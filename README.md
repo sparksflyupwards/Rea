@@ -1,2 +1,2 @@
-# Rea
+# React Calculator FCC
 Created with CodeSandbox
