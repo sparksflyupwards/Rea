@@ -14,10 +14,12 @@
 }
 
 .Calculator {
-  font-family: sans-serif;
   text-align: center;
-  background-color: black;
-  color: white;
+  background-color: #FFBF47;
+  color: black;
   width: 60%;
-  margin: 0 auto;
+  margin: 5% auto;
+  height: 80vh;
+  width: 29%;
+  border-radius: 5%;
 }
