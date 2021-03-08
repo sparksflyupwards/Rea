@@ -1,2 +1,2 @@
 # React Calculator FCC
-Created with CodeSandbox
+Calculator App built with react for FCC
