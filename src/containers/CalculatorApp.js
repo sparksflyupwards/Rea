@@ -25,14 +25,15 @@ export default class CalculatorApp extends React.Component {
   }
   render() {
     return (
-      <div class="Calculator">
-        <Header
-          title="FCC Calculator App"
-          themeToggleImage={this.state.themeToggleImage}
-          handleThemeToggle={this.handleThemeToggle}
-        />
-        <DisplayPanel />
-        <div> Yo </div>
+      <div className={this.state.themeToggleImage == "dark" ? "calculator-dark" : "calculator"}>
+
+            <Header
+              title="FCC Calculator App"
+              themeToggleImage={this.state.themeToggleImage}
+              handleThemeToggle={this.handleThemeToggle}
+            />
+            <DisplayPanel theme={this.state.themeToggleImage}/>
+            <div> Yo </div>
       </div>
     );
   }

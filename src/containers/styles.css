@@ -13,7 +13,7 @@
       format("svg");
 }
 
-.Calculator {
+.calculator {
   text-align: center;
   background-color: #FFBF47;
   color: black;
@@ -22,4 +22,18 @@
   height: 80vh;
   width: 29%;
   border-radius: 5%;
+  box-shadow: 2vw 6vh 6px rgba(0, 0, 0, 0.18), 0 1px 4px rgba(0, 0, 0, 0.24);
+
+}
+
+.calculator-dark {
+  text-align: center;
+  background-color: #32292F ;
+  color: white;
+  width: 60%;
+  margin: 5% auto;
+  height: 80vh;
+  width: 29%;
+  border-radius: 5%;
+  box-shadow: 2vw 6vh 6px rgba(0, 0, 0, 0.18), 0 1px 4px rgba(0, 0, 0, 0.24);
 }

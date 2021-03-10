@@ -9,7 +9,7 @@ function AppTitle(props) {
 function ThemeToggle(props) {
   return (
     <div id="themeToggle">
-      <button id="themeToggleBtn" onClick={props.handleThemeToggle}>
+      <button className= {props.themeToggleImage == "dark" ? "themeToggleBtn-dark" : "themeToggleBtn"} onClick={props.handleThemeToggle}>
         <img
           src={ThemeToggleIcon[props.themeToggleImage]["icon"]}
           alt="switch theme"

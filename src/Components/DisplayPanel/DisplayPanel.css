@@ -1,9 +1,33 @@
-#display-panel {
-  color: #fcb603;
+.display-panel {
+
+}
+.display-panel-light {
+  background-color: #f1d17f;
   font-family: Digital;
-  padding-right: 10px;
-  padding-top: 10px;
   text-align: right;
+  width: 85%;
+  margin: 0 auto;
+  border-radius: 10px;
+  padding-right: 10px;
+  padding-top: 50px;
+  padding-bottom: 10px;
+  box-shadow: 1.5px 1.5px 5px;
+  margin-top: 3%;
+}
+
+.display-panel-dark {
+  background-color: #4F6367;
+  color: #91A6FF;
+  font-family: Digital;
+  text-align: right;
+  width: 85%;
+  margin: 0 auto;
+  border-radius: 10px;
+  padding-right: 10px;
+  padding-top: 50px;
+  padding-bottom: 10px;
+  box-shadow: 1.5px 1.5px 5px white;
+  margin-top: 3%;
 }
 
 #display {
