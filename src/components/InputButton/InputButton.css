@@ -1,7 +1,7 @@
 
-.inputButton{
-    margin-left: 3%;
+.inputButton:acive{
     display: inline;
+    color: red;
 }
 
 
@@ -36,8 +36,18 @@
         height: 7.5vw;
         border-radius: 50%;
         border: 0;
+        outline: none;
         box-shadow: .5vw .5vh 8px rgba(0, 0, 0, 0.18), 0 1px 8px rgba(0, 0, 0, .6);
     }
+    .inputButton-light:active {
+        transform: translateX(2%);
+        transform: translateY(6%);
+        transition: all .2s;
+        
+     }
+
+
+
     
     .inputButton-dark {
         color: white;
@@ -62,7 +72,7 @@
     margin-left: 3%;
     display: inline;
     width: 2.5vw;
-    height: 5vw;
+    height: 10vw;
 }
 
 
@@ -94,10 +104,17 @@
         color: black;
         background-color: inherit;
         width: 7.5vw;
-        height: 15vw;
+        height: 20vw;
         border-radius: 15%;
         border: 0;
+        outline: none;
+        margin-left: 150%;
         box-shadow: .5vw .5vh 8px rgba(0, 0, 0, 0.18), 0 1px 8px rgba(0, 0, 0, .6);
+    }
+
+    .bigInputButton-light:active {
+        transform: translateY(5%);
+        transition: all .2s;
     }
     
     .bigInputButton-dark {
