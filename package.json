@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "",
   "keywords": [],
+  "main": "src/index.js",
   "engines": {
     "node": "15.7.x"
   },
