@@ -1,3 +1,5 @@
+
+/*Consider giving it an id and a class */
 .display-panel {
 
 }
@@ -9,7 +11,7 @@
   margin: 0 auto;
   border-radius: 10px;
   padding-right: 10px;
-  padding-top: 50px;
+  padding-top: 5vh;
   padding-bottom: 10px;
   box-shadow: 1.5px 1.5px 5px;
   margin-top: 3%;
@@ -24,7 +26,7 @@
   margin: 0 auto;
   border-radius: 10px;
   padding-right: 10px;
-  padding-top: 50px;
+  padding-top: 5vh;
   padding-bottom: 10px;
   box-shadow: 1.5px 1.5px 5px white;
   margin-top: 3%;
