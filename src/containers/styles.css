@@ -22,7 +22,6 @@
  
 }
 
-
 .calculator {
   width: 100%;
   margin: 5% auto;
@@ -31,6 +30,7 @@
   border-radius: 5%;
   box-shadow: 2vw 6vh 6px rgba(0, 0, 0, 0.18), 0 1px 4px rgba(0, 0, 0, 0.24);
 }
+
 @media only screen and (max-width: 600px){
   .calculator {
     margin: 10% auto;
