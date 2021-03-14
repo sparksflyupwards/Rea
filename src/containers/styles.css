@@ -33,7 +33,7 @@
 }
 
 @media only screen and (max-width: 600px){
-
+  
   .numberPad{
     display: grid;
     grid-template-columns: 25% 25% 25% 25%;

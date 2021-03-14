@@ -113,7 +113,6 @@
     }
 
     .bigInputButton-light:active {
-        transform: translateY(5%);
         transition: all .2s;
     }
     

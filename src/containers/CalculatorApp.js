@@ -32,10 +32,10 @@ export default class CalculatorApp extends React.Component {
         const clickOffset_x = (e.clientX-window.innerWidth/2)/calculatorElement.offsetWidth
 
         const clickOffset_y = (e.clientY-window.innerHeight/2)/calculatorElement.offsetHeight
-        /*
-        alert(clickOffset_x)
-        alert(clickOffset_y)
-        */
+        
+        //alert(clickOffset_x+" , "+clickOffset_y)
+        
+        
         let calculatorTransform;
 
         if(clickOffset_x > 0.2 && clickOffset_y > 0.2){
@@ -51,13 +51,25 @@ export default class CalculatorApp extends React.Component {
           calculatorTransform = "scale(0.98,0.98)"
           //alert("yo")
         }
-        const rotateX = Math.abs(clickOffset_x/0.15)*-5;
-        const rotateY = 0;
-        if(rotateX>-7)[
-          calculatorTransform = "scale(0.98,0.98)"
-        ]
+        else if (clickOffset_x < -0.2){
+          let x_rotate = -5, y_rotate = -10;
+          calculatorTransform = "perspective(2000px) rotateX("+x_rotate+"deg) rotateY("+y_rotate+"deg)"
+        }
+        else if (clickOffset_x > 0.2){
+          let x_rotate = -5, y_rotate =10;
+         // alert(clickOffset_y)
+          calculatorTransform = "perspective(2000px) rotateX("+x_rotate+"deg) rotateY("+y_rotate+"deg)"
+        }
+        else if(clickOffset_y > 0.27){
+          let x_rotate = -10, y_rotate =0;
+          calculatorTransform = "perspective(2000px) rotateX("+x_rotate+"deg) rotateY("+y_rotate+"deg)"
+        }
+        /** 
+        const rotateX = clickOffset_y>0 ? Math.abs(clickOffset_x/0.15)*-5 : Math.abs(clickOffset_x/0.15)*5;
+        const rotateY = clickOffset_x>0 ? Math.abs(clickOffset_y/0.15)*5 : Math.abs(clickOffset_y/0.15)*5;
 
-        calculatorTransform = "perspective(2000px) rotateX("+rotateX+"deg)"
+        calculatorTransform = "rotateX("+rotateX+"deg) rotateY("+rotateY+"deg)"
+        */
         calculatorElement.style.transform = calculatorTransform
 
 
@@ -66,7 +78,7 @@ export default class CalculatorApp extends React.Component {
      calculatorElement.addEventListener("mouseup",(e)=>{
        //alert("o")
       calculatorElement.style.transform = "rotateX(0deg)"
-      calculatorElement.style.transition = "all 0.25s";
+      calculatorElement.style.transition = "all linear .25s";
 
      });
   }
