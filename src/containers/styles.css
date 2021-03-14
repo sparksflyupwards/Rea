@@ -19,6 +19,7 @@
   text-align: center;
   background-color: #FFBF47;
   color: black;
+  
  
 }
 
@@ -47,7 +48,7 @@
     box-shadow: 2vw 6vh 6px rgba(0, 0, 0, 0.18), 0 1px 4px rgba(0, 0, 0, 0.24);
   }
   .calculator:hover {
-    transform: perspective(1000px) rotateX(-10deg) rotateY(+10deg);
+    transform: perspective(1000px) rotateX(-0deg) rotateY(+0deg);
   
   }
   .calculator-dark {
