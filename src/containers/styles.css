@@ -14,13 +14,27 @@
 }
 
 
+/* Calculator coloring rules */
 
 .calculator {
   text-align: center;
   background-color: #FFBF47;
   color: black;
-  
- 
+}
+
+
+.calculator-dark {
+  text-align: center;
+  background-color: #32292F ;
+  color: white;
+  }
+
+/* Calculator desktop sizing rules */
+.numberPad{
+  display: grid;
+  grid-template-columns: 25% 25% 25% 25%;
+  grid-template-rows: 43% 43% 43% 43%;
+  margin-top: 15%;
 }
 
 .calculator {
@@ -32,6 +46,7 @@
   box-shadow: 2vw 6vh 6px rgba(0, 0, 0, 0.18), 0 1px 4px rgba(0, 0, 0, 0.24);
 }
 
+/* Calculator mobile sizing rules */
 @media only screen and (max-width: 600px){
   
   .numberPad{
@@ -56,8 +71,3 @@
     }
 }
 
-.calculator-dark {
-  text-align: center;
-  background-color: #32292F ;
-  color: white;
-  }
