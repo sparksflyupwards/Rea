@@ -39,13 +39,13 @@ export default class CalculatorApp extends React.Component {
             ,1/2);
 
         const scale = 1 -0.045*Math.abs(1-distanceFromCenter);
-        calculatorTransform = "scale("+scale + ","+scale+") rotateX("+rotateX+"deg) rotateY("+rotateY+"deg)"
+        const calculatorTransform = "scale("+scale + ","+scale+") rotateX("+rotateX+"deg) rotateY("+rotateY+"deg)"
         calculatorElement.style.transform = calculatorTransform
 
 
      })
 
-     calculatorElement.addEventListener("mouseup",(e)=>{
+     document.addEventListener("mouseup",(e)=>{
       calculatorElement.style.transform = "rotateX(0deg)"
       calculatorElement.style.transition = "all linear .25s";
 

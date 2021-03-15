@@ -42,14 +42,10 @@
   }
   .calculator {
     margin: 10% auto;
-    height: 80vh;
+    height: 73vh;
     width: 70%;
     border-radius: 5%;
-    box-shadow: 2vw 6vh 6px rgba(0, 0, 0, 0.18), 0 1px 4px rgba(0, 0, 0, 0.24);
-  }
-  .calculator:hover {
-    transform: perspective(1000px) rotateX(-0deg) rotateY(+0deg);
-  
+    box-shadow: 6vw 6vh 6px rgba(0, 0, 0, 0.18), 0 1px 4px rgba(0, 0, 0, 0.24);
   }
   .calculator-dark {
     margin: 10% auto;
