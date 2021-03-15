@@ -29,9 +29,9 @@ export default class CalculatorApp extends React.Component {
     calculatorElement.addEventListener("mousedown",
      (e)=>{
 
-        const clickOffset_x = (e.clientX-window.innerWidth/2)/calculatorElement.offsetWidth
+        const clickOffset_x = (2*e.clientX-window.innerWidth)/calculatorElement.offsetWidth
 
-        const clickOffset_y = (e.clientY-window.innerHeight/2)/calculatorElement.offsetHeight
+        const clickOffset_y = (e.clientY-window.innerHeight*0.05)/calculatorElement.offsetHeight
         
         //alert(clickOffset_x+" , "+clickOffset_y)
         
@@ -39,7 +39,7 @@ export default class CalculatorApp extends React.Component {
         let calculatorTransform;
 
         if(clickOffset_x > 0.2 && clickOffset_y > 0.2){
-          let x_rotate = -5, y_rotate = 5;
+          let x_rotate = -10, y_rotate = 0;
           calculatorTransform = "perspective(2000px) rotateX("+clickOffset_x/0.2*x_rotate+"deg) rotateY("+clickOffset_y/0.2*y_rotate+"deg)"
           
         }
@@ -70,6 +70,16 @@ export default class CalculatorApp extends React.Component {
 
         calculatorTransform = "rotateX("+rotateX+"deg) rotateY("+rotateY+"deg)"
         */
+
+        const rotateX = (clickOffset_y - 0.49) * -1 * 10;
+        const rotateY = clickOffset_x  * 10;
+        const distanceFromCenter = Math.pow( Math.pow((Math.abs(clickOffset_x) - 0),2) + Math.pow((Math.abs(clickOffset_y) - 0.5) , 2),1/2);
+        const scale = 1 -0.02*Math.abs(1-distanceFromCenter);
+        //alert(1 -0.02*Math.abs(1-distanceFromCenter))
+
+        calculatorTransform = "perspective(2000px) scale("+scale + ","+scale+") rotateX("+rotateX+"deg) rotateY("+rotateY+"deg)"
+
+        console.log(clickOffset_x + "  ,  " + clickOffset_y)
         calculatorElement.style.transform = calculatorTransform
 
 
