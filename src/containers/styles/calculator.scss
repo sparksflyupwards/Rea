@@ -22,8 +22,28 @@
 
   $calculator-mobile-width-wide : 70%;
   $calculator-mobile-height-wide : 78vh;
-  
-  
+
+  body {
+    background-color:rgb(175, 184, 48);
+    background-image: 
+      repeating-linear-gradient(
+        45deg,
+        rgba(0,0,0,0.2),
+        rgba(0,0,0,0.2) 100px,
+        transparent 0px,
+        transparent 200px,
+       
+      ),
+      repeating-linear-gradient(
+        -45deg,
+        rgba(0,0,0,0.2),
+        rgba(0,0,0,0.2) 100px,
+        transparent 0px,
+        transparent 200px
+      );
+
+  }
+
 
   /** Calculator coloring rules **/
   .calculator {
