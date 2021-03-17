@@ -94,7 +94,19 @@
       .calculator-dark {
         @include calculatorMobileWide();
      }
+     
+        $grid-width: 25%;
+        $grid-height: 36%;
 
+        .numberPad{
+            display: grid;
+            grid-template-columns: $grid-width $grid-width $grid-width $grid-width;
+            grid-template-rows: $grid-height $grid-height $grid-height $grid-height;
+            margin-top: 10%;
+            margin-left: 0%;
+            
+        }
+        
       /** for thinner phones **/
       @media (max-aspect-ratio: 1/2) {
 

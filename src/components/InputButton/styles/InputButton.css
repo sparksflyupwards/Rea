@@ -36,8 +36,8 @@
     outline: none;
     -webkit-box-shadow: 0.5vw 0.5vh 8px rgba(0, 0, 0, 0.18), 0 1px 8px rgba(0, 0, 0, 0.6);
             box-shadow: 0.5vw 0.5vh 8px rgba(0, 0, 0, 0.18), 0 1px 8px rgba(0, 0, 0, 0.6);
-    width: 7.5vw;
-    height: 7.5vw;
+    width: 10vw;
+    height: 10vw;
   }
   .inputButton-light:active {
     -webkit-transform: translateY(12%) scaleX(0.9) scaleY(0.9) rotateX(10deg);
@@ -51,8 +51,8 @@
     outline: none;
     -webkit-box-shadow: 0.5vw 0.5vh 8px rgba(0, 0, 0, 0.18), 0 1px 8px rgba(0, 0, 0, 0.6);
             box-shadow: 0.5vw 0.5vh 8px rgba(0, 0, 0, 0.18), 0 1px 8px rgba(0, 0, 0, 0.6);
-    width: 7.5vw;
-    height: 7.5vw;
+    width: 10vw;
+    height: 10vw;
   }
   .inputButton-dark:active {
     -webkit-transform: translateY(12%) scaleX(0.9) scaleY(0.9) rotateX(10deg);
@@ -130,9 +130,10 @@
     outline: none;
     -webkit-box-shadow: 0.5vw 0.5vh 8px rgba(0, 0, 0, 0.18), 0 1px 8px rgba(0, 0, 0, 0.6);
             box-shadow: 0.5vw 0.5vh 8px rgba(0, 0, 0, 0.18), 0 1px 8px rgba(0, 0, 0, 0.6);
-    width: 7.5vw;
-    height: 24vw;
-    margin-left: 190%;
+    width: 8.5vw;
+    height: 27.5vw;
+    margin-top: 10%;
+    margin-left: 150%;
   }
   .bigInputButton-light:active {
     -webkit-transform: translateX(-2%) translateY(8%) scaleX(0.97) scaleY(0.97) rotateX(5deg);
@@ -146,9 +147,10 @@
     outline: none;
     -webkit-box-shadow: 0.5vw 0.5vh 8px rgba(0, 0, 0, 0.18), 0 1px 8px rgba(0, 0, 0, 0.6);
             box-shadow: 0.5vw 0.5vh 8px rgba(0, 0, 0, 0.18), 0 1px 8px rgba(0, 0, 0, 0.6);
-    width: 7.5vw;
-    height: 24vw;
-    margin-left: 190%;
+    width: 8.5vw;
+    height: 27.5vw;
+    margin-top: 10%;
+    margin-left: 150%;
   }
   .bigInputButton-dark:active {
     -webkit-transform: translateX(-2%) translateY(8%) scaleX(0.97) scaleY(0.97) rotateX(5deg);

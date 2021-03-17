@@ -8,7 +8,6 @@ ReactDOM.render(
   <StrictMode>
 
     <CalculatorApp />
-    V0.0
   </StrictMode>,
   rootElement
 );

@@ -68,6 +68,16 @@
     height: 75vh;
     width: 70%;
   }
+  .numberPad {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: 25% 25% 25% 25%;
+        grid-template-columns: 25% 25% 25% 25%;
+    -ms-grid-rows: 36% 36% 36% 36%;
+        grid-template-rows: 36% 36% 36% 36%;
+    margin-top: 10%;
+    margin-left: 0%;
+  }
   /** for thinner phones **/
 }
 
