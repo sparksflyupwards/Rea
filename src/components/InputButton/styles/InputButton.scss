@@ -41,14 +41,25 @@
 
 
 @mixin inputButtonMobile {
-        width: 7.5vw;
-        height: 7.5vw;
         border-radius: 50%;
         border: 0;
         outline: none;
         box-shadow: .5vw .5vh 8px rgba(0, 0, 0, 0.18), 0 1px 8px rgba(0, 0, 0, .6);
    
 }
+
+@mixin inputButtonMobileThin {
+    @include inputButtonMobile;
+    width: 11vw;
+    height: 11vw;
+}
+
+@mixin inputButtonMobileWide {
+    @include inputButtonMobile;
+    width: 7.5vw;
+    height: 7.5vw;
+}
+
 
 @mixin inputButtonMobileActive {
     transform: translateY(12%) scaleX(0.9) scaleY(0.9) rotateX(10deg);
@@ -57,8 +68,9 @@
 
 @media only screen and (max-width: 600px){
 
+   
     .inputButton-light {
-      @include inputButtonMobile;
+      @include inputButtonMobileWide;
     }
     .inputButton-light:active {
         
@@ -67,12 +79,24 @@
      }
      
     .inputButton-dark {
-        @include inputButtonMobile;
+        @include inputButtonMobileWide;
     }
 
     .inputButton-dark:active {
         @include inputButtonMobileActive;
      }
+
+    /** sizing rules for thin viewports **/
+    @media (max-aspect-ratio: 1/2) {
+        .inputButton-light {
+            @include inputButtonMobileThin;
+          }
+
+        .inputButton-dark {
+            @include inputButtonMobileThin;
+        }
+
+    }
 }
 
 
@@ -122,15 +146,28 @@
 }
 
 
+
 @mixin bigInputButtonMobile {
-    width: 7.5vw;
-    height: 20vw;
-    border-radius: 15%;
+    border-radius: 20%;
     border: 0;
     outline: none;
-    margin-left: 150%;
     box-shadow: .5vw .5vh 8px rgba(0, 0, 0, 0.18), 0 1px 8px rgba(0, 0, 0, .6);
 }
+
+@mixin bigInputButtonMobileThin {
+    @include bigInputButtonMobile();
+    width:  9.5vw;
+    height: 30vw;
+    margin-left: 210%;
+}
+
+@mixin bigInputButtonMobileWide {
+    @include bigInputButtonMobile();
+    width: 7.5vw;
+    height: 24vw;
+    margin-left: 190%;
+}
+
 
 @mixin bigInputButtonMobileActive {
     transform: translateX(-2%) translateY(8%) scaleX(0.97) scaleY(0.97) rotateX(5deg);
@@ -140,7 +177,7 @@
 @media only screen and (max-width: 600px){
 
     .bigInputButton-light {
-      @include bigInputButtonMobile();
+      @include bigInputButtonMobileWide();
     }
 
     .bigInputButton-light:active {
@@ -149,10 +186,23 @@
     }
     
     .bigInputButton-dark {
-        @include bigInputButtonMobile();
+        @include bigInputButtonMobileWide();
     }
     .bigInputButton-dark:active {
         //rule defined above
         @include bigInputButtonMobileActive();
+    }
+
+    /** sizing rules for thin view ports */
+    @media (max-aspect-ratio: 1/2) {
+
+        .bigInputButton-light {
+            @include bigInputButtonMobileThin();
+        }
+
+        .bigInputButton-dark {
+            @include bigInputButtonMobileThin();
+        }
+
     }
 }

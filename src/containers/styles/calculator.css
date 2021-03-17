@@ -77,9 +77,10 @@
     display: grid;
     -ms-grid-columns: 25% 25% 25% 25%;
         grid-template-columns: 25% 25% 25% 25%;
-    -ms-grid-rows: 43% 43% 43% 43%;
-        grid-template-rows: 43% 43% 43% 43%;
-    margin-top: 15%;
+    -ms-grid-rows: 36% 36% 36% 36%;
+        grid-template-rows: 36% 36% 36% 36%;
+    margin-top: 19%;
+    margin-left: 0%;
   }
   .calculator {
     border-radius: 5%;

@@ -31,13 +31,13 @@
 /* inputButton mobile sizing rules */
 @media only screen and (max-width: 600px) {
   .inputButton-light {
-    width: 7.5vw;
-    height: 7.5vw;
     border-radius: 50%;
     border: 0;
     outline: none;
     -webkit-box-shadow: 0.5vw 0.5vh 8px rgba(0, 0, 0, 0.18), 0 1px 8px rgba(0, 0, 0, 0.6);
             box-shadow: 0.5vw 0.5vh 8px rgba(0, 0, 0, 0.18), 0 1px 8px rgba(0, 0, 0, 0.6);
+    width: 7.5vw;
+    height: 7.5vw;
   }
   .inputButton-light:active {
     -webkit-transform: translateY(12%) scaleX(0.9) scaleY(0.9) rotateX(10deg);
@@ -46,19 +46,41 @@
     transition: all .2s;
   }
   .inputButton-dark {
-    width: 7.5vw;
-    height: 7.5vw;
     border-radius: 50%;
     border: 0;
     outline: none;
     -webkit-box-shadow: 0.5vw 0.5vh 8px rgba(0, 0, 0, 0.18), 0 1px 8px rgba(0, 0, 0, 0.6);
             box-shadow: 0.5vw 0.5vh 8px rgba(0, 0, 0, 0.18), 0 1px 8px rgba(0, 0, 0, 0.6);
+    width: 7.5vw;
+    height: 7.5vw;
   }
   .inputButton-dark:active {
     -webkit-transform: translateY(12%) scaleX(0.9) scaleY(0.9) rotateX(10deg);
             transform: translateY(12%) scaleX(0.9) scaleY(0.9) rotateX(10deg);
     -webkit-transition: all .2s;
     transition: all .2s;
+  }
+  /** sizing rules for thin viewports **/
+}
+
+@media only screen and (max-width: 600px) and (max-aspect-ratio: 1 / 2) {
+  .inputButton-light {
+    border-radius: 50%;
+    border: 0;
+    outline: none;
+    -webkit-box-shadow: 0.5vw 0.5vh 8px rgba(0, 0, 0, 0.18), 0 1px 8px rgba(0, 0, 0, 0.6);
+            box-shadow: 0.5vw 0.5vh 8px rgba(0, 0, 0, 0.18), 0 1px 8px rgba(0, 0, 0, 0.6);
+    width: 11vw;
+    height: 11vw;
+  }
+  .inputButton-dark {
+    border-radius: 50%;
+    border: 0;
+    outline: none;
+    -webkit-box-shadow: 0.5vw 0.5vh 8px rgba(0, 0, 0, 0.18), 0 1px 8px rgba(0, 0, 0, 0.6);
+            box-shadow: 0.5vw 0.5vh 8px rgba(0, 0, 0, 0.18), 0 1px 8px rgba(0, 0, 0, 0.6);
+    width: 11vw;
+    height: 11vw;
   }
 }
 
@@ -103,14 +125,14 @@
 /* bigInputButton mobile sizing rules */
 @media only screen and (max-width: 600px) {
   .bigInputButton-light {
-    width: 7.5vw;
-    height: 20vw;
-    border-radius: 15%;
+    border-radius: 20%;
     border: 0;
     outline: none;
-    margin-left: 150%;
     -webkit-box-shadow: 0.5vw 0.5vh 8px rgba(0, 0, 0, 0.18), 0 1px 8px rgba(0, 0, 0, 0.6);
             box-shadow: 0.5vw 0.5vh 8px rgba(0, 0, 0, 0.18), 0 1px 8px rgba(0, 0, 0, 0.6);
+    width: 7.5vw;
+    height: 24vw;
+    margin-left: 190%;
   }
   .bigInputButton-light:active {
     -webkit-transform: translateX(-2%) translateY(8%) scaleX(0.97) scaleY(0.97) rotateX(5deg);
@@ -119,20 +141,44 @@
     transition: all .2s;
   }
   .bigInputButton-dark {
-    width: 7.5vw;
-    height: 20vw;
-    border-radius: 15%;
+    border-radius: 20%;
     border: 0;
     outline: none;
-    margin-left: 150%;
     -webkit-box-shadow: 0.5vw 0.5vh 8px rgba(0, 0, 0, 0.18), 0 1px 8px rgba(0, 0, 0, 0.6);
             box-shadow: 0.5vw 0.5vh 8px rgba(0, 0, 0, 0.18), 0 1px 8px rgba(0, 0, 0, 0.6);
+    width: 7.5vw;
+    height: 24vw;
+    margin-left: 190%;
   }
   .bigInputButton-dark:active {
     -webkit-transform: translateX(-2%) translateY(8%) scaleX(0.97) scaleY(0.97) rotateX(5deg);
             transform: translateX(-2%) translateY(8%) scaleX(0.97) scaleY(0.97) rotateX(5deg);
     -webkit-transition: all .2s;
     transition: all .2s;
+  }
+  /** sizing rules for thin view ports */
+}
+
+@media only screen and (max-width: 600px) and (max-aspect-ratio: 1 / 2) {
+  .bigInputButton-light {
+    border-radius: 20%;
+    border: 0;
+    outline: none;
+    -webkit-box-shadow: 0.5vw 0.5vh 8px rgba(0, 0, 0, 0.18), 0 1px 8px rgba(0, 0, 0, 0.6);
+            box-shadow: 0.5vw 0.5vh 8px rgba(0, 0, 0, 0.18), 0 1px 8px rgba(0, 0, 0, 0.6);
+    width: 9.5vw;
+    height: 30vw;
+    margin-left: 210%;
+  }
+  .bigInputButton-dark {
+    border-radius: 20%;
+    border: 0;
+    outline: none;
+    -webkit-box-shadow: 0.5vw 0.5vh 8px rgba(0, 0, 0, 0.18), 0 1px 8px rgba(0, 0, 0, 0.6);
+            box-shadow: 0.5vw 0.5vh 8px rgba(0, 0, 0, 0.18), 0 1px 8px rgba(0, 0, 0, 0.6);
+    width: 9.5vw;
+    height: 30vw;
+    margin-left: 210%;
   }
 }
 /*# sourceMappingURL=InputButton.css.map */

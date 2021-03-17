@@ -19,7 +19,13 @@ export default class InputButton extends React.Component{
     render(){
         return (
             <div className={this.props.class}>
-                <button className= {this.props.class+"-"+this.props.theme} style={{backgroundColor:this.props.buttonColor}} id={this.props.id} onClick={this.props.onClick}>{this.props.buttonText}</button>
+                <button className= {this.props.class+"-"+this.props.theme}
+                 id={this.props.id} 
+                 onClick={this.props.onClick}>
+                     
+                     {this.props.buttonText}
+                     
+                </button>
             </div>
             
         )
