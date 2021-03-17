@@ -1,4 +1,4 @@
-import "./styles.css";
+import "./styles/calculator.css";
 import React, { Component } from "react";
 
 import DisplayPanel from "../components/DisplayPanel/DisplayPanel";

@@ -1,0 +1,84 @@
+@font-face {
+    font-family: "Digital";
+    src: url("//db.onlinewebfonts.com/t/8e22783d707ad140bffe18b2a3812529.eot");
+    src: url("//db.onlinewebfonts.com/t/8e22783d707ad140bffe18b2a3812529.eot?#iefix")
+        format("embedded-opentype"),
+      url("//db.onlinewebfonts.com/t/8e22783d707ad140bffe18b2a3812529.woff2")
+        format("woff2"),
+      url("//db.onlinewebfonts.com/t/8e22783d707ad140bffe18b2a3812529.woff")
+        format("woff"),
+      url("//db.onlinewebfonts.com/t/8e22783d707ad140bffe18b2a3812529.ttf")
+        format("truetype"),
+      url("//db.onlinewebfonts.com/t/8e22783d707ad140bffe18b2a3812529.svg#Digital-7")
+        format("svg");
+  }
+  
+  
+  /* Calculator coloring rules */
+  
+
+  .calculator {
+    text-align: center;
+    background-color: #FFBF47;
+    color: black;
+  }
+  
+  
+  .calculator-dark {
+    text-align: center;
+    background-color: #32292F ;
+    color: white;
+}
+  
+
+  /* Calculator desktop sizing rules */
+  .numberPad{
+    display: grid;
+    grid-template-columns: 25% 25% 25% 25%;
+    grid-template-rows: 43% 43% 43% 43%;
+    margin-top: 15%;
+  }
+  
+  @mixin calculator {
+    width: 100%;
+    margin: 5% auto;
+    height: 80vh;
+    width: 29%;
+    border-radius: 5%;
+    box-shadow: 2vw 6vh 6px rgba(0, 0, 0, 0.18), 0 1px 4px rgba(0, 0, 0, 0.24);
+  }
+  .calculator {
+      @include calculator();
+  }
+
+  .calculator-dark {
+   @include calculator();
+  }
+  
+  /* Calculator mobile sizing rules */
+
+  @mixin calculatorMobile {
+    margin: 10% auto;
+    height: 80vh;
+    width: 70%;
+    border-radius: 5%;
+    box-shadow: 6vw 6vh 6px rgba(0, 0, 0, 0.18), 0 1px 4px rgba(0, 0, 0, 0.24);
+  }
+
+
+  @media only screen and (max-width: 600px){
+    
+    .numberPad{
+      display: grid;
+      grid-template-columns: 25% 25% 25% 25%;
+      grid-template-rows: 43% 43% 43% 43%;
+      margin-top: 15%;
+      
+    }
+    .calculator {
+      @include calculatorMobile();
+    }
+    .calculator-dark {
+      @include calculatorMobile();
+   }
+  }
