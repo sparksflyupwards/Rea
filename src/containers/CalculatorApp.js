@@ -17,8 +17,9 @@ export default class CalculatorApp extends React.Component {
 
   componentDidMount() {
     //hide addressbar
-    document.body.scrollTop = 0; // For Safari
-    document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
+    document.body.scrollTop = document.body.scrollHeight; // For Safari
+    document.documentElement.scrollTop = document.documentElement.scrollHeight; // For Chrome, Firefox, IE and Opera
+    
 
     const calculatorElement = document.getElementById("calculatorApp");
 
