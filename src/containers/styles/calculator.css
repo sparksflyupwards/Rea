@@ -4,7 +4,8 @@
   src: url("//db.onlinewebfonts.com/t/8e22783d707ad140bffe18b2a3812529.eot?#iefix") format("embedded-opentype"), url("//db.onlinewebfonts.com/t/8e22783d707ad140bffe18b2a3812529.woff2") format("woff2"), url("//db.onlinewebfonts.com/t/8e22783d707ad140bffe18b2a3812529.woff") format("woff"), url("//db.onlinewebfonts.com/t/8e22783d707ad140bffe18b2a3812529.ttf") format("truetype"), url("//db.onlinewebfonts.com/t/8e22783d707ad140bffe18b2a3812529.svg#Digital-7") format("svg");
 }
 
-/* Calculator coloring rules */
+/** Global styling variables **/
+/** Calculator coloring rules **/
 .calculator {
   text-align: center;
   background-color: #FFBF47;
@@ -30,9 +31,9 @@
 
 .calculator {
   width: 100%;
-  margin: 5% auto;
-  height: 80vh;
-  width: 29%;
+  margin: 4% auto;
+  height: 650px;
+  width: 400px;
   border-radius: 5%;
   -webkit-box-shadow: 2vw 6vh 6px rgba(0, 0, 0, 0.18), 0 1px 4px rgba(0, 0, 0, 0.24);
           box-shadow: 2vw 6vh 6px rgba(0, 0, 0, 0.18), 0 1px 4px rgba(0, 0, 0, 0.24);
@@ -40,9 +41,9 @@
 
 .calculator-dark {
   width: 100%;
-  margin: 5% auto;
-  height: 80vh;
-  width: 29%;
+  margin: 4% auto;
+  height: 650px;
+  width: 400px;
   border-radius: 5%;
   -webkit-box-shadow: 2vw 6vh 6px rgba(0, 0, 0, 0.18), 0 1px 4px rgba(0, 0, 0, 0.24);
           box-shadow: 2vw 6vh 6px rgba(0, 0, 0, 0.18), 0 1px 4px rgba(0, 0, 0, 0.24);
@@ -50,6 +51,27 @@
 
 /* Calculator mobile sizing rules */
 @media only screen and (max-width: 600px) {
+  /** for wider mobile viewports */
+  .calculator {
+    border-radius: 5%;
+    -webkit-box-shadow: 6vw 6vh 6px rgba(0, 0, 0, 0.18), 0 1px 4px rgba(0, 0, 0, 0.24);
+            box-shadow: 6vw 6vh 6px rgba(0, 0, 0, 0.18), 0 1px 4px rgba(0, 0, 0, 0.24);
+    margin: 20% auto;
+    height: 75vh;
+    width: 70%;
+  }
+  .calculator-dark {
+    border-radius: 5%;
+    -webkit-box-shadow: 6vw 6vh 6px rgba(0, 0, 0, 0.18), 0 1px 4px rgba(0, 0, 0, 0.24);
+            box-shadow: 6vw 6vh 6px rgba(0, 0, 0, 0.18), 0 1px 4px rgba(0, 0, 0, 0.24);
+    margin: 20% auto;
+    height: 75vh;
+    width: 70%;
+  }
+  /** for thinner phones **/
+}
+
+@media only screen and (max-width: 600px) and (max-aspect-ratio: 1 / 2) {
   .numberPad {
     display: -ms-grid;
     display: grid;
@@ -60,20 +82,20 @@
     margin-top: 15%;
   }
   .calculator {
-    margin: 10% auto;
-    height: 80vh;
-    width: 70%;
     border-radius: 5%;
     -webkit-box-shadow: 6vw 6vh 6px rgba(0, 0, 0, 0.18), 0 1px 4px rgba(0, 0, 0, 0.24);
             box-shadow: 6vw 6vh 6px rgba(0, 0, 0, 0.18), 0 1px 4px rgba(0, 0, 0, 0.24);
+    margin: 20% auto;
+    height: 75vh;
+    width: 80%;
   }
   .calculator-dark {
-    margin: 10% auto;
-    height: 80vh;
-    width: 70%;
     border-radius: 5%;
     -webkit-box-shadow: 6vw 6vh 6px rgba(0, 0, 0, 0.18), 0 1px 4px rgba(0, 0, 0, 0.24);
             box-shadow: 6vw 6vh 6px rgba(0, 0, 0, 0.18), 0 1px 4px rgba(0, 0, 0, 0.24);
+    margin: 20% auto;
+    height: 75vh;
+    width: 80%;
   }
 }
 /*# sourceMappingURL=calculator.css.map */
