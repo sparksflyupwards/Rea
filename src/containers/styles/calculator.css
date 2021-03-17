@@ -24,9 +24,9 @@
   display: grid;
   -ms-grid-columns: 25% 25% 25% 25%;
       grid-template-columns: 25% 25% 25% 25%;
-  -ms-grid-rows: 43% 43% 43% 43%;
-      grid-template-rows: 43% 43% 43% 43%;
-  margin-top: 15%;
+  -ms-grid-rows: 25% 25% 25% 25%;
+      grid-template-rows: 25% 25% 25% 25%;
+  margin-top: 10%;
 }
 
 .calculator {

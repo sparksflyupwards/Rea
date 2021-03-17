@@ -41,11 +41,14 @@
   
 
   /* Calculator desktop sizing rules */
+  $grid-width: 25%;
+  $grid-height: 25%;
+
   .numberPad{
     display: grid;
-    grid-template-columns: 25% 25% 25% 25%;
-    grid-template-rows: 43% 43% 43% 43%;
-    margin-top: 15%;
+    grid-template-columns: $grid-width $grid-width $grid-width $grid-width;
+    grid-template-rows: $grid-height $grid-height $grid-height $grid-height;
+    margin-top: 10%;
   }
   
   @mixin calculator {
@@ -95,13 +98,13 @@
         @include calculatorMobileWide();
      }
      
-        $grid-width: 25%;
-        $grid-height: 36%;
+        $grid-width-mobile: 25%;
+        $grid-height-mobile: 36%;
 
         .numberPad{
             display: grid;
-            grid-template-columns: $grid-width $grid-width $grid-width $grid-width;
-            grid-template-rows: $grid-height $grid-height $grid-height $grid-height;
+            grid-template-columns: $grid-width-mobile $grid-width-mobile $grid-width-mobile $grid-width-mobile;
+            grid-template-rows: $grid-height-mobile $grid-height-mobile $grid-height-mobile $grid-height-mobile;
             margin-top: 10%;
             margin-left: 0%;
             
