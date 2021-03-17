@@ -1,4 +1,4 @@
-import "./InputButton.css";
+import "./styles/InputButton.css";
 import React from "react";
 
 export default class InputButton extends React.Component{

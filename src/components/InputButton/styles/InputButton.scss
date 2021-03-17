@@ -1,74 +1,84 @@
-
-
 /* inputButton coloring rules */
-.inputButton-light {
+
+@mixin inputButtonLightTheme {
     color: black;
     background-color: inherit;
 }
 
-.inputButton-dark {
+@mixin inputButtonDarkTheme {
     color: white;
     background-color: inherit;
+}
+
+.inputButton-light {
+    @include inputButtonLightTheme;
+}
+
+.inputButton-dark {
+    @include inputButtonDarkTheme;
 }
 
 /* inputButton desktop sizing rules */
 
-.inputButton-light {
+
+@mixin inputButton {
     width: 2.5vw;
     height: 2.5vw;
     border-radius: 50%;
     border: 0;
     box-shadow: .5vw .5vh 8px rgba(0, 0, 0, 0.18), 0 1px 8px rgba(0, 0, 0, .6);
+
+}
+.inputButton-light {
+    @include inputButton;
 }
 
 .inputButton-dark {
-    color: white;
-    background-color: inherit;
-    width: 2.5vw;
-    height: 2.5vw;
-    border-radius: 50%;
-    border: 0;
-    box-shadow: .5vw .5vh 8px rgba(0, 0, 0, 0.18), 0 1px 8px rgba(0, 0, 0, .6);
+    @include inputButton;
 }
 
 /* inputButton mobile sizing rules */
 
-@media only screen and (max-width: 600px){
 
-    .inputButton-light {
+@mixin inputButtonMobile {
         width: 7.5vw;
         height: 7.5vw;
         border-radius: 50%;
         border: 0;
         outline: none;
         box-shadow: .5vw .5vh 8px rgba(0, 0, 0, 0.18), 0 1px 8px rgba(0, 0, 0, .6);
+   
+}
+
+@mixin inputButtonMobileActive {
+    transform: translateY(12%) scaleX(0.9) scaleY(0.9) rotateX(10deg);
+    transition: all .2s;
+}
+
+@media only screen and (max-width: 600px){
+
+    .inputButton-light {
+      @include inputButtonMobile;
     }
     .inputButton-light:active {
         
-        transform: translateY(12%);
-        width: 7vw;
-        height: 7vw;
-        transition: all .2s;
+        @include inputButtonMobileActive;
         
      }
      
     .inputButton-dark {
-        width: 7.5vw;
-        height: 7.5vw;
-        border-radius: 50%;
-        border: 0;
-        outline: none;
-        box-shadow: .5vw .5vh 8px rgba(0, 0, 0, 0.18), 0 1px 8px rgba(0, 0, 0, .6);
+        @include inputButtonMobile;
     }
 
     .inputButton-dark:active {
-        transform: translateX(4%);
-        width: 7vw;
-        height: 7vw;
-        transition: all .2s;
-        
+        @include inputButtonMobileActive;
      }
 }
+
+
+
+
+
 
 
 /* styles for the larger button bellow 
@@ -76,64 +86,73 @@
 */
 
 /* bigInputButton coloring rules */
+
+
 .bigInputButton-light {
-    color: black;
-    background-color: inherit;
+    @include inputButtonLightTheme;
 }
 .bigInputButton-dark {
-    color: white;
-    background-color: inherit;
+    @include inputButtonDarkTheme;
 }
 
 /* bigInputButton desktop sizing rules */
+
+
 
 .bigInputButton{
     width: 2.5vw;
     height: 10vw;
 }
-.bigInputButton-light {
+
+@mixin bigInputButton {
     width: inherit;
     height: inherit;
     border-radius: 50%;
     border: 0;
     box-shadow: .5vw .5vh 8px rgba(0, 0, 0, 0.18), 0 1px 8px rgba(0, 0, 0, .6);
+
 }
 
+.bigInputButton-light {
+    @include bigInputButton;
+  }
+
 .bigInputButton-dark {
-    width: 2.5vw;
-    height: 10vw;
-    border-radius: 10%;
+    @include bigInputButton;
+}
+
+
+@mixin bigInputButtonMobile {
+    width: 7.5vw;
+    height: 20vw;
+    border-radius: 15%;
     border: 0;
+    outline: none;
+    margin-left: 150%;
     box-shadow: .5vw .5vh 8px rgba(0, 0, 0, 0.18), 0 1px 8px rgba(0, 0, 0, .6);
 }
 
+@mixin bigInputButtonMobileActive {
+    transform: translateX(-2%) translateY(8%) scaleX(0.97) scaleY(0.97) rotateX(5deg);
+    transition: all .2s;
+}
 /* bigInputButton mobile sizing rules */
 @media only screen and (max-width: 600px){
 
     .bigInputButton-light {
-        width: 7.5vw;
-        height: 20vw;
-        border-radius: 15%;
-        border: 0;
-        outline: none;
-        margin-left: 150%;
-        box-shadow: .5vw .5vh 8px rgba(0, 0, 0, 0.18), 0 1px 8px rgba(0, 0, 0, .6);
+      @include bigInputButtonMobile();
     }
 
     .bigInputButton-light:active {
-        transition: all .2s;
+        //rule defined above
+        @include bigInputButtonMobileActive();
     }
     
     .bigInputButton-dark {
-        width: 7.5vw;
-        height: 20vw;
-        border-radius: 15%;
-        border: 0;
-        outline: none;
-        margin-left: 150%;
-        box-shadow: .5vw .5vh 8px rgba(0, 0, 0, 0.18), 0 1px 8px rgba(0, 0, 0, .6);
+        @include bigInputButtonMobile();
     }
     .bigInputButton-dark:active {
-        transition: all .2s;
+        //rule defined above
+        @include bigInputButtonMobileActive();
     }
 }

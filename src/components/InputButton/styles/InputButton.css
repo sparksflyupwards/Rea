@@ -1,0 +1,138 @@
+/* inputButton coloring rules */
+.inputButton-light {
+  color: black;
+  background-color: inherit;
+}
+
+.inputButton-dark {
+  color: white;
+  background-color: inherit;
+}
+
+/* inputButton desktop sizing rules */
+.inputButton-light {
+  width: 2.5vw;
+  height: 2.5vw;
+  border-radius: 50%;
+  border: 0;
+  -webkit-box-shadow: 0.5vw 0.5vh 8px rgba(0, 0, 0, 0.18), 0 1px 8px rgba(0, 0, 0, 0.6);
+          box-shadow: 0.5vw 0.5vh 8px rgba(0, 0, 0, 0.18), 0 1px 8px rgba(0, 0, 0, 0.6);
+}
+
+.inputButton-dark {
+  width: 2.5vw;
+  height: 2.5vw;
+  border-radius: 50%;
+  border: 0;
+  -webkit-box-shadow: 0.5vw 0.5vh 8px rgba(0, 0, 0, 0.18), 0 1px 8px rgba(0, 0, 0, 0.6);
+          box-shadow: 0.5vw 0.5vh 8px rgba(0, 0, 0, 0.18), 0 1px 8px rgba(0, 0, 0, 0.6);
+}
+
+/* inputButton mobile sizing rules */
+@media only screen and (max-width: 600px) {
+  .inputButton-light {
+    width: 7.5vw;
+    height: 7.5vw;
+    border-radius: 50%;
+    border: 0;
+    outline: none;
+    -webkit-box-shadow: 0.5vw 0.5vh 8px rgba(0, 0, 0, 0.18), 0 1px 8px rgba(0, 0, 0, 0.6);
+            box-shadow: 0.5vw 0.5vh 8px rgba(0, 0, 0, 0.18), 0 1px 8px rgba(0, 0, 0, 0.6);
+  }
+  .inputButton-light:active {
+    -webkit-transform: translateY(12%) scaleX(0.9) scaleY(0.9) rotateX(10deg);
+            transform: translateY(12%) scaleX(0.9) scaleY(0.9) rotateX(10deg);
+    -webkit-transition: all .2s;
+    transition: all .2s;
+  }
+  .inputButton-dark {
+    width: 7.5vw;
+    height: 7.5vw;
+    border-radius: 50%;
+    border: 0;
+    outline: none;
+    -webkit-box-shadow: 0.5vw 0.5vh 8px rgba(0, 0, 0, 0.18), 0 1px 8px rgba(0, 0, 0, 0.6);
+            box-shadow: 0.5vw 0.5vh 8px rgba(0, 0, 0, 0.18), 0 1px 8px rgba(0, 0, 0, 0.6);
+  }
+  .inputButton-dark:active {
+    -webkit-transform: translateY(12%) scaleX(0.9) scaleY(0.9) rotateX(10deg);
+            transform: translateY(12%) scaleX(0.9) scaleY(0.9) rotateX(10deg);
+    -webkit-transition: all .2s;
+    transition: all .2s;
+  }
+}
+
+/* styles for the larger button bellow 
+
+*/
+/* bigInputButton coloring rules */
+.bigInputButton-light {
+  color: black;
+  background-color: inherit;
+}
+
+.bigInputButton-dark {
+  color: white;
+  background-color: inherit;
+}
+
+/* bigInputButton desktop sizing rules */
+.bigInputButton {
+  width: 2.5vw;
+  height: 10vw;
+}
+
+.bigInputButton-light {
+  width: inherit;
+  height: inherit;
+  border-radius: 50%;
+  border: 0;
+  -webkit-box-shadow: 0.5vw 0.5vh 8px rgba(0, 0, 0, 0.18), 0 1px 8px rgba(0, 0, 0, 0.6);
+          box-shadow: 0.5vw 0.5vh 8px rgba(0, 0, 0, 0.18), 0 1px 8px rgba(0, 0, 0, 0.6);
+}
+
+.bigInputButton-dark {
+  width: inherit;
+  height: inherit;
+  border-radius: 50%;
+  border: 0;
+  -webkit-box-shadow: 0.5vw 0.5vh 8px rgba(0, 0, 0, 0.18), 0 1px 8px rgba(0, 0, 0, 0.6);
+          box-shadow: 0.5vw 0.5vh 8px rgba(0, 0, 0, 0.18), 0 1px 8px rgba(0, 0, 0, 0.6);
+}
+
+/* bigInputButton mobile sizing rules */
+@media only screen and (max-width: 600px) {
+  .bigInputButton-light {
+    width: 7.5vw;
+    height: 20vw;
+    border-radius: 15%;
+    border: 0;
+    outline: none;
+    margin-left: 150%;
+    -webkit-box-shadow: 0.5vw 0.5vh 8px rgba(0, 0, 0, 0.18), 0 1px 8px rgba(0, 0, 0, 0.6);
+            box-shadow: 0.5vw 0.5vh 8px rgba(0, 0, 0, 0.18), 0 1px 8px rgba(0, 0, 0, 0.6);
+  }
+  .bigInputButton-light:active {
+    -webkit-transform: translateX(-2%) translateY(8%) scaleX(0.97) scaleY(0.97) rotateX(5deg);
+            transform: translateX(-2%) translateY(8%) scaleX(0.97) scaleY(0.97) rotateX(5deg);
+    -webkit-transition: all .2s;
+    transition: all .2s;
+  }
+  .bigInputButton-dark {
+    width: 7.5vw;
+    height: 20vw;
+    border-radius: 15%;
+    border: 0;
+    outline: none;
+    margin-left: 150%;
+    -webkit-box-shadow: 0.5vw 0.5vh 8px rgba(0, 0, 0, 0.18), 0 1px 8px rgba(0, 0, 0, 0.6);
+            box-shadow: 0.5vw 0.5vh 8px rgba(0, 0, 0, 0.18), 0 1px 8px rgba(0, 0, 0, 0.6);
+  }
+  .bigInputButton-dark:active {
+    -webkit-transform: translateX(-2%) translateY(8%) scaleX(0.97) scaleY(0.97) rotateX(5deg);
+            transform: translateX(-2%) translateY(8%) scaleX(0.97) scaleY(0.97) rotateX(5deg);
+    -webkit-transition: all .2s;
+    transition: all .2s;
+  }
+}
+/*# sourceMappingURL=InputButton.css.map */

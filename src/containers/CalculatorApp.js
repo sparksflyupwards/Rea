@@ -23,8 +23,13 @@ export default class CalculatorApp extends React.Component {
       const clickOffset_y =
         (e.clientY - window.innerHeight * 0.05) /
         calculatorElement.offsetHeight;
-      const rotateX = (clickOffset_y - 0.49) * -1 * 25;
-      const rotateY = clickOffset_x * 25;
+      
+      const rotateMagnitude = 25;
+      const rotateX = (clickOffset_y - 0.49) * -1 * rotateMagnitude;
+      const rotateY = clickOffset_x * rotateMagnitude;
+      //const rotateY = 45;
+      console.log("loc: "+clickOffset_x + " , " + clickOffset_y)
+      console.log("rotate: "+rotateX + " , " + rotateY)
       const distanceFromCenter = Math.pow(
         Math.pow(Math.abs(clickOffset_x) - 0, 2) +
           Math.pow(Math.abs(clickOffset_y) - 0.5, 2),

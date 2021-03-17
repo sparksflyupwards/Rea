@@ -54,10 +54,11 @@
     grid-template-columns: 25% 25% 25% 25%;
     grid-template-rows: 43% 43% 43% 43%;
     margin-top: 15%;
+    
   }
   .calculator {
     margin: 10% auto;
-    height: 73vh;
+    height: 80vh;
     width: 70%;
     border-radius: 5%;
     box-shadow: 6vw 6vh 6px rgba(0, 0, 0, 0.18), 0 1px 4px rgba(0, 0, 0, 0.24);
@@ -67,7 +68,7 @@
     height: 80vh;
     width: 70%;
     border-radius: 5%;
-    box-shadow: 2vw 6vh 6px rgba(0, 0, 0, 0.18), 0 1px 4px rgba(0, 0, 0, 0.24);
-    }
+    box-shadow: 6vw 6vh 6px rgba(0, 0, 0, 0.18), 0 1px 4px rgba(0, 0, 0, 0.24);
+ }
 }
 
