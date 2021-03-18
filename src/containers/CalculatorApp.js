@@ -68,19 +68,33 @@ export default class CalculatorApp extends React.Component {
   }
 
   handleThemeToggle() {
+
     this.setState((state) => {
-      if (state.currentBaseColor == "dark") {
-        return {
-          currentBaseColor: "light",
-        };
-      } else {
-        if (state.currentBaseColor == "light") {
-          return {
-            currentBaseColor: "dark",
-          };
-        }
+              if (state.currentBaseColor == "dark") {
+                return {
+                  currentBaseColor: "light",
+                };
+              } 
+              
+              else {
+                if (state.currentBaseColor == "light") {
+                  return {
+                    currentBaseColor: "dark",
+                  };
+                }
+              }
+    },
+    
+    ()=>{
+      switch(this.state.currentBaseColor){
+        case "dark": document.body.style.backgroundColor=  "rgb(20, 79, 155)";
+        break;
+        case "light": document.body.style.backgroundColor = "rgb(175, 184, 48)";
+        break;
       }
-    });
+      
+    }
+    );
   }
 
   render() {

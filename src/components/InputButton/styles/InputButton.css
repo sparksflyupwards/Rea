@@ -24,8 +24,8 @@
 .inputButton-light:active {
   -webkit-transform: translateY(12%) scaleX(0.9) scaleY(0.9) rotateX(10deg);
           transform: translateY(12%) scaleX(0.9) scaleY(0.9) rotateX(10deg);
-  -webkit-transition: all .2s;
-  transition: all .2s;
+  -webkit-transition: all 0.2s;
+  transition: all 0.2s;
 }
 
 .inputButton-dark {
@@ -41,8 +41,8 @@
 .inputButton-dark:active {
   -webkit-transform: translateY(12%) scaleX(0.9) scaleY(0.9) rotateX(10deg);
           transform: translateY(12%) scaleX(0.9) scaleY(0.9) rotateX(10deg);
-  -webkit-transition: all .2s;
-  transition: all .2s;
+  -webkit-transition: all 0.2s;
+  transition: all 0.2s;
 }
 
 /* inputButton mobile sizing rules */
@@ -59,8 +59,8 @@
   .inputButton-light:active {
     -webkit-transform: translateY(12%) scaleX(0.9) scaleY(0.9) rotateX(10deg);
             transform: translateY(12%) scaleX(0.9) scaleY(0.9) rotateX(10deg);
-    -webkit-transition: all .2s;
-    transition: all .2s;
+    -webkit-transition: all 0.2s;
+    transition: all 0.2s;
   }
   .inputButton-dark {
     border-radius: 50%;
@@ -74,8 +74,8 @@
   .inputButton-dark:active {
     -webkit-transform: translateY(12%) scaleX(0.9) scaleY(0.9) rotateX(10deg);
             transform: translateY(12%) scaleX(0.9) scaleY(0.9) rotateX(10deg);
-    -webkit-transition: all .2s;
-    transition: all .2s;
+    -webkit-transition: all 0.2s;
+    transition: all 0.2s;
   }
   /** sizing rules for thin viewports **/
 }
@@ -132,8 +132,8 @@
 .bigInputButton-light:active {
   -webkit-transform: translateX(-2%) translateY(8%) scaleX(0.97) scaleY(0.97) rotateX(5deg);
           transform: translateX(-2%) translateY(8%) scaleX(0.97) scaleY(0.97) rotateX(5deg);
-  -webkit-transition: all .2s;
-  transition: all .2s;
+  -webkit-transition: all 0.2s;
+  transition: all 0.2s;
 }
 
 .bigInputButton-dark {
@@ -151,8 +151,8 @@
 .bigInputButton-dark:active {
   -webkit-transform: translateX(-2%) translateY(8%) scaleX(0.97) scaleY(0.97) rotateX(5deg);
           transform: translateX(-2%) translateY(8%) scaleX(0.97) scaleY(0.97) rotateX(5deg);
-  -webkit-transition: all .2s;
-  transition: all .2s;
+  -webkit-transition: all 0.2s;
+  transition: all 0.2s;
 }
 
 /* bigInputButton mobile sizing rules */
@@ -171,8 +171,8 @@
   .bigInputButton-light:active {
     -webkit-transform: translateX(-2%) translateY(8%) scaleX(0.97) scaleY(0.97) rotateX(5deg);
             transform: translateX(-2%) translateY(8%) scaleX(0.97) scaleY(0.97) rotateX(5deg);
-    -webkit-transition: all .2s;
-    transition: all .2s;
+    -webkit-transition: all 0.2s;
+    transition: all 0.2s;
   }
   .bigInputButton-dark {
     border-radius: 20%;
@@ -188,8 +188,8 @@
   .bigInputButton-dark:active {
     -webkit-transform: translateX(-2%) translateY(8%) scaleX(0.97) scaleY(0.97) rotateX(5deg);
             transform: translateX(-2%) translateY(8%) scaleX(0.97) scaleY(0.97) rotateX(5deg);
-    -webkit-transition: all .2s;
-    transition: all .2s;
+    -webkit-transition: all 0.2s;
+    transition: all 0.2s;
   }
   /** sizing rules for thin view ports */
 }

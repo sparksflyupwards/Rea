@@ -2,6 +2,8 @@
 
 $lightShadow: inset 4px 2px 2px rgba(255, 255, 255, .4), inset -2px -2px 2px rgba(0, 0, 0, .4);
 $darkShadow: inset 4px 2px 2px rgba(255, 255, 255, 0.178), inset -2px -2px 2px rgba(0, 0, 0, .4);
+$transition-time: 0.2s;
+
 
 /* inputButton coloring rules */
 @mixin inputButtonLightTheme {
@@ -39,7 +41,7 @@ $darkShadow: inset 4px 2px 2px rgba(255, 255, 255, 0.178), inset -2px -2px 2px r
 
 @mixin inputButtonActive {
     transform: translateY(12%) scaleX(0.9) scaleY(0.9) rotateX(10deg);
-    transition: all .2s;
+    transition: all $transition-time;
 }
 
 .inputButton-light {
@@ -85,7 +87,7 @@ $darkShadow: inset 4px 2px 2px rgba(255, 255, 255, 0.178), inset -2px -2px 2px r
 
 @mixin inputButtonMobileActive {
     transform: translateY(12%) scaleX(0.9) scaleY(0.9) rotateX(10deg);
-    transition: all .2s;
+    transition: all $transition-time;
 }
 
 @media only screen and (max-width: 600px){
@@ -167,7 +169,7 @@ $darkShadow: inset 4px 2px 2px rgba(255, 255, 255, 0.178), inset -2px -2px 2px r
 
 @mixin bigInputButtonActive {
     transform: translateX(-2%) translateY(8%) scaleX(0.97) scaleY(0.97) rotateX(5deg);
-    transition: all .2s;
+    transition: all $transition-time;
 }
 
 .bigInputButton-light {
@@ -212,7 +214,7 @@ $darkShadow: inset 4px 2px 2px rgba(255, 255, 255, 0.178), inset -2px -2px 2px r
 
 @mixin bigInputButtonMobileActive {
     transform: translateX(-2%) translateY(8%) scaleX(0.97) scaleY(0.97) rotateX(5deg);
-    transition: all .2s;
+    transition: all $transition-time;
 }
 /* bigInputButton mobile sizing rules */
 @media only screen and (max-width: 600px){
