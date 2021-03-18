@@ -31,7 +31,7 @@ export default class CalculatorApp extends React.Component {
 
     const initiate3DTilt = (e) => {
 
-          const xPos, yPos;
+          let xPos, yPos;
 
           //if(isMobile){
             xPos = e.clientX;
