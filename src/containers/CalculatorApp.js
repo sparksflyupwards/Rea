@@ -17,54 +17,78 @@ export default class CalculatorApp extends React.Component {
 
   componentDidMount() {
 
+    let isMobile;
     const calculatorElement = document.getElementById("calculatorApp");
+    if(/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)){
+      // true for mobile device
+      console.log("mobile device");
+      isMobile = true;
+    }else{
+      // false for not mobile device
+      console.log("not mobile device");
+      isMobile = false;
+    }
 
     const initiate3DTilt = (e) => {
-      const clickOffset_x =
-        (2 * e.clientX - window.innerWidth) / calculatorElement.offsetWidth;
-      const clickOffset_y =
-        (e.clientY - window.innerHeight * 0.05) /
-        calculatorElement.offsetHeight;
 
-      const rotateMagnitude = 25;
-      const rotateX = (clickOffset_y - 0.49) * -1 * rotateMagnitude;
-      const rotateY = clickOffset_x * rotateMagnitude;
+          const xPos, yPos;
 
-    
-      const distanceFromCenter = Math.pow(
-        Math.pow(Math.abs(clickOffset_x) - 0, 2) +
-          Math.pow(Math.abs(clickOffset_y) - 0.5, 2),
-        1 / 2
-      );
+          //if(isMobile){
+            xPos = e.clientX;
+            yPos = e.clientY;
+         // }
+        // else if (!isMobile){
 
-      const scale = 1 - 0.045 * Math.abs(1 - distanceFromCenter);
+        //  }
+          const clickOffset_x =
+            (2 * xPos - window.innerWidth) / calculatorElement.offsetWidth;
+          const clickOffset_y =
+            (yPos - window.innerHeight * 0.05) /
+            calculatorElement.offsetHeight;
 
-        //const rotateY = 45;
-        console.log("loc: "+clickOffset_x + " , " + clickOffset_y);
-        console.log("rotate: "+rotateX + " , " + rotateY);
-        console.log("distance: " + distanceFromCenter);
-        console.log("scale: " + scale)
-      const calculatorTransform =
-        "scale(" +
-        scale +
-        "," +
-        scale +
-        ") rotateX(" +
-        rotateX +
-        "deg) rotateY(" +
-        rotateY +
-        "deg)";
-      calculatorElement.style.transform = calculatorTransform;
+          const rotateMagnitude = 25;
+          const rotateX = (clickOffset_y - 0.49) * -1 * rotateMagnitude;
+          const rotateY = clickOffset_x * rotateMagnitude;
+
+        
+          const distanceFromCenter = Math.pow(
+            Math.pow(Math.abs(clickOffset_x) - 0, 2) +
+              Math.pow(Math.abs(clickOffset_y) - 0.5, 2),
+            1 / 2
+          );
+
+          const scale = 1 - 0.045 * Math.abs(1 - distanceFromCenter);
+
+            //const rotateY = 45;
+            console.log("loc: "+clickOffset_x + " , " + clickOffset_y);
+            console.log("rotate: "+rotateX + " , " + rotateY);
+            console.log("distance: " + distanceFromCenter);
+            console.log("scale: " + scale)
+          const calculatorTransform =
+            "scale(" +
+            scale +
+            "," +
+            scale +
+            ") rotateX(" +
+            rotateX +
+            "deg) rotateY(" +
+            rotateY +
+            "deg)";
+          calculatorElement.style.transform = calculatorTransform;
     };
 
     const finish3DTilt = (e) => {
-      calculatorElement.style.transform = "rotateX(0deg)";
-      calculatorElement.style.transition = "all linear .25s";
+          calculatorElement.style.transform = "rotateX(0deg)";
+          calculatorElement.style.transition = "all linear .25s";
     };
 
     calculatorElement.addEventListener("mousedown", initiate3DTilt);
 
     document.addEventListener("mouseup", finish3DTilt);
+
+    calculatorElement.addEventListener("touchstart", initiate3DTilt);
+
+    document.addEventListener("end", finish3DTilt);
   }
 
   handleThemeToggle() {
