@@ -33,13 +33,14 @@ export default class CalculatorApp extends React.Component {
 
           let xPos, yPos;
 
-          //if(isMobile){
+          if(isMobile){
             xPos = e.clientX;
             yPos = e.clientY;
-         // }
-        // else if (!isMobile){
-
-        //  }
+          }
+         else if (!isMobile){
+            xPos = e.touches[0].screenX;
+            yPos = e.touches[0].screenY;
+          }
           const clickOffset_x =
             (2 * xPos - window.innerWidth) / calculatorElement.offsetWidth;
           const clickOffset_y =
