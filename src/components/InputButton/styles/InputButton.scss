@@ -3,6 +3,7 @@
 @mixin inputButtonLightTheme {
     color: black;
     background-color: inherit;
+
 }
 
 @mixin inputButtonDarkTheme {
@@ -26,15 +27,31 @@
     height: 3.7vw;
     border-radius: 50%;
     border: 0;
-    box-shadow: .5vw .5vh 8px rgba(0, 0, 0, 0.18), 0 1px 8px rgba(0, 0, 0, .6);
+    outline: none;
+    box-shadow: inset 4px 2px 2px rgba(255, 255, 255, .4), inset -2px -2px 2px rgba(0, 0, 0, .4);
+
 
 }
+
+@mixin inputButtonActive {
+    transform: translateY(12%) scaleX(0.9) scaleY(0.9) rotateX(10deg);
+    transition: all .2s;
+}
+
 .inputButton-light {
     @include inputButton;
 }
 
+.inputButton-light:active  {
+    @include inputButtonActive();
+}
+
 .inputButton-dark {
     @include inputButton;
+}
+
+.inputButton-dark:active  {
+    @include inputButtonActive();
 }
 
 /* inputButton mobile sizing rules */
@@ -44,7 +61,7 @@
         border-radius: 50%;
         border: 0;
         outline: none;
-        box-shadow: .5vw .5vh 8px rgba(0, 0, 0, 0.18), 0 1px 8px rgba(0, 0, 0, .6);
+        box-shadow: inset 4px 2px 2px rgba(255, 255, 255, .4), inset -2px -2px 2px rgba(0, 0, 0, .4);
    
 }
 
@@ -136,25 +153,37 @@
     border: 0;
     margin-top: -10%;
     margin-left: 70%;
-    box-shadow: .5vw .5vh 8px rgba(0, 0, 0, 0.18), 0 1px 8px rgba(0, 0, 0, .6);
+    outline: none;
+    box-shadow: inset 4px 2px 2px rgba(255, 255, 255, .4), inset -2px -2px 2px rgba(0, 0, 0, .4);
 
+}
+
+@mixin bigInputButtonActive {
+    transform: translateX(-2%) translateY(8%) scaleX(0.97) scaleY(0.97) rotateX(5deg);
+    transition: all .2s;
 }
 
 .bigInputButton-light {
     @include bigInputButton;
   }
+.bigInputButton-light:active {
+    @include bigInputButtonActive();
+  }
+
 
 .bigInputButton-dark {
     @include bigInputButton;
 }
-
+.bigInputButton-dark:active {
+    @include bigInputButtonActive();
+  }
 
 
 @mixin bigInputButtonMobile {
     border-radius: 20%;
     border: 0;
     outline: none;
-    box-shadow: .5vw .5vh 8px rgba(0, 0, 0, 0.18), 0 1px 8px rgba(0, 0, 0, .6);
+    box-shadow: inset 4px 2px 2px rgba(255, 255, 255, .4), inset -2px -2px 2px rgba(0, 0, 0, .4);
 }
 
 @mixin bigInputButtonMobileThin {
