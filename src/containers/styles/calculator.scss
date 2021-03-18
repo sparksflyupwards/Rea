@@ -46,6 +46,7 @@
         transparent 0px,
         transparent 200px
       );
+    user-select: none;
     transition: all $transition-time;
   }
 
