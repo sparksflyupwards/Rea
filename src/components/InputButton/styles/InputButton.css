@@ -1,3 +1,4 @@
+/** global styling rules **/
 /* inputButton coloring rules */
 .inputButton-light {
   color: black;
@@ -16,8 +17,8 @@
   border-radius: 50%;
   border: 0;
   outline: none;
-  -webkit-box-shadow: inset 4px 2px 2px rgba(255, 255, 255, 0.4), inset -2px -2px 2px rgba(0, 0, 0, 0.4);
-          box-shadow: inset 4px 2px 2px rgba(255, 255, 255, 0.4), inset -2px -2px 2px rgba(0, 0, 0, 0.4);
+  -webkit-box-shadow: inset 4px 2px 2px rgba(255, 255, 255, 0.178), inset -2px -2px 2px rgba(0, 0, 0, 0.4);
+          box-shadow: inset 4px 2px 2px rgba(255, 255, 255, 0.178), inset -2px -2px 2px rgba(0, 0, 0, 0.4);
 }
 
 .inputButton-light:active {
@@ -50,10 +51,10 @@
     border-radius: 50%;
     border: 0;
     outline: none;
-    -webkit-box-shadow: inset 4px 2px 2px rgba(255, 255, 255, 0.4), inset -2px -2px 2px rgba(0, 0, 0, 0.4);
-            box-shadow: inset 4px 2px 2px rgba(255, 255, 255, 0.4), inset -2px -2px 2px rgba(0, 0, 0, 0.4);
     width: 10vw;
     height: 10vw;
+    -webkit-box-shadow: inset 4px 2px 2px rgba(255, 255, 255, 0.178), inset -2px -2px 2px rgba(0, 0, 0, 0.4);
+            box-shadow: inset 4px 2px 2px rgba(255, 255, 255, 0.178), inset -2px -2px 2px rgba(0, 0, 0, 0.4);
   }
   .inputButton-light:active {
     -webkit-transform: translateY(12%) scaleX(0.9) scaleY(0.9) rotateX(10deg);
@@ -65,10 +66,10 @@
     border-radius: 50%;
     border: 0;
     outline: none;
-    -webkit-box-shadow: inset 4px 2px 2px rgba(255, 255, 255, 0.4), inset -2px -2px 2px rgba(0, 0, 0, 0.4);
-            box-shadow: inset 4px 2px 2px rgba(255, 255, 255, 0.4), inset -2px -2px 2px rgba(0, 0, 0, 0.4);
     width: 10vw;
     height: 10vw;
+    -webkit-box-shadow: inset 4px 2px 2px rgba(255, 255, 255, 0.4), inset -2px -2px 2px rgba(0, 0, 0, 0.4);
+            box-shadow: inset 4px 2px 2px rgba(255, 255, 255, 0.4), inset -2px -2px 2px rgba(0, 0, 0, 0.4);
   }
   .inputButton-dark:active {
     -webkit-transform: translateY(12%) scaleX(0.9) scaleY(0.9) rotateX(10deg);
@@ -84,8 +85,6 @@
     border-radius: 50%;
     border: 0;
     outline: none;
-    -webkit-box-shadow: inset 4px 2px 2px rgba(255, 255, 255, 0.4), inset -2px -2px 2px rgba(0, 0, 0, 0.4);
-            box-shadow: inset 4px 2px 2px rgba(255, 255, 255, 0.4), inset -2px -2px 2px rgba(0, 0, 0, 0.4);
     width: 11vw;
     height: 11vw;
   }
@@ -93,8 +92,6 @@
     border-radius: 50%;
     border: 0;
     outline: none;
-    -webkit-box-shadow: inset 4px 2px 2px rgba(255, 255, 255, 0.4), inset -2px -2px 2px rgba(0, 0, 0, 0.4);
-            box-shadow: inset 4px 2px 2px rgba(255, 255, 255, 0.4), inset -2px -2px 2px rgba(0, 0, 0, 0.4);
     width: 11vw;
     height: 11vw;
   }
@@ -128,8 +125,8 @@
   margin-top: -10%;
   margin-left: 70%;
   outline: none;
-  -webkit-box-shadow: inset 4px 2px 2px rgba(255, 255, 255, 0.4), inset -2px -2px 2px rgba(0, 0, 0, 0.4);
-          box-shadow: inset 4px 2px 2px rgba(255, 255, 255, 0.4), inset -2px -2px 2px rgba(0, 0, 0, 0.4);
+  -webkit-box-shadow: inset 4px 2px 2px rgba(255, 255, 255, 0.178), inset -2px -2px 2px rgba(0, 0, 0, 0.4);
+          box-shadow: inset 4px 2px 2px rgba(255, 255, 255, 0.178), inset -2px -2px 2px rgba(0, 0, 0, 0.4);
 }
 
 .bigInputButton-light:active {
@@ -164,12 +161,12 @@
     border-radius: 20%;
     border: 0;
     outline: none;
-    -webkit-box-shadow: inset 4px 2px 2px rgba(255, 255, 255, 0.4), inset -2px -2px 2px rgba(0, 0, 0, 0.4);
-            box-shadow: inset 4px 2px 2px rgba(255, 255, 255, 0.4), inset -2px -2px 2px rgba(0, 0, 0, 0.4);
     width: 8.5vw;
     height: 27.5vw;
     margin-top: 10%;
     margin-left: 150%;
+    -webkit-box-shadow: inset 4px 2px 2px rgba(255, 255, 255, 0.178), inset -2px -2px 2px rgba(0, 0, 0, 0.4);
+            box-shadow: inset 4px 2px 2px rgba(255, 255, 255, 0.178), inset -2px -2px 2px rgba(0, 0, 0, 0.4);
   }
   .bigInputButton-light:active {
     -webkit-transform: translateX(-2%) translateY(8%) scaleX(0.97) scaleY(0.97) rotateX(5deg);
@@ -181,12 +178,12 @@
     border-radius: 20%;
     border: 0;
     outline: none;
-    -webkit-box-shadow: inset 4px 2px 2px rgba(255, 255, 255, 0.4), inset -2px -2px 2px rgba(0, 0, 0, 0.4);
-            box-shadow: inset 4px 2px 2px rgba(255, 255, 255, 0.4), inset -2px -2px 2px rgba(0, 0, 0, 0.4);
     width: 8.5vw;
     height: 27.5vw;
     margin-top: 10%;
     margin-left: 150%;
+    -webkit-box-shadow: inset 4px 2px 2px rgba(255, 255, 255, 0.4), inset -2px -2px 2px rgba(0, 0, 0, 0.4);
+            box-shadow: inset 4px 2px 2px rgba(255, 255, 255, 0.4), inset -2px -2px 2px rgba(0, 0, 0, 0.4);
   }
   .bigInputButton-dark:active {
     -webkit-transform: translateX(-2%) translateY(8%) scaleX(0.97) scaleY(0.97) rotateX(5deg);
@@ -202,8 +199,6 @@
     border-radius: 20%;
     border: 0;
     outline: none;
-    -webkit-box-shadow: inset 4px 2px 2px rgba(255, 255, 255, 0.4), inset -2px -2px 2px rgba(0, 0, 0, 0.4);
-            box-shadow: inset 4px 2px 2px rgba(255, 255, 255, 0.4), inset -2px -2px 2px rgba(0, 0, 0, 0.4);
     width: 9.5vw;
     height: 30vw;
     margin-left: 210%;
@@ -212,8 +207,6 @@
     border-radius: 20%;
     border: 0;
     outline: none;
-    -webkit-box-shadow: inset 4px 2px 2px rgba(255, 255, 255, 0.4), inset -2px -2px 2px rgba(0, 0, 0, 0.4);
-            box-shadow: inset 4px 2px 2px rgba(255, 255, 255, 0.4), inset -2px -2px 2px rgba(0, 0, 0, 0.4);
     width: 9.5vw;
     height: 30vw;
     margin-left: 210%;

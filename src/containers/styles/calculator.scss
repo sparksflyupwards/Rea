@@ -22,6 +22,9 @@
 
   $calculator-mobile-width-wide : 70%;
   $calculator-mobile-height-wide : 78vh;
+  
+  $lightShadow: inset 4px 2px 2px rgba(255, 255, 255, .4), inset -2px -2px 2px rgba(0, 0, 0, .4);
+  $darkShadow: inset 4px 2px 2px rgba(255, 255, 255, 0.178), inset -2px -2px 2px rgba(0, 0, 0, 0.548);
 
   
   body {
@@ -81,16 +84,17 @@
     height: $calculator-desktop-height;
     width: $calculator-desktop-width;
     border-radius: 5%;
-    box-shadow: 2vw 6vh 6px rgba(0, 0, 0, 0.18), 0 1px 4px rgba(0, 0, 0, 0.24);
 
     box-shadow: inset 4px 2px 2px rgba(255, 255, 255, .4), inset -2px -2px 2px rgba(0, 0, 0, .4);
   }
   .calculator {
       @include calculator();
+      box-shadow: $darkShadow;
   }
 
   .calculator-dark {
    @include calculator();
+   box-shadow: $lightShadow;
   }
   
   /* Calculator mobile sizing rules */

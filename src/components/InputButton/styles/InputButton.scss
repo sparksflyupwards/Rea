@@ -1,5 +1,9 @@
-/* inputButton coloring rules */
+/** global styling rules **/
 
+$lightShadow: inset 4px 2px 2px rgba(255, 255, 255, .4), inset -2px -2px 2px rgba(0, 0, 0, .4);
+$darkShadow: inset 4px 2px 2px rgba(255, 255, 255, 0.178), inset -2px -2px 2px rgba(0, 0, 0, .4);
+
+/* inputButton coloring rules */
 @mixin inputButtonLightTheme {
     color: black;
     background-color: inherit;
@@ -28,7 +32,7 @@
     border-radius: 50%;
     border: 0;
     outline: none;
-    box-shadow: inset 4px 2px 2px rgba(255, 255, 255, .4), inset -2px -2px 2px rgba(0, 0, 0, .4);
+    
 
 
 }
@@ -40,6 +44,7 @@
 
 .inputButton-light {
     @include inputButton;
+    box-shadow: $darkShadow;
 }
 
 .inputButton-light:active  {
@@ -48,6 +53,7 @@
 
 .inputButton-dark {
     @include inputButton;
+    box-shadow: $lightShadow
 }
 
 .inputButton-dark:active  {
@@ -61,7 +67,6 @@
         border-radius: 50%;
         border: 0;
         outline: none;
-        box-shadow: inset 4px 2px 2px rgba(255, 255, 255, .4), inset -2px -2px 2px rgba(0, 0, 0, .4);
    
 }
 
@@ -88,6 +93,8 @@
    
     .inputButton-light {
       @include inputButtonMobileWide;
+
+      box-shadow: $darkShadow;
     }
     .inputButton-light:active {
         
@@ -97,6 +104,7 @@
      
     .inputButton-dark {
         @include inputButtonMobileWide;
+        box-shadow: $lightShadow
     }
 
     .inputButton-dark:active {
@@ -154,7 +162,6 @@
     margin-top: -10%;
     margin-left: 70%;
     outline: none;
-    box-shadow: inset 4px 2px 2px rgba(255, 255, 255, .4), inset -2px -2px 2px rgba(0, 0, 0, .4);
 
 }
 
@@ -165,6 +172,7 @@
 
 .bigInputButton-light {
     @include bigInputButton;
+    box-shadow: $darkShadow;
   }
 .bigInputButton-light:active {
     @include bigInputButtonActive();
@@ -173,6 +181,7 @@
 
 .bigInputButton-dark {
     @include bigInputButton;
+    box-shadow: $lightShadow;
 }
 .bigInputButton-dark:active {
     @include bigInputButtonActive();
@@ -183,7 +192,6 @@
     border-radius: 20%;
     border: 0;
     outline: none;
-    box-shadow: inset 4px 2px 2px rgba(255, 255, 255, .4), inset -2px -2px 2px rgba(0, 0, 0, .4);
 }
 
 @mixin bigInputButtonMobileThin {
@@ -211,6 +219,7 @@
 
     .bigInputButton-light {
       @include bigInputButtonMobileWide();
+      box-shadow: $darkShadow;
     }
 
     .bigInputButton-light:active {
@@ -220,6 +229,7 @@
     
     .bigInputButton-dark {
         @include bigInputButtonMobileWide();
+        box-shadow: $lightShadow;
     }
     .bigInputButton-dark:active {
         //rule defined above
