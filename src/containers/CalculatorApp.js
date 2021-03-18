@@ -18,8 +18,9 @@ export default class CalculatorApp extends React.Component {
   componentDidMount() {
 
     let isMobile;
+    const devMode = false;
     const calculatorElement = document.getElementById("calculatorApp");
-    if(/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)){
+    if(devMode || /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)){
       // true for mobile device
       console.log("mobile device");
       isMobile = true;
@@ -30,7 +31,6 @@ export default class CalculatorApp extends React.Component {
     }
 
     const initiate3DTilt = (e) => {
-
           let xPos, yPos;
 
           if(!isMobile){
@@ -39,8 +39,9 @@ export default class CalculatorApp extends React.Component {
           }
          else if (isMobile){
             console.log(e.touches)
-            xPos = e.touches[0].screenX;
-            yPos = e.touches[0].screenY;
+            
+            xPos = e.touches[0].clientX;
+            yPos = e.touches[0].clientY;
           }
           const clickOffset_x =
             (2 * xPos - window.innerWidth) / calculatorElement.offsetWidth;
@@ -76,7 +77,10 @@ export default class CalculatorApp extends React.Component {
             "deg) rotateY(" +
             rotateY +
             "deg)";
+          console.log(calculatorTransform);
+          console.log(calculatorElement.style.transform)
           calculatorElement.style.transform = calculatorTransform;
+          console.log(calculatorElement.style.transform)
     };
 
     const finish3DTilt = (e) => {
@@ -84,13 +88,19 @@ export default class CalculatorApp extends React.Component {
           calculatorElement.style.transition = "all linear .25s";
     };
 
-    calculatorElement.addEventListener("mousedown", initiate3DTilt);
+    if(!isMobile){
+      calculatorElement.addEventListener("mousedown", initiate3DTilt);
 
-    document.addEventListener("mouseup", finish3DTilt);
+      document.addEventListener("mouseup", finish3DTilt);
+    }
+    else {
 
-    calculatorElement.addEventListener("touchstart", initiate3DTilt);
+      calculatorElement.addEventListener("touchstart", initiate3DTilt);
 
-    document.addEventListener("end", finish3DTilt);
+      document.addEventListener("touchend", finish3DTilt);
+    }
+    
+
   }
 
   handleThemeToggle() {
