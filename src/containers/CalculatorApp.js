@@ -133,7 +133,7 @@ export default class CalculatorApp extends React.Component {
       switch(this.state.currentBaseColor){
         case "dark": document.body.style.backgroundColor=  "rgb(20, 79, 155)";
         break;
-        case "light": document.body.style.backgroundColor = "rgb(100, 164, 48)";
+        case "light": document.body.style.backgroundColor = "#2edfd6";
         break;
       }
       

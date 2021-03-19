@@ -23,8 +23,11 @@
   $calculator-mobile-width-wide : 70%;
   $calculator-mobile-height-wide : 78vh;
   
-  $lightShadow: inset 4px 2px 2px rgba(255, 255, 255, .4), inset -2px -2px 2px rgba(0, 0, 0, .4);
-  $darkShadow: inset 4px 2px 2px rgba(255, 255, 255, 0.178), inset -2px -2px 2px rgba(0, 0, 0, 0.548);
+  $lightShadow: inset 4px 2px 2px rgba(255, 255, 255, .4), inset -2px -2px 2px rgba(0, 0, 0, .4)
+                ,  2vw 6vh 6px rgba(0, 0, 0, 0.18), 0 1px 4px rgba(0, 0, 0, 0.24);
+
+  $darkShadow: inset 4px 2px 2px rgba(255, 255, 255, 0.178), inset -2px -2px 2px rgba(0, 0, 0, 0.548)
+                ,  2vw 6vh 6px rgba(0, 0, 0, 0.18), 0 1px 4px rgba(0, 0, 0, 0.24);
   $transition-time: 0.2s;
 
   @mixin numberPad {
@@ -34,7 +37,7 @@
   
   body {
     min-height: 100vh;
-    background-color:rgb(175, 184, 48);
+    background-color:#2edfd6;
     background-image: 
       repeating-linear-gradient(
         45deg,
