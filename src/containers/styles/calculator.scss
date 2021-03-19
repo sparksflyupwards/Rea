@@ -26,6 +26,11 @@
   $lightShadow: inset 4px 2px 2px rgba(255, 255, 255, .4), inset -2px -2px 2px rgba(0, 0, 0, .4);
   $darkShadow: inset 4px 2px 2px rgba(255, 255, 255, 0.178), inset -2px -2px 2px rgba(0, 0, 0, 0.548);
   $transition-time: 0.2s;
+
+  @mixin numberPad {
+    display: grid;
+    overflow:visible
+  }
   
   body {
     min-height: 100vh;
@@ -64,8 +69,6 @@
     text-align: center;
     background-color: #32292F ;
     color: white;
-
-    $foo: 4;
 }
   
 
@@ -74,10 +77,11 @@
   $grid-height: 25%;
 
   .numberPad{
-    display: grid;
+    @include numberPad();
     grid-template-columns: $grid-width $grid-width $grid-width $grid-width;
     grid-template-rows: $grid-height $grid-height $grid-height $grid-height;
     margin-top: 10%;
+    min-height: 36%;
   }
   
   @mixin calculator {
@@ -99,6 +103,8 @@
    box-shadow: $lightShadow;
   }
   
+
+
   /* Calculator mobile sizing rules */
 
   @mixin calculatorMobile {
@@ -116,7 +122,7 @@
 
   @mixin calculatorMobileWide {
     @include calculatorMobile();
-    margin: 20% auto;
+    margin: 17% auto;
     height: $calculator-mobile-height-wide;
     width: $calculator-mobile-width-wide;
   }
@@ -135,13 +141,13 @@
      }
      
         $grid-width-mobile: 25%;
-        $grid-height-mobile: 36%;
+        $grid-height-mobile: 31%;
 
         .numberPad{
-            display: grid;
+           @include numberPad();
             grid-template-columns: $grid-width-mobile $grid-width-mobile $grid-width-mobile $grid-width-mobile;
             grid-template-rows: $grid-height-mobile $grid-height-mobile $grid-height-mobile $grid-height-mobile;
-            margin-top: 10%;
+            margin-top: 4vh;
             margin-left: 0%;
             
         }
@@ -153,7 +159,8 @@
         $grid-height: 36%;
 
         .numberPad{
-            display: grid;
+            
+            @include numberPad();
             grid-template-columns: $grid-width $grid-width $grid-width $grid-width;
             grid-template-rows: $grid-height $grid-height $grid-height $grid-height;
             margin-top: 19%;

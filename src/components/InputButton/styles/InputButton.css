@@ -45,6 +45,18 @@
   transition: all 0.2s;
 }
 
+/** iPads or wide shorter desktop viewports */
+@media only screen and (max-width: 1100px) {
+  .inputButton-light {
+    width: 9vw;
+    height: 9vw;
+  }
+  .inputButton-dark {
+    width: 9vw;
+    height: 9vw;
+  }
+}
+
 /* inputButton mobile sizing rules */
 @media only screen and (max-width: 600px) {
   .inputButton-light {
@@ -155,6 +167,21 @@
   transition: all 0.2s;
 }
 
+/** bigButton iPad and smaller desktop viewports **/
+@media only screen and (max-width: 1100px) {
+  .bigInputButton-light {
+    width: 9vw;
+    height: 20.5vw;
+    margin-right: 6%;
+  }
+  .bigInputButton-dark {
+    width: 9vw;
+    height: 20.5vw;
+    margin-right: 6%;
+  }
+}
+
+/** Big button mobile sizing rules */
 /* bigInputButton mobile sizing rules */
 @media only screen and (max-width: 600px) {
   .bigInputButton-light {

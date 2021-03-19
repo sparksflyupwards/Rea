@@ -24,7 +24,6 @@ export default class InputButton extends React.Component{
                  onClick={this.props.onClick}>
                      
                      {this.props.buttonText}
-                     
                 </button>
             </div>
             
