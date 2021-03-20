@@ -172,7 +172,14 @@ export default class CalculatorApp extends React.Component {
     //if we are dealing with an operation add to espression with a space else the space isnt important
 
     if("/X-+".indexOf(newInput) != -1){
+        //make sure if the last entry was an operator then switch
+        if("/X-+".indexOf(this.state.expression[this.state.expression.length-2]) != -1){
+          newExpression = this.state.expression.slice(0, this.state.expression.length-3) + " " + newInput + " ";
+        }
+        else {
+
           newExpression = this.state.expression + " " + newInput + " ";
+        }
       
     }
     else {
