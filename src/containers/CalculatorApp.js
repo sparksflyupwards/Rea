@@ -10,7 +10,7 @@ export default class CalculatorApp extends React.Component {
     super(props);
     this.state = {
       currentBaseColor: "light",
-      expression: "",
+      expression: "9 X 2 + 3 + 2 + 2 X 3 X 4 + 2 X 2 / 7",
       currentNumber: 0,
       input: 0
 
@@ -18,6 +18,8 @@ export default class CalculatorApp extends React.Component {
 
     this.handleThemeToggle = this.handleThemeToggle.bind(this);
     this.handleInput = this.handleInput.bind(this);
+    this.handleEvaluate = this.handleEvaluate.bind(this);
+    this.getExpressionDM = this.getExpressionDM.bind(this);
     this.handleClear = this.handleClear.bind(this);
     this.handleAllClear = this.handleAllClear.bind(this);
   }
@@ -203,6 +205,71 @@ export default class CalculatorApp extends React.Component {
   
   }
 
+
+  getExpressionDM(expression){
+
+    let expressionItems = this.state.expression.split(" ");
+      console.log(expressionItems)
+      //do division and multiplication first by seperating out expression items that divide or multipli
+      let expressionItemsDM = [[]];
+      let lastSign="";
+      for(let i = 0; i<expressionItems.length; i++){
+        let lastExpressionItem = expressionItemsDM[expressionItemsDM.length-1];
+        
+        if("/X".indexOf(expressionItems[i]) != -1){
+          console.log(expressionItems[i])
+          let lastExpression = expressionItemsDM[expressionItemsDM.length-1];
+          //change to DM
+          if(lastSign == "+-"){
+            expressionItemsDM[expressionItemsDM.length-1] = lastExpression.slice(0,lastExpression.length-1)
+            expressionItemsDM.push([... expressionItems.slice(i-1,i+1)])
+              
+          }
+          else {
+            expressionItemsDM[expressionItemsDM.length-1].push(expressionItems[i])
+          }
+          lastSign = "X/";
+          console.log(lastSign)
+        }
+        else if ("+-".indexOf(expressionItems[i]) != -1){
+          console.log(expressionItems[i])
+          //change to AS
+          if(lastSign == "X/"){
+
+            expressionItemsDM.push([expressionItems[i]])
+
+          }
+          else {
+            expressionItemsDM[expressionItemsDM.length-1].push(expressionItems[i])
+          }
+          lastSign = "+-";
+          console.log(lastSign)
+        }
+        else {
+          
+          expressionItemsDM[expressionItemsDM.length-1].push(expressionItems[i])
+        }
+
+      }
+      return expressionItemsDM;
+
+  }
+
+
+  handleEvaluate(){
+    let expression_split = this.getExpressionDM();
+    console.log(expression_split);
+    //calculate the total for each item in the expression split;
+
+    for(let i = 0; i<expression_split.length; i++){
+      
+      for(let j = 0; j<expression_split[i].length; j++){
+
+      }
+    }
+
+      
+  }
   handleClear(){
     this.setState((state)=>{
       return {input: 0,
@@ -358,6 +425,7 @@ export default class CalculatorApp extends React.Component {
                   id="equals"
                   class="bigInputButton"
                   buttonText="="
+                  onClick={this.handleEvaluate}
                   theme={this.state.currentBaseColor}
                 />
 
