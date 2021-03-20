@@ -15,6 +15,8 @@ body {
           user-select: none;
   -webkit-transition: all 0.2s;
   transition: all 0.2s;
+  -webkit-transition: translate 2s;
+  transition: translate 2s;
 }
 
 /** Calculator coloring rules **/
