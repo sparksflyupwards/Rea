@@ -21,7 +21,8 @@ export default class InputButton extends React.Component{
             <div className={this.props.class}>
                 <button className= {this.props.class+"-"+this.props.theme}
                  id={this.props.id} 
-                 onClick={this.props.onClick}>
+                 onClick={this.props.onClick}
+                 value={this.props.buttonText}>
                      
                      {this.props.buttonText}
                 </button>

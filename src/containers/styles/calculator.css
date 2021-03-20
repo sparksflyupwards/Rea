@@ -7,7 +7,7 @@
 /** Global styling variables **/
 body {
   min-height: 100vh;
-  background-color: #2edfd6;
+  background-color: #e05371;
   background-image: repeating-linear-gradient(45deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2) 100px, transparent 0px, transparent 200px), repeating-linear-gradient(-45deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2) 100px, transparent 0px, transparent 200px);
   -webkit-user-select: none;
      -moz-user-select: none;

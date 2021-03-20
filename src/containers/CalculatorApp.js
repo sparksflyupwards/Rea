@@ -10,10 +10,15 @@ export default class CalculatorApp extends React.Component {
     super(props);
     this.state = {
       currentBaseColor: "light",
+      expression: "",
+      input: 0
 
     };
 
     this.handleThemeToggle = this.handleThemeToggle.bind(this);
+    this.handleInput = this.handleInput.bind(this);
+    this.handleClear = this.handleClear.bind(this);
+    this.handleAllClear = this.handleAllClear.bind(this);
   }
 
 
@@ -30,11 +35,11 @@ export default class CalculatorApp extends React.Component {
     const calculatorElement = document.getElementById("calculatorApp");
     if(devMode || /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)){
       // true for mobile device
-      console.log("mobile device");
+     // console.log("mobile device");
       isMobile = true;
     }else{
       // false for not mobile device
-      console.log("not mobile device");
+     // console.log("not mobile device");
       isMobile = false;
     }
 
@@ -46,7 +51,7 @@ export default class CalculatorApp extends React.Component {
             yPos = e.clientY;
           }
          else if (isMobile){
-            console.log(e.touches)
+            //console.log(e.touches)
             
             xPos = e.touches[0].clientX;
             yPos = e.touches[0].clientY;
@@ -71,10 +76,12 @@ export default class CalculatorApp extends React.Component {
           const scale = 1 - 0.045 * Math.abs(1 - distanceFromCenter);
 
             //const rotateY = 45;
+            /** 
             console.log("loc: "+clickOffset_x + " , " + clickOffset_y);
             console.log("rotate: "+rotateX + " , " + rotateY);
             console.log("distance: " + distanceFromCenter);
             console.log("scale: " + scale)
+            */
           const calculatorTransform =
             "scale(" +
             scale +
@@ -85,10 +92,12 @@ export default class CalculatorApp extends React.Component {
             "deg) rotateY(" +
             rotateY +
             "deg)";
+            /** 
           console.log(calculatorTransform);
           console.log(calculatorElement.style.transform)
           calculatorElement.style.transform = calculatorTransform;
           console.log(calculatorElement.style.transform)
+          */
     };
 
     const finish3DTilt = (e) => {
@@ -141,6 +150,62 @@ export default class CalculatorApp extends React.Component {
     );
   }
 
+  handleInput(e){
+    console.log(e.target.value)
+    const newInput = e.target.value;
+    let newExpression;
+    //if we are dealing with an operation add to espression with a space else the space isnt important
+
+    if("/X-+".indexOf(newInput) != -1){
+
+        this.setState((state)=> {
+          return {input: newInput,
+          expression: state.expression + " " + newInput + " "}
+          });
+      
+    }
+    else {
+
+      //if first entry remove zero
+      if(this.state.expression == "0"){
+          this.setState((state)=> {
+            return {input: newInput,
+            expression: newInput}
+          });
+      }
+      else {
+        //if user trying to enter decimal twice dont let them
+          if(this.state.input == "."){
+            if(this.state.expression.charAt(this.state.expression.length-1) == "."){
+              
+            }
+
+          }
+          this.setState((state)=> {
+            return {input: newInput,
+            expression: state.expression + newInput}
+          });
+      }
+     
+    }
+  
+  }
+
+  handleClear(){
+    this.setState((state)=>{
+      return {input: 0,
+              expression: state.expression.slice(0,state.expression.length-2)}
+    })
+  }
+
+  handleAllClear(){
+    this.setState((state)=>{
+      return {input: 0,
+              expression: "0"}
+    })
+  }
+
+
   render() {
     return (
       <div
@@ -160,7 +225,9 @@ export default class CalculatorApp extends React.Component {
         />
 
 
-        <DisplayPanel theme={this.state.currentBaseColor} />
+        <DisplayPanel theme={this.state.currentBaseColor}
+                      input={this.state.input}
+                      expression={this.state.expression} />
         
         
         
@@ -170,6 +237,7 @@ export default class CalculatorApp extends React.Component {
                   id="clear"
                   class="inputButton"
                   buttonText="AC"
+                  onClick = {this.handleAllClear}
                   theme={this.state.currentBaseColor}
                 />
 
@@ -177,18 +245,21 @@ export default class CalculatorApp extends React.Component {
                   id="clearLine"
                   class="inputButton"
                   buttonText="C"
+                  onClick = {this.handleClear}
                   theme={this.state.currentBaseColor}
                 />
                 <InputButton
                   id="divide"
                   class="inputButton"
                   buttonText="/"
+                  onClick={this.handleInput}
                   theme={this.state.currentBaseColor}
                 />
                 <InputButton
                   id="multiply"
                   class="inputButton"
                   buttonText="X"
+                  onClick={this.handleInput}
                   theme={this.state.currentBaseColor}
                 />
 
@@ -196,24 +267,28 @@ export default class CalculatorApp extends React.Component {
                   id="seven"
                   class="inputButton"
                   buttonText="7"
+                  onClick={this.handleInput}
                   theme={this.state.currentBaseColor}
                 />
                 <InputButton
                   id="eight"
                   class="inputButton"
                   buttonText="8"
+                  onClick={this.handleInput}
                   theme={this.state.currentBaseColor}
                 />
                 <InputButton
                   id="nine"
                   class="inputButton"
                   buttonText="9"
+                  onClick={this.handleInput}
                   theme={this.state.currentBaseColor}
                 />
                 <InputButton
                   id="subtract"
                   class="inputButton"
                   buttonText="-"
+                  onClick={this.handleInput}
                   theme={this.state.currentBaseColor}
                 />
 
@@ -221,24 +296,28 @@ export default class CalculatorApp extends React.Component {
                   id="four"
                   class="inputButton"
                   buttonText="4"
+                  onClick={this.handleInput}
                   theme={this.state.currentBaseColor}
                 />
                 <InputButton
                   id="five"
                   class="inputButton"
                   buttonText="5"
+                  onClick={this.handleInput}
                   theme={this.state.currentBaseColor}
                 />
                 <InputButton
                   id="six"
                   class="inputButton"
                   buttonText="6"
+                  onClick={this.handleInput}
                   theme={this.state.currentBaseColor}
                 />
                 <InputButton
                   id="add"
                   class="inputButton"
                   buttonText="+"
+                  onClick={this.handleInput}
                   theme={this.state.currentBaseColor}
                 />
 
@@ -246,18 +325,21 @@ export default class CalculatorApp extends React.Component {
                   id="one"
                   class="inputButton"
                   buttonText="1"
+                  onClick={this.handleInput}
                   theme={this.state.currentBaseColor}
                 />
                 <InputButton
                   id="two"
                   class="inputButton"
                   buttonText="2"
+                  onClick={this.handleInput}
                   theme={this.state.currentBaseColor}
                 />
                 <InputButton
                   id="three"
                   class="inputButton"
                   buttonText="3"
+                  onClick={this.handleInput}
                   theme={this.state.currentBaseColor}
                 />
                 <InputButton
@@ -277,12 +359,14 @@ export default class CalculatorApp extends React.Component {
                   id="zero"
                   class="inputButton"
                   buttonText="0"
+                  onClick={this.handleInput}
                   theme={this.state.currentBaseColor}
                 />
                 <InputButton
                   id="decimal"
                   class="inputButton"
                   buttonText="."
+                  onClick={this.handleInput}
                   theme={this.state.currentBaseColor}
                 />
         </div>

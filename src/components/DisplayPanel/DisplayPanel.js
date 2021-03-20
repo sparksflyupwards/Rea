@@ -26,8 +26,8 @@ export default class DisplayPanel extends React.Component {
   render() {
     return (
           <div className={this.props.theme == "dark" ? "display-panel-dark":"display-panel-light"}>
-          <TopDisplay num={2} />
-          <BottomDisplay num={4} />
+          <TopDisplay num={this.props.expression} />
+          <BottomDisplay num={this.props.input} />
           </div>
       
     );
