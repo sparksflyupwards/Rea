@@ -11,6 +11,7 @@ export default class CalculatorApp extends React.Component {
     this.state = {
       currentBaseColor: "light",
       expression: "",
+      currentNumber: 0,
       input: 0
 
     };
@@ -154,40 +155,51 @@ export default class CalculatorApp extends React.Component {
     console.log(e.target.value)
     const newInput = e.target.value;
     let newExpression;
+
+
+    //get the last entered number
+    let currentNumber = this.state.expression.split(" ");
+    if(currentNumber.length== 0){
+              currentNumber = this.state.expression;
+    }
+    else {
+              
+            currentNumber = currentNumber[currentNumber.length-1]
+    }
+    
     //if we are dealing with an operation add to espression with a space else the space isnt important
 
     if("/X-+".indexOf(newInput) != -1){
-
-        this.setState((state)=> {
-          return {input: newInput,
-          expression: state.expression + " " + newInput + " "}
-          });
+          newExpression = this.state.expression + " " + newInput + " ";
       
     }
     else {
 
-      //if first entry remove zero
-      if(this.state.expression == "0"){
-          this.setState((state)=> {
-            return {input: newInput,
-            expression: newInput}
-          });
-      }
-      else {
-        //if user trying to enter decimal twice dont let them
-          if(this.state.input == "."){
-            if(this.state.expression.charAt(this.state.expression.length-1) == "."){
-              
-            }
-
+          //if first entry remove zero
+          if(this.state.expression == "0"){
+              newExpression = newInput;
           }
-          this.setState((state)=> {
-            return {input: newInput,
-            expression: state.expression + newInput}
-          });
-      }
+          else {
+
+
+
+            //if user trying to enter decimal twice dont let them
+              if(newInput == "."
+                  && currentNumber.indexOf(".") != -1){
+                  
+                  newExpression = this.state.expression;
+              }
+              else {
+                  newExpression = this.state.expression + newInput;
+              }
+            
+          }
      
     }
+
+    this.setState((state)=>{return{input: newInput, expression: newExpression}})
+
+    
   
   }
 
