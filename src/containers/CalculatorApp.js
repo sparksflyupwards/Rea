@@ -10,7 +10,7 @@ export default class CalculatorApp extends React.Component {
     super(props);
     this.state = {
       currentBaseColor: "light",
-      expression: "9 X 2 + 3 + 2 + 2 X 3 X 4 + 2 X 2 / 7",
+      expression: "3 + 5 X 6 - 2 / 4",
       currentNumber: 0,
       input: 0
 
@@ -162,6 +162,7 @@ export default class CalculatorApp extends React.Component {
 
 
     //get the last entered number
+    
     let currentNumber = this.state.expression.split(" ");
     if(currentNumber.length== 0){
               currentNumber = this.state.expression;
@@ -274,6 +275,13 @@ export default class CalculatorApp extends React.Component {
         }
 
       }
+      for(let i = 0; i<expressionItemsDM.length; i++)
+      console.log("DM: "+ expressionItemsDM[i])
+      console.log(this.state.expression)
+      console.log(this.state.expression.replace('X', "*"))
+      console.log("TOTAL:  A: " + eval(this.state.expression.replace('X', "*")))
+
+
       return expressionItemsDM;
 
   }
@@ -281,16 +289,93 @@ export default class CalculatorApp extends React.Component {
 
   handleEvaluate(){
     let expression_split = this.getExpressionDM();
-    console.log(expression_split);
+   // console.log(expression_split);
+    let evaluated_expression_split =[];
     //calculate the total for each item in the expression split;
-
     for(let i = 0; i<expression_split.length; i++){
+
+      //remove plus from start and end
+      if(expression_split[i][0] == "+"){
+        expression_split[i] = expression_split[i].slice(1);
+      }
+      if(expression_split[i][expression_split[i].length-1] == "+"){
+        expression_split[i] = expression_split[i].slice(0,expression_split[i].length-1);
+      }
+
       
+      let totalOfExpressionSplit;
       for(let j = 0; j<expression_split[i].length; j++){
+        let operand;
+        let a , b;
+
+       // console.log("J: "+j+" "+expression_split[i])
+        if(expression_split[i].length-j>2){
+          operand = expression_split[i][j+1];
+          a = expression_split[i][j+0];
+          b = expression_split[i][j+2];
+          j +=3
+          //console.log(a)
+        }
+        else {
+         // console.log("J: "+ j + " " + expression_split[i])
+         // console.log("J: "+ j + " " + expression_split[i][j])
+          operand = expression_split[i][j-1];
+          a = totalOfExpressionSplit;
+          b = expression_split[i][j];
+        }
+        a = Number(a);
+        b = Number(b);
+
+       // console.log("a: " + a + " b: " + b + " operand: " + operand);
+        
+        switch(operand){
+          case "X":
+            totalOfExpressionSplit = a * b;
+            break;
+          case "/":
+            totalOfExpressionSplit = a / b;
+            break;          
+          case "+":
+            totalOfExpressionSplit = a + b;
+            break;
+          case "-":
+            totalOfExpressionSplit = a - b;
+            break;
+        }
 
       }
+
+   //   console.log("totals: "+ totalOfExpressionSplit)
+
+      evaluated_expression_split.push(totalOfExpressionSplit);
     }
 
+   //   console.log(expression_split)
+     
+    //sums up each itm in the expression split to get the result
+    let sum = 0;
+    for(let i = 0; i<evaluated_expression_split.length; i++){
+        //if the split has a value add it to the sum
+        if(evaluated_expression_split[i]){
+
+          sum += evaluated_expression_split[i];
+
+      //  console.log(evaluated_expression_split[i])
+        }
+        
+    }
+    console.log("SUM: " + sum)
+
+    /// we can just do this...
+    sum = eval(this.state.expression.replace('X', "*"));
+    sum = JSON.stringify(sum);
+    //changes the input state
+    this.setState((state)=>{
+      return {
+        expression: sum,
+        input: sum
+      }
+    });
       
   }
   handleClear(){
