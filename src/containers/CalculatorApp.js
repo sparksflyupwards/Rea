@@ -175,20 +175,33 @@ export default class CalculatorApp extends React.Component {
     console.log("currentNumber "+ currentNumber)
     
     //if we are dealing with an operation add to espression with a space else the space isnt important
-    let lastExpression = this.state.expression[this.state.expression.length-2];
-    console.log("LAST: "+ lastExpression);
+    const expression = this.state.expression.slice();
+    console.log(expression+":")
+    console.log(expression.length)
+    let lastExpression = this.state.expression.slice();
+    let i = lastExpression.length-1;
+    while(lastExpression.slice(i) == " "){
+      i = i -1;
+    }
+    lastExpression = lastExpression.slice(i, i+1)
+   // lastExpression = lastExpression.slice(lastExpression.length-1)
+
+   console.log("LAST:"+ lastExpression + ":");
+    //console.log("CURRENT: " + newInput)
+    console.log("SWAP: " + (lastExpression === "-"))
 
 
     if("/X-+".indexOf(newInput) != -1){
         //make sure if the last entry was an operator then switch
-        if("/X+".indexOf(lastExpression) != -1){
+       // alert(lastExpression  )
+    //   console.log("LAST: " + lastExpression || (newInput === " - "))
+        if("/X+".indexOf(lastExpression) != -1 || (lastExpression === "-")){
           //if the new entry is a minus sign and the previous was D or M then perserve the sign
+          console.log("swap" + currentNumber + currentNumber.match(/\//gi))
           if(newInput == "-" && "/X".indexOf(lastExpression) != -1){
-            console.log("keep minus")
             newExpression = this.state.expression.slice(0, this.state.expression.length-1) + " " + newInput;
           }
           else {
-
             //if it is not a multiplication sign then switch the operator
            newExpression = this.state.expression.slice(0, this.state.expression.length-3) + " " + newInput + " ";
           }
