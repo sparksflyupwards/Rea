@@ -1,4 +1,14 @@
 /** global styling rules **/
+.lock-button-light {
+  opacity: 0.70;
+}
+
+.lock-button-dark {
+  -webkit-filter: brightness(0) invert(1);
+          filter: brightness(0) invert(1);
+  opacity: 0.8;
+}
+
 /* inputButton coloring rules */
 .inputButton-light {
   color: black;

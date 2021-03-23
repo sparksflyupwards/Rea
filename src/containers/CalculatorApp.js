@@ -4,6 +4,7 @@ import React, { Component } from "react";
 import DisplayPanel from "../components/DisplayPanel/DisplayPanel";
 import Header from "../components/Header/Header";
 import InputButton from "../components/InputButton/InputButton";
+import { Typography } from "@material-ui/core";
 
 export default class CalculatorApp extends React.Component {
   constructor(props) {
@@ -12,6 +13,7 @@ export default class CalculatorApp extends React.Component {
       currentBaseColor: "light",
       expression: "",
       input: 0,
+      tiltLock: false,
     };
 
     this.handleThemeToggle = this.handleThemeToggle.bind(this);
@@ -19,6 +21,7 @@ export default class CalculatorApp extends React.Component {
     this.handleEvaluate = this.handleEvaluate.bind(this);
     this.handleClear = this.handleClear.bind(this);
     this.handleAllClear = this.handleAllClear.bind(this);
+    this.handleLock = this.handleLock.bind(this);
   }
 
   componentDidMount() {
@@ -38,6 +41,10 @@ export default class CalculatorApp extends React.Component {
     }
 
     const initiate3DTilt = (e) => {
+      //if component is locked then do not create transforms
+      if(this.state.tiltLock){
+        return;
+      }
       let xPos, yPos;
 
       if (!isMobile) {
@@ -197,10 +204,44 @@ export default class CalculatorApp extends React.Component {
   }
 
   
+  handleLock(){
+    //toggle the lock
+    this.setState({tiltLock: this.state.tiltLock ? false : true}, ()=>{
 
+      if(this.state.tiltLock){
+        if(this.state.isMobile){
+          document.removeEventListener("mousedown");
+        } 
+
+      }
+    })
+
+  }
   handleEvaluate() {
     let sum;
-    sum = eval(this.state.expression.replace("X", "*"));
+    if(this.state.expression && this.state.expression.indexOf("X") != -1){
+
+      sum = eval(this.state.expression.replace("X", "*"));
+    }
+    else {
+       try {
+          if(!this.state.expression){
+            this.setState((state) => {
+              return {
+                input: "Invalid input",
+              };
+            });
+
+            return
+          } 
+         sum = eval(this.state.expression);
+       }
+       catch(exception) {
+          console.log(exception);
+          sum = "error calculating sum"
+       }
+    }
+
     sum = JSON.stringify(sum);
     //changes the input state
     this.setState((state) => {
@@ -245,6 +286,7 @@ export default class CalculatorApp extends React.Component {
           theme={this.state.currentBaseColor}
           input={this.state.input}
           expression={this.state.expression}
+          displayHelp={this.state.displayHelp}
         />
 
         <div className="numberPad">
@@ -366,9 +408,10 @@ export default class CalculatorApp extends React.Component {
           />
 
           <InputButton
-            id="?"
+            id="lock"
             class="inputButton"
-            buttonText="?"
+            buttonImage="lock"
+            onClick={this.handleLock}
             theme={this.state.currentBaseColor}
           />
           <InputButton

@@ -1,3 +1,4 @@
+import LockIcon from '../../media/icons/lock.svg'
 import "./styles/InputButton.css";
 import React from "react";
 
@@ -23,8 +24,11 @@ export default class InputButton extends React.Component{
                  id={this.props.id} 
                  onClick={this.props.onClick}
                  value={this.props.buttonText}>
+                     {this.props.buttonText    ? 
+                     this.props.buttonText :  
+                     <img className= {"lock-button-"+this.props.theme} src={LockIcon}
+          alt="lock calculator" />}
                      
-                     {this.props.buttonText}
                 </button>
             </div>
             
