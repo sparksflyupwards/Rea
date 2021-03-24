@@ -6,7 +6,6 @@ import Header from "../components/Header/Header";
 import InputButton from "../components/InputButton/InputButton";
 
 import {motion} from "framer-motion";
-import * as PageTransitionRules from "./pageTransitionRules/pageTranisitionRules"
 import Tour from "reactour";
 
 export default class CalculatorApp extends React.Component {
@@ -301,12 +300,10 @@ export default class CalculatorApp extends React.Component {
   render() {
     return (
       <motion.div
-      style={PageTransitionRules.pageStyle}
-      initial="initial"
-      animate="in"
-      exit="out"
-      variants={PageTransitionRules.pageVariants}
-      transition={PageTransitionRules.pageTransition}
+      initial={{ scaleY: 0 }}
+      animate={{ scaleY: 1 }}
+      exit={{ scaleY: 0 }}
+      transition={{ duration: 0.5 }}
     > 
             <div
               className={

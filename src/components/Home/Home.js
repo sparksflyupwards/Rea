@@ -9,7 +9,13 @@ import {
     Route,
     Link
   } from "react-router-dom";
-import { AnimatePresence } from "framer-motion";
+
+import { AnimatePresence, motion } from "framer-motion";
+
+
+import * as PageTransitionRules from "./pageTransitionRules/pageTranisitionRules"
+
+
 
 const Home = ()=>{
     return(
@@ -20,7 +26,7 @@ const Home = ()=>{
           
           {/* A <Switch> looks through its children <Route>s and
               renders the first one that matches the current URL. */}
-        <AnimatePresence>
+        <AnimatePresence exitBeforeEnter>
                 <Switch>
                     <Route path="/Calculator">
                     <CalculatorApp isTourOpen ={false} />
@@ -40,7 +46,16 @@ const Home = ()=>{
 }
 
 const Navigation = ()=>{
-    return(<nav>
+    return(
+
+        <motion.div
+        initial="initial"
+        animate="in"
+        exit="out"
+        transition={PageTransitionRules.pageTransition}
+        style={PageTransitionRules.pageStyle}
+        variants={PageTransitionRules.pageVariants}
+      ><nav>
         <ul>
           <li>
             <Link to="/">Home</Link>
@@ -53,6 +68,7 @@ const Navigation = ()=>{
           </li>
         </ul>
       </nav>
+      </motion.div>
 )
 }
 
