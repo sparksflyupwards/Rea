@@ -18,10 +18,14 @@ export default class CalculatorApp extends React.Component {
       isTourOpen: true,
       steps: [
         {
-          selector: '[data-tut="calculator"]',
+          selector: '[data-tut="tr"]',
           content: `Welcome to the React 3D Calculator tour! 
-                    It's got all your standard numbers and operations to press at your hearts delight, but  
-                    watch out, it tilts as you touch it! (give it a try)`
+                    Lets get started, and remember, you can exit anytime and play with the app as you go...`
+        },
+        {
+          selector: '[data-tut="calculator"]',
+          content: `Here you will find our state of the art, touch if you dare, calculator lovingly built with ReactJS. It's got all your standard numbers and operations to press at your hearts delight, but  
+                    watch out, it tilts as you touch it!`
       
         },
         {
@@ -31,17 +35,17 @@ export default class CalculatorApp extends React.Component {
         },
         {
           selector: '[data-tut="AC"]',
-          content: `To start from scratch hit the AC button to erase everything on the display.`
+          content: `To start from scratch hit the AC button to reset your display.`
       
         },
         {
           selector: '[data-tut="toggle-theme"]',
-          content: `Try out the dark theme if your eyes get tired`
+          content: `Try out the dark theme if your eyes get tired.`
       
         },
         {
           selector: '[data-tut="lock"]',
-          content: `If you'd like your calculator to stay still hit the lock and it'll be so`
+          content: `And finally, if you'd like your calculator to stay still hit the lock and so it will be!`
       
         },
       ]
