@@ -5,20 +5,6 @@
 }
 
 /** Global styling variables **/
-body {
-  min-height: 100vh;
-  background-color: #2edfd6;
-  background-image: repeating-linear-gradient(45deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2) 100px, transparent 0px, transparent 200px), repeating-linear-gradient(-45deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2) 100px, transparent 0px, transparent 200px);
-  -webkit-user-select: none;
-     -moz-user-select: none;
-      -ms-user-select: none;
-          user-select: none;
-  -webkit-transition: all 0.2s;
-  transition: all 0.2s;
-  -webkit-transition: translate 2s;
-  transition: translate 2s;
-}
-
 /** Calculator coloring rules **/
 .calculator {
   text-align: center;

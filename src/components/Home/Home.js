@@ -46,8 +46,9 @@ const Home = ()=>{
 }
 
 const Navigation = ()=>{
-    return(
 
+    return(
+        
         <motion.div
         initial="initial"
         animate="in"
@@ -55,19 +56,25 @@ const Navigation = ()=>{
         transition={PageTransitionRules.pageTransition}
         style={PageTransitionRules.pageStyle}
         variants={PageTransitionRules.pageVariants}
-      ><nav>
+      >
+        <div class="home">
+        <div class="shape-blob"></div>
+        <div class="shape-blob one"></div>
+        <div class="shape-blob two"></div>  
+        <nav>
         <ul>
           <li>
-            <Link to="/">Home</Link>
+            <Link to="/"><h1>Home</h1></Link>
           </li>
           <li>
-            <Link to="/Calculator">Without a tutorial</Link>
+            <Link to="/Calculator"><h1>Without a tutorial</h1></Link>
           </li>
           <li>
-            <Link to="/CalculatorTutorial">With a tutorial</Link>
+            <Link to="/CalculatorTutorial"><h1>With a tutorial</h1></Link>
           </li>
         </ul>
       </nav>
+      </div>
       </motion.div>
 )
 }

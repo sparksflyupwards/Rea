@@ -1,4 +1,5 @@
 import "./styles/calculator.css";
+import * as StyleModules  from "./styles/modules/styles"
 import React, { Component } from "react";
 
 import DisplayPanel from "../components/DisplayPanel/DisplayPanel";
@@ -57,7 +58,14 @@ export default class CalculatorApp extends React.Component {
   }
 
   componentDidMount() {
+    /** 
+    //keep user from going back to home page
+    window.addEventListener("popstate", () => {
+      history.go(1);
+    });
+    */
 
+    
     let isMobile;
     const devMode = false;
     const calculatorElement = document.getElementById("calculatorApp");
@@ -134,6 +142,8 @@ export default class CalculatorApp extends React.Component {
 
       document.addEventListener("touchend", finish3DTilt);
     }
+
+
   }
 
   handleThemeToggle() {
@@ -302,177 +312,179 @@ export default class CalculatorApp extends React.Component {
       <motion.div
       initial={{ scaleY: 0 }}
       animate={{ scaleY: 1 }}
-      exit={{ scaleY: 0 }}
-      transition={{ duration: 0.5 }}
+      exit={{ scaleY: 0,
+              opacity: 0 }}
+      transition={{ duration: 1 }}
     > 
-            <div
-              className={
-                this.state.currentBaseColor == "dark"
-                  ? "calculator-dark"
-                  : "calculator"
-              }
-              id="calculatorApp"
-              data-tut="calculator"
-            >
-              <Tour
-                steps={this.state.steps}
-                isOpen={this.state.isTourOpen}
-                onRequestClose={this.toggleTour}
-              ></Tour>
-              <Header
-                title="FCC Calculator App"
-                themeToggleImage={this.state.currentBaseColor}
-                handleThemeToggle={this.handleThemeToggle}
-              />
+            <div className="appContainer" style={StyleModules.bodyStyle}>
+                <div className={
+                    this.state.currentBaseColor == "dark"
+                      ? "calculator-dark"
+                      : "calculator"
+                  }
+                  id="calculatorApp"
+                  data-tut="calculator"
+                >
+                  <Tour
+                    steps={this.state.steps}
+                    isOpen={this.state.isTourOpen}
+                    onRequestClose={this.toggleTour}
+                  ></Tour>
+                  <Header
+                    title="FCC Calculator App"
+                    themeToggleImage={this.state.currentBaseColor}
+                    handleThemeToggle={this.handleThemeToggle}
+                  />
 
-              <DisplayPanel
-                theme={this.state.currentBaseColor}
-                input={this.state.input}
-                expression={this.state.expression}
-                displayHelp={this.state.displayHelp}
-              />
+                  <DisplayPanel
+                    theme={this.state.currentBaseColor}
+                    input={this.state.input}
+                    expression={this.state.expression}
+                    displayHelp={this.state.displayHelp}
+                  />
 
-              <div className="numberPad">
-                <InputButton
-                  id="clear"
-                  class="inputButton"
-                  buttonText="AC"
-                  onClick={this.handleAllClear}
-                  theme={this.state.currentBaseColor}
-                />
+                  <div className="numberPad">
+                    <InputButton
+                      id="clear"
+                      class="inputButton"
+                      buttonText="AC"
+                      onClick={this.handleAllClear}
+                      theme={this.state.currentBaseColor}
+                    />
 
-                <InputButton
-                  id="clearLine"
-                  class="inputButton"
-                  buttonText="C"
-                  onClick={this.handleClear}
-                  theme={this.state.currentBaseColor}
-                />
-                <InputButton
-                  id="divide"
-                  class="inputButton"
-                  buttonText="/"
-                  onClick={this.handleInput}
-                  theme={this.state.currentBaseColor}
-                />
-                <InputButton
-                  id="multiply"
-                  class="inputButton"
-                  buttonText="X"
-                  onClick={this.handleInput}
-                  theme={this.state.currentBaseColor}
-                />
+                    <InputButton
+                      id="clearLine"
+                      class="inputButton"
+                      buttonText="C"
+                      onClick={this.handleClear}
+                      theme={this.state.currentBaseColor}
+                    />
+                    <InputButton
+                      id="divide"
+                      class="inputButton"
+                      buttonText="/"
+                      onClick={this.handleInput}
+                      theme={this.state.currentBaseColor}
+                    />
+                    <InputButton
+                      id="multiply"
+                      class="inputButton"
+                      buttonText="X"
+                      onClick={this.handleInput}
+                      theme={this.state.currentBaseColor}
+                    />
 
-                <InputButton
-                  id="seven"
-                  class="inputButton"
-                  buttonText="7"
-                  onClick={this.handleInput}
-                  theme={this.state.currentBaseColor}
-                />
-                <InputButton
-                  id="eight"
-                  class="inputButton"
-                  buttonText="8"
-                  onClick={this.handleInput}
-                  theme={this.state.currentBaseColor}
-                />
-                <InputButton
-                  id="nine"
-                  class="inputButton"
-                  buttonText="9"
-                  onClick={this.handleInput}
-                  theme={this.state.currentBaseColor}
-                />
-                <InputButton
-                  id="subtract"
-                  class="inputButton"
-                  buttonText="-"
-                  onClick={this.handleInput}
-                  theme={this.state.currentBaseColor}
-                />
+                    <InputButton
+                      id="seven"
+                      class="inputButton"
+                      buttonText="7"
+                      onClick={this.handleInput}
+                      theme={this.state.currentBaseColor}
+                    />
+                    <InputButton
+                      id="eight"
+                      class="inputButton"
+                      buttonText="8"
+                      onClick={this.handleInput}
+                      theme={this.state.currentBaseColor}
+                    />
+                    <InputButton
+                      id="nine"
+                      class="inputButton"
+                      buttonText="9"
+                      onClick={this.handleInput}
+                      theme={this.state.currentBaseColor}
+                    />
+                    <InputButton
+                      id="subtract"
+                      class="inputButton"
+                      buttonText="-"
+                      onClick={this.handleInput}
+                      theme={this.state.currentBaseColor}
+                    />
 
-                <InputButton
-                  id="four"
-                  class="inputButton"
-                  buttonText="4"
-                  onClick={this.handleInput}
-                  theme={this.state.currentBaseColor}
-                />
-                <InputButton
-                  id="five"
-                  class="inputButton"
-                  buttonText="5"
-                  onClick={this.handleInput}
-                  theme={this.state.currentBaseColor}
-                />
-                <InputButton
-                  id="six"
-                  class="inputButton"
-                  buttonText="6"
-                  onClick={this.handleInput}
-                  theme={this.state.currentBaseColor}
-                />
-                <InputButton
-                  id="add"
-                  class="inputButton"
-                  buttonText="+"
-                  onClick={this.handleInput}
-                  theme={this.state.currentBaseColor}
-                />
+                    <InputButton
+                      id="four"
+                      class="inputButton"
+                      buttonText="4"
+                      onClick={this.handleInput}
+                      theme={this.state.currentBaseColor}
+                    />
+                    <InputButton
+                      id="five"
+                      class="inputButton"
+                      buttonText="5"
+                      onClick={this.handleInput}
+                      theme={this.state.currentBaseColor}
+                    />
+                    <InputButton
+                      id="six"
+                      class="inputButton"
+                      buttonText="6"
+                      onClick={this.handleInput}
+                      theme={this.state.currentBaseColor}
+                    />
+                    <InputButton
+                      id="add"
+                      class="inputButton"
+                      buttonText="+"
+                      onClick={this.handleInput}
+                      theme={this.state.currentBaseColor}
+                    />
 
-                <InputButton
-                  id="one"
-                  class="inputButton"
-                  buttonText="1"
-                  onClick={this.handleInput}
-                  theme={this.state.currentBaseColor}
-                />
-                <InputButton
-                  id="two"
-                  class="inputButton"
-                  buttonText="2"
-                  onClick={this.handleInput}
-                  theme={this.state.currentBaseColor}
-                />
-                <InputButton
-                  id="three"
-                  class="inputButton"
-                  buttonText="3"
-                  onClick={this.handleInput}
-                  theme={this.state.currentBaseColor}
-                />
-                <InputButton
-                  id="equals"
-                  class="bigInputButton"
-                  buttonText="="
-                  onClick={this.handleEvaluate}
-                  theme={this.state.currentBaseColor}
-                />
+                    <InputButton
+                      id="one"
+                      class="inputButton"
+                      buttonText="1"
+                      onClick={this.handleInput}
+                      theme={this.state.currentBaseColor}
+                    />
+                    <InputButton
+                      id="two"
+                      class="inputButton"
+                      buttonText="2"
+                      onClick={this.handleInput}
+                      theme={this.state.currentBaseColor}
+                    />
+                    <InputButton
+                      id="three"
+                      class="inputButton"
+                      buttonText="3"
+                      onClick={this.handleInput}
+                      theme={this.state.currentBaseColor}
+                    />
+                    <InputButton
+                      id="equals"
+                      class="bigInputButton"
+                      buttonText="="
+                      onClick={this.handleEvaluate}
+                      theme={this.state.currentBaseColor}
+                    />
 
-                <InputButton
-                  id="lock"
-                  class="inputButton"
-                  buttonText="lock"
-                  buttonImage="lock"
-                  onClick={this.handleLock}
-                  theme={this.state.currentBaseColor}
-                />
-                <InputButton
-                  id="zero"
-                  class="inputButton"
-                  buttonText="0"
-                  onClick={this.handleInput}
-                  theme={this.state.currentBaseColor}
-                />
-                <InputButton
-                  id="decimal"
-                  class="inputButton"
-                  buttonText="."
-                  onClick={this.handleInput}
-                  theme={this.state.currentBaseColor}
-                />
-              </div>
+                    <InputButton
+                      id="lock"
+                      class="inputButton"
+                      buttonText="lock"
+                      buttonImage="lock"
+                      onClick={this.handleLock}
+                      theme={this.state.currentBaseColor}
+                    />
+                    <InputButton
+                      id="zero"
+                      class="inputButton"
+                      buttonText="0"
+                      onClick={this.handleInput}
+                      theme={this.state.currentBaseColor}
+                    />
+                    <InputButton
+                      id="decimal"
+                      class="inputButton"
+                      buttonText="."
+                      onClick={this.handleInput}
+                      theme={this.state.currentBaseColor}
+                    />
+                  </div>
+                </div>
             </div>
        </motion.div> 
     );
