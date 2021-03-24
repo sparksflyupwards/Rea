@@ -5,7 +5,7 @@ import DisplayPanel from "../components/DisplayPanel/DisplayPanel";
 import Header from "../components/Header/Header";
 import InputButton from "../components/InputButton/InputButton";
 
-import Tour from 'reactour';
+import Tour from "reactour";
 
 export default class CalculatorApp extends React.Component {
   constructor(props) {
@@ -20,35 +20,30 @@ export default class CalculatorApp extends React.Component {
         {
           selector: '[data-tut="tr"]',
           content: `Welcome to the React 3D Calculator tour! 
-                    Lets get started, and remember, you can exit anytime and play with the app as you go...`
+                    Lets get started, and remember, you can exit anytime and play with the app as you go...`,
         },
         {
           selector: '[data-tut="calculator"]',
           content: `Here you will find our state of the art, touch if you dare, calculator lovingly built with ReactJS. It's got all your standard numbers and operations to press at your hearts delight, but  
-                    watch out, it tilts as you touch it!`
-      
+                    watch out, it tilts as you touch it!`,
         },
         {
           selector: '[data-tut="C"]',
-          content: `If you make a mistake you can erase your recent input with the C button here.`
-      
+          content: `If you make a mistake you can erase your recent input with the C button here.`,
         },
         {
           selector: '[data-tut="AC"]',
-          content: `To start from scratch hit the AC button to reset your display.`
-      
+          content: `To start from scratch hit the AC button to reset your display.`,
         },
         {
           selector: '[data-tut="toggle-theme"]',
-          content: `Try out the dark theme if your eyes get tired.`
-      
+          content: `Try out the dark theme if your eyes get tired.`,
         },
         {
           selector: '[data-tut="lock"]',
-          content: `And finally, if you'd like your calculator to stay still hit the lock and so it will be!`
-      
+          content: `And finally, if you'd like your calculator to stay still hit the lock and so it will be!`,
         },
-      ]
+      ],
     };
 
     this.handleThemeToggle = this.handleThemeToggle.bind(this);
@@ -58,8 +53,6 @@ export default class CalculatorApp extends React.Component {
     this.handleAllClear = this.handleAllClear.bind(this);
     this.handleLock = this.handleLock.bind(this);
     this.toggleTour = this.toggleTour.bind(this);
-
-    
   }
 
   componentDidMount() {
@@ -80,7 +73,7 @@ export default class CalculatorApp extends React.Component {
 
     const initiate3DTilt = (e) => {
       //if component is locked then do not create transforms
-      if(this.state.tiltLock){
+      if (this.state.tiltLock) {
         return;
       }
       let xPos, yPos;
@@ -89,7 +82,6 @@ export default class CalculatorApp extends React.Component {
         xPos = e.clientX;
         yPos = e.clientY;
       } else if (isMobile) {
-
         xPos = e.touches[0].clientX;
         yPos = e.touches[0].clientY;
       }
@@ -143,7 +135,6 @@ export default class CalculatorApp extends React.Component {
   }
 
   handleThemeToggle() {
-    
     this.setState(
       (state) => {
         if (state.currentBaseColor == "dark") {
@@ -184,7 +175,6 @@ export default class CalculatorApp extends React.Component {
       currentNumber = currentNumber[currentNumber.length - 1];
     }
 
-
     //if we are dealing with an operation add to espression with a space else the space isnt important
 
     //get the last entered key before the input
@@ -194,7 +184,6 @@ export default class CalculatorApp extends React.Component {
       i = i - 1;
     }
     lastKey = lastKey.slice(i, i + 1);
-
 
     //check if the newInput is an operation
     if ("/X-+".indexOf(newInput) != -1) {
@@ -206,7 +195,7 @@ export default class CalculatorApp extends React.Component {
             this.state.expression.slice(0, this.state.expression.length - 1) +
             " " +
             newInput;
-        } 
+        }
         //if all other cases then we swap the new entry with the old
         else {
           newExpression =
@@ -215,7 +204,7 @@ export default class CalculatorApp extends React.Component {
             newInput +
             " ";
         }
-      } 
+      }
       //if the last input was not an operation then append the new operation to the expression
       else {
         newExpression = this.state.expression + " " + newInput + " ";
@@ -241,53 +230,51 @@ export default class CalculatorApp extends React.Component {
     });
   }
 
-  
-  handleLock(){
+  handleLock() {
     //toggle the lock
-    this.setState({tiltLock: this.state.tiltLock ? false : true}, ()=>{
-
-      if(this.state.tiltLock){
-        if(this.state.isMobile){
+    this.setState({ tiltLock: this.state.tiltLock ? false : true }, () => {
+      if (this.state.tiltLock) {
+        if (this.state.isMobile) {
           document.removeEventListener("mousedown");
-        } 
-
+        }
       }
-    })
-
+    });
   }
   handleEvaluate() {
-    let sum;
-    if(this.state.expression && this.state.expression.indexOf("X") != -1){
-
+    let sum, errorMessage;
+    if (this.state.expression && this.state.expression.indexOf("X") != -1) {
       sum = eval(this.state.expression.replace("X", "*"));
-    }
-    else {
-       try {
-          if(!this.state.expression){
-            this.setState((state) => {
-              return {
-                input: "Invalid input",
-              };
-            });
-
-            return
-          } 
-         sum = eval(this.state.expression);
-       }
-       catch(exception) {
-          console.log(exception);
-          sum = "error calculating sum"
-       }
+      
+    } else {
+      try {
+        if (!this.state.expression) {
+          errorMessage = "Invalid Input";
+        } else {
+          sum = eval(this.state.expression);
+        }
+      } catch (exception) {
+        console.log(exception);
+        errorMessage = "Error.";
+      }
     }
 
-    sum = JSON.stringify(sum);
-    //changes the input state
-    this.setState((state) => {
-      return {
-        expression: sum,
-        input: sum,
-      };
-    });
+    if (errorMessage) {
+      this.setState((state) => {
+        return {
+          input: errorMessage,
+        };
+      });
+    } else {
+      sum = sum.toFixed(4);
+      sum = JSON.stringify(sum);
+      //changes the input state
+      this.setState((state) => {
+        return {
+          expression: sum,
+          input: sum,
+        };
+      });
+    }
   }
   handleClear() {
     this.setState((state) => {
@@ -304,8 +291,8 @@ export default class CalculatorApp extends React.Component {
     });
   }
 
-  toggleTour(){
-    this.setState({isTourOpen: !this.state.isTourOpen});
+  toggleTour() {
+    this.setState({ isTourOpen: !this.state.isTourOpen });
   }
 
   render() {
@@ -315,15 +302,15 @@ export default class CalculatorApp extends React.Component {
           this.state.currentBaseColor == "dark"
             ? "calculator-dark"
             : "calculator"
-        } 
+        }
         id="calculatorApp"
         data-tut="calculator"
       >
-
         <Tour
-        steps={this.state.steps}
-        isOpen={this.state.isTourOpen}
-        onRequestClose={this.toggleTour}></Tour>
+          steps={this.state.steps}
+          isOpen={this.state.isTourOpen}
+          onRequestClose={this.toggleTour}
+        ></Tour>
         <Header
           title="FCC Calculator App"
           themeToggleImage={this.state.currentBaseColor}
@@ -462,7 +449,6 @@ export default class CalculatorApp extends React.Component {
             buttonImage="lock"
             onClick={this.handleLock}
             theme={this.state.currentBaseColor}
-           
           />
           <InputButton
             id="zero"
