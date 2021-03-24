@@ -5,7 +5,6 @@ import DisplayPanel from "../components/DisplayPanel/DisplayPanel";
 import Header from "../components/Header/Header";
 import InputButton from "../components/InputButton/InputButton";
 
-import { Typography } from "@material-ui/core";
 import Tour from 'reactour';
 
 export default class CalculatorApp extends React.Component {
