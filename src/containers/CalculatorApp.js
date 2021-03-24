@@ -4,7 +4,9 @@ import React, { Component } from "react";
 import DisplayPanel from "../components/DisplayPanel/DisplayPanel";
 import Header from "../components/Header/Header";
 import InputButton from "../components/InputButton/InputButton";
+
 import { Typography } from "@material-ui/core";
+import Tour from 'reactour';
 
 export default class CalculatorApp extends React.Component {
   constructor(props) {
@@ -14,6 +16,36 @@ export default class CalculatorApp extends React.Component {
       expression: "",
       input: 0,
       tiltLock: false,
+      isTourOpen: true,
+      steps: [
+        {
+          selector: '[data-tut="calculator"]',
+          content: `Welcome to the React 3D Calculator tour! 
+                    It's got all your standard numbers and operations to press at your hearts delight, but  
+                    watch out, it tilts as you touch it! (give it a try)`
+      
+        },
+        {
+          selector: '[data-tut="C"]',
+          content: `If you make a mistake you can erase your recent input with the C button here.`
+      
+        },
+        {
+          selector: '[data-tut="AC"]',
+          content: `To start from scratch hit the AC button to erase everything on the display.`
+      
+        },
+        {
+          selector: '[data-tut="toggle-theme"]',
+          content: `Try out the dark theme if your eyes get tired`
+      
+        },
+        {
+          selector: '[data-tut="lock"]',
+          content: `If you'd like your calculator to stay still hit the lock and it'll be so`
+      
+        },
+      ]
     };
 
     this.handleThemeToggle = this.handleThemeToggle.bind(this);
@@ -22,6 +54,9 @@ export default class CalculatorApp extends React.Component {
     this.handleClear = this.handleClear.bind(this);
     this.handleAllClear = this.handleAllClear.bind(this);
     this.handleLock = this.handleLock.bind(this);
+    this.toggleTour = this.toggleTour.bind(this);
+
+    
   }
 
   componentDidMount() {
@@ -266,6 +301,10 @@ export default class CalculatorApp extends React.Component {
     });
   }
 
+  toggleTour(){
+    this.setState({isTourOpen: !this.state.isTourOpen});
+  }
+
   render() {
     return (
       <div
@@ -273,9 +312,15 @@ export default class CalculatorApp extends React.Component {
           this.state.currentBaseColor == "dark"
             ? "calculator-dark"
             : "calculator"
-        }
+        } 
         id="calculatorApp"
+        data-tut="calculator"
       >
+
+        <Tour
+        steps={this.state.steps}
+        isOpen={this.state.isTourOpen}
+        onRequestClose={this.toggleTour}></Tour>
         <Header
           title="FCC Calculator App"
           themeToggleImage={this.state.currentBaseColor}
@@ -410,9 +455,11 @@ export default class CalculatorApp extends React.Component {
           <InputButton
             id="lock"
             class="inputButton"
+            buttonText="lock"
             buttonImage="lock"
             onClick={this.handleLock}
             theme={this.state.currentBaseColor}
+           
           />
           <InputButton
             id="zero"

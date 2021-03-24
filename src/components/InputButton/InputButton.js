@@ -18,13 +18,17 @@ export default class InputButton extends React.Component{
 
 
     render(){
+    
         return (
-            <div className={this.props.class}>
+            <div className={this.props.class} >
                 <button className= {this.props.class+"-"+this.props.theme}
                  id={this.props.id} 
                  onClick={this.props.onClick}
-                 value={this.props.buttonText}>
-                     {this.props.buttonText    ? 
+                 value={this.props.buttonText}
+                 data-tut= {this.props.buttonText}
+                 >
+                     
+                {this.props.buttonText != "lock"   ? 
                      this.props.buttonText :  
                      <img className= {"lock-button-"+this.props.theme} src={LockIcon}
           alt="lock calculator" />}

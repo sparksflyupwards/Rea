@@ -8,7 +8,7 @@ function AppTitle(props) {
 
 function ThemeToggle(props) {
   return (
-    <div id="themeToggle">
+    <div id="themeToggle" data-tut="toggle-theme"> 
       <button className= {props.themeToggleImage == "dark" ? "themeToggleBtn-dark" : "themeToggleBtn"} onClick={props.handleThemeToggle}>
         <img
           src={ThemeToggleIcon[props.themeToggleImage]["icon"]}
@@ -31,6 +31,7 @@ export default class DisplayPanel extends React.Component {
         <ThemeToggle
           handleThemeToggle={this.props.handleThemeToggle}
           themeToggleImage={this.props.themeToggleImage}
+          
         />
       </div>
     );
