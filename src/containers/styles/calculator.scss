@@ -32,17 +32,19 @@
 
   @mixin numberPad {
     display: grid;
-    overflow:visible
   }
   
   
 
 
   /** Calculator coloring rules **/
+
   .calculator {
     text-align: center;
     background-color: #FFBF47;
     color: black;
+    
+    
     
   }
   
@@ -55,24 +57,25 @@
   
 
   /* Calculator desktop sizing rules */
-  $grid-width: 25%;
-  $grid-height: 25%;
+  $grid-width: 13vw;
+  $grid-height: 13vh;
 
   .numberPad{
     @include numberPad();
     grid-template-columns: $grid-width $grid-width $grid-width $grid-width;
-    grid-template-rows: $grid-height $grid-height $grid-height $grid-height;
+    grid-template-rows: $grid-height $grid-height $grid-height $grid-height $grid-height;
     margin-top: 10%;
     min-height: 36%;
+
   }
   
   @mixin calculator {
-    width: 100%;
     margin: 4% auto;
-    height: $calculator-desktop-height;
-    width: $calculator-desktop-width;
+    height: fit-content;
+    
+    width: fit-content;
     border-radius: 5%;
-
+    
     box-shadow: inset 4px 2px 2px rgba(255, 255, 255, .4), inset -2px -2px 2px rgba(0, 0, 0, .4);
   }
   .calculator {
@@ -98,14 +101,14 @@
   @mixin calculatorMobileThin {
     @include calculatorMobile();
     margin: 20% auto;
-    height: $calculator-mobile-height-thin;
+    height: auto;
     width: $calculator-mobile-width-thin;
     }
 
   @mixin calculatorMobileWide {
     @include calculatorMobile();
     margin: 17% auto;
-    height: $calculator-mobile-height-wide;
+    height: auto;
     width: $calculator-mobile-width-wide;
   }
 
@@ -115,6 +118,7 @@
     /** for wider mobile viewports */
     .calculator {
         @include calculatorMobileWide();
+   
       }
       .calculator-dark {
         @include calculatorMobileWide();
@@ -128,7 +132,7 @@
         .numberPad{
            @include numberPad();
             grid-template-columns: $grid-width-mobile $grid-width-mobile $grid-width-mobile $grid-width-mobile;
-            grid-template-rows: $grid-height-mobile $grid-height-mobile $grid-height-mobile $grid-height-mobile;
+            grid-template-rows: $grid-height-mobile $grid-height-mobile $grid-height-mobile $grid-height-mobile $grid-height-mobile;
             margin-top: 4vh;
             margin-left: 0%;
             
@@ -143,8 +147,8 @@
         .numberPad{
             
             @include numberPad();
-            grid-template-columns: $grid-width $grid-width $grid-width $grid-width;
-            grid-template-rows: $grid-height $grid-height $grid-height $grid-height;
+            grid-template-columns: repeat( 4, $grid-width);
+            grid-template-rows: repeat( 5, $grid-height);
             margin-top: 19%;
             margin-left: 0%;
             

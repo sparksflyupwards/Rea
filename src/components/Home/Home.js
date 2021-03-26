@@ -62,23 +62,20 @@ const Navigation = ()=>{
         <div class="shape-blob one"></div>
         <div class="shape-blob two"></div>  
         <nav>
-        <ul>
-          <ul>
             <Link to="/"><h1>3D Calculator</h1></Link>
-          </ul>
-          <ul>
-            <Link to="/CalculatorTutorial">
-                <button type="button" className="entryButton">
-                    Take a tutorial
-                </button>
-            </Link>
-            <Link to="/Calculator">
-                <button type="button" className="entryButton">
-                    Just get starterd
-                </button>
-            </Link>
-          </ul>
-        </ul>
+            
+            <div className="entryPad">
+                    <Link to="/CalculatorTutorial">
+                        <button type="button" className="entryButton">
+                            Take a tutorial
+                        </button>
+                    </Link>
+                    <Link to="/Calculator">
+                        <button type="button" className="entryButton">
+                            Just get starterd
+                        </button>
+                    </Link>
+            </div>
       </nav>
       </div>
       </motion.div>

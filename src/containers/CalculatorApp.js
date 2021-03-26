@@ -317,7 +317,6 @@ export default class CalculatorApp extends React.Component {
               opacity: 0 }}
       transition={{ duration: 1 }}
     > 
-            <div className="appContainer">
                 <div className={
                     this.state.currentBaseColor == "dark"
                       ? "calculator-dark"
@@ -326,25 +325,25 @@ export default class CalculatorApp extends React.Component {
                   id="calculatorApp"
                   data-tut="calculator"
                 >
-                  <Tour
-                    steps={this.state.steps}
-                    isOpen={this.state.isTourOpen}
-                    onRequestClose={this.toggleTour}
-                  ></Tour>
-                  <Header
-                    title="FCC Calculator App"
-                    themeToggleImage={this.state.currentBaseColor}
-                    handleThemeToggle={this.handleThemeToggle}
-                  />
+                      <Tour
+                        steps={this.state.steps}
+                        isOpen={this.state.isTourOpen}
+                        onRequestClose={this.toggleTour}
+                      ></Tour>
+                      <Header
+                        title="FCC Calculator App"
+                        themeToggleImage={this.state.currentBaseColor}
+                        handleThemeToggle={this.handleThemeToggle}
+                      />
 
-                  <DisplayPanel
-                    theme={this.state.currentBaseColor}
-                    input={this.state.input}
-                    expression={this.state.expression}
-                    displayHelp={this.state.displayHelp}
-                  />
+                      <DisplayPanel
+                        theme={this.state.currentBaseColor}
+                        input={this.state.input}
+                        expression={this.state.expression}
+                        displayHelp={this.state.displayHelp}
+                      />
 
-                  <div className="numberPad">
+                      <div className="numberPad">
                     <InputButton
                       id="clear"
                       class="inputButton"
@@ -485,8 +484,8 @@ export default class CalculatorApp extends React.Component {
                       theme={this.state.currentBaseColor}
                     />
                   </div>
+
                 </div>
-            </div>
        </motion.div> 
     );
   }

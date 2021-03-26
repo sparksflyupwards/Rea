@@ -1,5 +1,17 @@
 @import url('https://fonts.googleapis.com/css?family=Playfair+Display:400,900');
 
+a {
+    text-decoration: none;
+}
+.entryPad{
+    margin: 0 auto;
+}
+nav {
+    display: flex;
+    flex-direction: column;
+    
+
+}
 .entryButton{
     background: none;
     display:inline-block;
@@ -16,17 +28,19 @@
     transition: all 0.25s;
 
     margin-top: 5%;
-    
+
 }
 
 .entryButton:hover{
     color:#DDDDDD;
     border-color:#DDDDDD;
+    animation: neonOutward 1.5s ease-in-out infinite alternate; 
 }
 
 .entryButton:active{
     color:#BBBBBB;
     border-color:#BBBBBB;
+    outline: none;
 }
  
 
@@ -113,6 +127,17 @@
      }
     100% {
        box-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #fff, 0 0 20px #FF1177, 0 0 35px #FF1177, 0 0 40px #FF1177, 0 0 50px #FF1177, 0 0 75px #FF1177 inset;
+    }
+  }
+  @keyframes neonOutward {
+    0% {
+      box-shadow: 0 0 6px #fff, 0 0 20px #fff, 0 0 30px #fff, 0 0 40px #FF1177, 0 0 70px #FF1177, 0 0 80px #FF1177, 0 0 100px #FF1177, 0 0 150px #FF1177 ;
+    }
+    50% {
+        box-shadow: 0 0 3px #fff, 0 0 15px #fff, 0 0 20px #fff, 0 0 30px #FF1177, 0 0 55px #FF1177, 0 0 60px #FF1177, 0 0 75px #FF1177, 0 0 90px #FF1177 ;
+     }
+    100% {
+       box-shadow: 0 0 6px #fff, 0 0 10px #fff, 0 0 15px #fff, 0 0 20px #FF1177, 0 0 35px #FF1177, 0 0 40px #FF1177, 0 0 50px #FF1177, 0 0 75px #FF1177 ;
     }
   }
 h1 {
