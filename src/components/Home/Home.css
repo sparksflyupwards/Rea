@@ -1,8 +1,39 @@
 @import url('https://fonts.googleapis.com/css?family=Playfair+Display:400,900');
 
+.entryButton{
+    background: none;
+    display:inline-block;
+    padding:0.5em 3em;
+    border:0.16em solid #FFFFFF;
+    margin:0 0.3em 0.3em 0;
+    box-sizing: border-box;
+    text-decoration:none;
+    text-transform:uppercase;
+    font-family:'Roboto',sans-serif;
+    font-weight:400;
+    color:#FFFFFF;
+    text-align:center;
+    transition: all 0.25s;
 
+    margin-top: 5%;
+    
+}
+
+.entryButton:hover{
+    color:#DDDDDD;
+    border-color:#DDDDDD;
+}
+
+.entryButton:active{
+    color:#BBBBBB;
+    border-color:#BBBBBB;
+}
+ 
+
+    
 .home {
-	background: #0A2463;
+    background: rgb(238,174,202);
+    background: radial-gradient(circle, rgba(238,174,202,1) 0%, rgba(148,187,233,1) 100%);
 	min-height: 120vh;
     min-width: 120vw;
 	display: flex;
@@ -14,13 +45,15 @@
 }
 
 .shape-blob {
-	background:#ED1250;
+	background:#9CFFFA;
 	height: 10%;
 	width: 10%;
 	border-radius: 30% 50% 20% 40%;
   	animation: 
 		transform 20s ease-in-out infinite both alternate,
-		movement_one 40s ease-in-out infinite both;
+		movement_one 40s ease-in-out infinite both,
+         neon1 1.5s ease-in-out infinite alternate;
+    transition: all 0.5s;
 	opacity:.7;
 	position: absolute;
 	left: 70%;
@@ -32,7 +65,7 @@
 	left: -200px;
 	top: -150px;
 	transform: rotate(-180deg);
-	animation: transform 30s ease-in-out infinite both alternate, movement_two 60s ease-in-out infinite both;
+	animation: transform 30s ease-in-out infinite both alternate, movement_two 60s ease-in-out infinite both, neon1 3s ease-in-out infinite alternate;
 }
 
 .shape-blob.two{
@@ -41,7 +74,9 @@
 	left: 500px;
 	top: -150px;
 	transform: rotate(-180deg);
-	animation: transform 30s ease-in-out infinite both alternate, movement_two 60s ease-in-out infinite both;
+	animation: transform 30s ease-in-out infinite both alternate,
+     movement_two 60s ease-in-out infinite both,
+     neon1 3s ease-in-out infinite alternate;
 }
 
 @keyframes transform
@@ -69,6 +104,17 @@
    50% { transform: translate(50%, 20%) rotate(-200deg) scale(1.2);}
 }
 
+@keyframes neon1 {
+    0% {
+      box-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #fff, 0 0 40px #FF1177, 0 0 70px #FF1177, 0 0 80px #FF1177, 0 0 100px #FF1177, 0 0 150px #FF1177 inset;
+    }
+    50% {
+        box-shadow: 0 0 7px #fff, 0 0 15px #fff, 0 0 20px #fff, 0 0 30px #FF1177, 0 0 55px #FF1177, 0 0 60px #FF1177, 0 0 75px #FF1177, 0 0 90px #FF1177 inset;
+     }
+    100% {
+       box-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #fff, 0 0 20px #FF1177, 0 0 35px #FF1177, 0 0 40px #FF1177, 0 0 50px #FF1177, 0 0 75px #FF1177 inset;
+    }
+  }
 h1 {
 	font-family: 'Playfair Display', serif;
 	font-size: 5em;

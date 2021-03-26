@@ -65,7 +65,8 @@ export default class CalculatorApp extends React.Component {
     });
     */
 
-    
+    const body = document.getElementsByTagName("BODY")[0];
+    body.style = 'min-height: 100vh\; background-color: #2edfd6\; background-image: repeating-linear-gradient(45deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2) 100px, transparent 0px, transparent 200px), repeating-linear-gradient(-45deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2) 100px, transparent 0px, transparent 200px)\; -webkit-user-select: none\; -moz-user-select: none\;-ms-user-select: none\;user-select: none\; -webkit-transition: all 0.2s\; transition: all 0.2s\; -webkit-transition: translate 2s\; transition: translate 2s'
     let isMobile;
     const devMode = false;
     const calculatorElement = document.getElementById("calculatorApp");
@@ -316,7 +317,7 @@ export default class CalculatorApp extends React.Component {
               opacity: 0 }}
       transition={{ duration: 1 }}
     > 
-            <div className="appContainer" style={StyleModules.bodyStyle}>
+            <div className="appContainer">
                 <div className={
                     this.state.currentBaseColor == "dark"
                       ? "calculator-dark"

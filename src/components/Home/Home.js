@@ -63,15 +63,21 @@ const Navigation = ()=>{
         <div class="shape-blob two"></div>  
         <nav>
         <ul>
-          <li>
-            <Link to="/"><h1>Home</h1></Link>
-          </li>
-          <li>
-            <Link to="/Calculator"><h1>Without a tutorial</h1></Link>
-          </li>
-          <li>
-            <Link to="/CalculatorTutorial"><h1>With a tutorial</h1></Link>
-          </li>
+          <ul>
+            <Link to="/"><h1>3D Calculator</h1></Link>
+          </ul>
+          <ul>
+            <Link to="/CalculatorTutorial">
+                <button type="button" className="entryButton">
+                    Take a tutorial
+                </button>
+            </Link>
+            <Link to="/Calculator">
+                <button type="button" className="entryButton">
+                    Just get starterd
+                </button>
+            </Link>
+          </ul>
         </ul>
       </nav>
       </div>
