@@ -279,8 +279,7 @@ export default class CalculatorApp extends React.Component {
       });
     } else {
       sum = sum.toFixed(4);
-      sum = JSON.stringify(sum);
-      //changes the input state
+      sum = Number(sum.toString()).toString(); // this removes trailing zeros
       this.setState((state) => {
         return {
           expression: sum,
