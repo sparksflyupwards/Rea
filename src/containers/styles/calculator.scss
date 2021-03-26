@@ -57,23 +57,24 @@
   
 
   /* Calculator desktop sizing rules */
-  $grid-width: 13vw;
-  $grid-height: 13vh;
+  $grid-width: 6.2em;
+  $grid-height: 6.2em;
 
   .numberPad{
     @include numberPad();
-    grid-template-columns: $grid-width $grid-width $grid-width $grid-width;
-    grid-template-rows: $grid-height $grid-height $grid-height $grid-height $grid-height;
+    grid-template-columns: repeat(4, $grid-width);
+    grid-template-rows: repeat(5, $grid-height);
     margin-top: 10%;
     min-height: 36%;
 
   }
   
   @mixin calculator {
+    width: 100%;
     margin: 4% auto;
     height: fit-content;
     
-    width: fit-content;
+    width: $calculator-desktop-width;
     border-radius: 5%;
     
     box-shadow: inset 4px 2px 2px rgba(255, 255, 255, .4), inset -2px -2px 2px rgba(0, 0, 0, .4);
@@ -101,15 +102,15 @@
   @mixin calculatorMobileThin {
     @include calculatorMobile();
     margin: 20% auto;
-    height: auto;
-    width: $calculator-mobile-width-thin;
+    height: fit-content;
+    width: fit-content;
     }
 
   @mixin calculatorMobileWide {
     @include calculatorMobile();
     margin: 17% auto;
-    height: auto;
-    width: $calculator-mobile-width-wide;
+    height: fit-content;
+    width: fit-content;
   }
 
 
@@ -126,13 +127,13 @@
        
      }
      
-        $grid-width-mobile: 25%;
-        $grid-height-mobile: 31%;
+        $grid-width-mobile: 4.5em;
+        $grid-height-mobile: 4.8em;
 
         .numberPad{
            @include numberPad();
-            grid-template-columns: $grid-width-mobile $grid-width-mobile $grid-width-mobile $grid-width-mobile;
-            grid-template-rows: $grid-height-mobile $grid-height-mobile $grid-height-mobile $grid-height-mobile $grid-height-mobile;
+            grid-template-columns: repeat(4, $grid-width-mobile);
+            grid-template-rows: repeat(5, $grid-height-mobile);
             margin-top: 4vh;
             margin-left: 0%;
             
@@ -141,8 +142,8 @@
       /** for thinner phones **/
       @media (max-aspect-ratio: 1/2) {
 
-        $grid-width: 25%;
-        $grid-height: 36%;
+        $grid-width: 4em;
+        $grid-height: 4.5em;
 
         .numberPad{
             

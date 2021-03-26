@@ -26,6 +26,7 @@ nav {
     color:#FFFFFF;
     text-align:center;
     transition: all 0.25s;
+    min-height: 5vh;
 
     margin-top: 5%;
 
