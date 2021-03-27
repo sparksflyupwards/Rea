@@ -53,6 +53,7 @@ export default class CalculatorApp extends React.Component {
     this.handleEvaluate = this.handleEvaluate.bind(this);
     this.handleClear = this.handleClear.bind(this);
     this.handleAllClear = this.handleAllClear.bind(this);
+    this.handleClearExpression = this.handleClearExpression.bind(this);
     this.handleLock = this.handleLock.bind(this);
     this.toggleTour = this.toggleTour.bind(this);
   }
@@ -254,9 +255,16 @@ export default class CalculatorApp extends React.Component {
     });
   }
   handleEvaluate() {
-    let sum, errorMessage;
-    if (this.state.expression && this.state.expression.indexOf("X") != -1) {
-      sum = eval(this.state.expression.replace("X", "*"));
+    let sum, terms, errorMessage;
+    terms = this.state.expression.split(" ");
+
+    if (terms && this.state.expression.indexOf("X") != -1) {
+      if(terms>=3){
+        sum = eval(this.state.expression.replace("X", "*"));
+      }
+      else {
+        errorMessage = "Invalid Expression"
+      }
       
     } else {
       try {
@@ -266,7 +274,6 @@ export default class CalculatorApp extends React.Component {
           sum = eval(this.state.expression);
         }
       } catch (exception) {
-        console.log(exception);
         errorMessage = "Error.";
       }
     }
@@ -274,6 +281,7 @@ export default class CalculatorApp extends React.Component {
     if (errorMessage) {
       this.setState((state) => {
         return {
+          expression: "",
           input: errorMessage,
         };
       });
@@ -287,6 +295,14 @@ export default class CalculatorApp extends React.Component {
         };
       });
     }
+  }
+
+  handleClearExpression() {
+    this.setState((state) => {
+      return {
+        expression: "",
+      };
+    });
   }
   handleClear() {
     this.setState((state) => {
