@@ -155,8 +155,8 @@
 
 /* bigInputButton desktop sizing rules */
 .bigInputButton {
-  width: 3vw;
-  height: 10vw;
+  width: 3.5vw;
+  height: 20.5vh;
 }
 
 .bigInputButton-light {
@@ -165,7 +165,7 @@
   border-radius: 20%;
   border: 0;
   margin-top: -10%;
-  margin-left: 70%;
+  margin-left: 50%;
   outline: none;
   -webkit-box-shadow: inset 4px 2px 2px rgba(255, 255, 255, 0.178), inset -2px -2px 2px rgba(0, 0, 0, 0.4);
           box-shadow: inset 4px 2px 2px rgba(255, 255, 255, 0.178), inset -2px -2px 2px rgba(0, 0, 0, 0.4);
@@ -184,7 +184,7 @@
   border-radius: 20%;
   border: 0;
   margin-top: -10%;
-  margin-left: 70%;
+  margin-left: 50%;
   outline: none;
   -webkit-box-shadow: inset 4px 2px 2px rgba(255, 255, 255, 0.4), inset -2px -2px 2px rgba(0, 0, 0, 0.4);
           box-shadow: inset 4px 2px 2px rgba(255, 255, 255, 0.4), inset -2px -2px 2px rgba(0, 0, 0, 0.4);
@@ -198,43 +198,71 @@
 }
 
 /** bigButton iPad and smaller desktop viewports **/
-@media only screen and (max-width: 1100px) {
+@media only screen and (pointer: none), (pointer: coarse), (max-width: 1200px) {
   .bigInputButton-light {
-    width: 8vw;
-    height: 22.2vw;
-    margin-right: 6%;
+    width: 4vw;
+    height: 21vh;
+    margin-left: 60%;
   }
   .bigInputButton-dark {
-    width: 8vw;
-    height: 22.2vw;
-    margin-right: 6%;
+    width: 4vw;
+    height: 21vh;
+    margin-left: 60%;
   }
 }
 
-/** bigButton wide desktop viewports **/
-@media only screen and (max-width: 900px) {
+/** between wide and full **/
+@media only screen and (pointer: none), (pointer: coarse), (max-width: 1050px) {
   .bigInputButton-light {
-    width: 7vw;
-    height: 18vw;
-    margin-right: 6%;
+    width: 4.5vw;
+    height: 22vh;
+    margin-left: 70%;
   }
   .bigInputButton-dark {
-    width: 7vw;
-    height: 18vw;
-    margin-right: 6%;
+    width: 4.5vw;
+    height: 22vh;
+    margin-left: 70%;
+  }
+}
+
+/** bigButton and thin desktop viewports **/
+@media only screen and (pointer: none), (pointer: coarse), (max-width: 900px) {
+  .bigInputButton-light {
+    width: 6vw;
+    height: 15vh;
+    margin-left: 90%;
+  }
+  .bigInputButton-dark {
+    width: 6vw;
+    height: 15vh;
+    margin-left: 90%;
+  }
+}
+
+/** between thin desktop and mobile **/
+@media only screen and (pointer: none), (pointer: coarse), (max-width: 750px) {
+  .bigInputButton-light {
+    width: 6vw;
+    height: 19vh;
+    margin-left: 140%;
+  }
+  .bigInputButton-dark {
+    width: 6vw;
+    height: 19vh;
+    margin-left: 140%;
   }
 }
 
 /** Big button mobile sizing rules */
 /* bigInputButton mobile sizing rules */
-@media only screen and (max-width: 600px) {
+@media only screen and (pointer: none), (pointer: coarse), (max-width: 600px) {
   .bigInputButton-light {
     border-radius: 20%;
     border: 0;
     outline: none;
-    width: 6vw;
-    height: 18vw;
-    margin-left: 60%;
+    width: 8vw;
+    height: 15vh;
+    margin-left: 90%;
     -webkit-box-shadow: inset 4px 2px 2px rgba(255, 255, 255, 0.178), inset -2px -2px 2px rgba(0, 0, 0, 0.4);
             box-shadow: inset 4px 2px 2px rgba(255, 255, 255, 0.178), inset -2px -2px 2px rgba(0, 0, 0, 0.4);
   }
@@ -248,9 +276,9 @@
     border-radius: 20%;
     border: 0;
     outline: none;
-    width: 6vw;
-    height: 18vw;
-    margin-left: 60%;
+    width: 8vw;
+    height: 15vh;
+    margin-left: 90%;
     -webkit-box-shadow: inset 4px 2px 2px rgba(255, 255, 255, 0.4), inset -2px -2px 2px rgba(0, 0, 0, 0.4);
             box-shadow: inset 4px 2px 2px rgba(255, 255, 255, 0.4), inset -2px -2px 2px rgba(0, 0, 0, 0.4);
   }
@@ -263,21 +291,21 @@
   /** sizing rules for thin view ports */
 }
 
-@media only screen and (max-width: 600px) and (max-aspect-ratio: 1 / 2) {
+@media only screen and (pointer: none) and (max-aspect-ratio: 1 / 2), (pointer: coarse) and (max-aspect-ratio: 1 / 2), (max-width: 600px) and (max-aspect-ratio: 1 / 2) {
   .bigInputButton-light {
     border-radius: 20%;
     border: 0;
     outline: none;
-    width: 9.5vw;
-    height: 28vw;
+    width: 8.5vw;
+    height: 12.5vh;
     margin-left: 100%;
   }
   .bigInputButton-dark {
     border-radius: 20%;
     border: 0;
     outline: none;
-    width: 9.5vw;
-    height: 28vw;
+    width: 8.5vw;
+    height: 12.5vh;
     margin-left: 100%;
   }
 }
