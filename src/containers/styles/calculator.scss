@@ -124,8 +124,8 @@
        
      }
      
-        $grid-width-mobile: 4.5em;
-        $grid-height-mobile: 4.8em;
+        $grid-width-mobile: 3.5em;
+        $grid-height-mobile: 3.8em;
 
         .numberPad{
            @include numberPad();
@@ -139,8 +139,8 @@
       /** for thinner phones **/
       @media (max-aspect-ratio: 1/2) {
 
-        $grid-width: 4em;
-        $grid-height: 4.5em;
+        $grid-width: 3.5em;
+        $grid-height: 3.8em;
 
         .numberPad{
             
@@ -148,7 +148,8 @@
             grid-template-columns: repeat( 4, $grid-width);
             grid-template-rows: repeat( 5, $grid-height);
             margin-top: 19%;
-            margin-left: 0%;
+            padding-left: 1%;
+            padding-right: 1%;
             
           }
           .calculator {

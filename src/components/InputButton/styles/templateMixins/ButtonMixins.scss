@@ -1,0 +1,35 @@
+$lightShadow: inset 4px 2px 2px rgba(255, 255, 255, .4), inset -2px -2px 2px rgba(0, 0, 0, .4);
+$darkShadow: inset 4px 2px 2px rgba(255, 255, 255, 0.178), inset -2px -2px 2px rgba(0, 0, 0, .4);
+$transition-time: 0.2s;
+
+
+.lock-button-light {
+    opacity: 0.70;
+}
+.lock-button-dark {
+    filter: brightness(0) invert(1);
+    opacity: 0.8;
+}
+/* inputButton coloring rules */
+@mixin inputButtonLightTheme {
+    color: black;
+    background-color: inherit;
+
+}
+
+@mixin inputButtonDarkTheme {
+    color: white;
+    background-color: inherit;
+}
+
+
+@mixin inputButtonLightTheme {
+    color: black;
+    background-color: inherit;
+
+}
+
+@mixin inputButtonDarkTheme {
+    color: white;
+    background-color: inherit;
+}
