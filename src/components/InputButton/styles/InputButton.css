@@ -9,140 +9,6 @@
 }
 
 /* inputButton coloring rules */
-.lock-button-light {
-  opacity: 0.70;
-}
-
-.lock-button-dark {
-  -webkit-filter: brightness(0) invert(1);
-          filter: brightness(0) invert(1);
-  opacity: 0.8;
-}
-
-/* inputButton coloring rules */
-/** global styling rules **/
-.inputButton-light {
-  color: black;
-  background-color: inherit;
-}
-
-.inputButton-dark {
-  color: white;
-  background-color: inherit;
-}
-
-/* inputButton desktop sizing rules */
-.inputButton-light {
-  width: 4.5vw;
-  height: 4.5vw;
-  border-radius: 50%;
-  border: 0;
-  outline: none;
-  -webkit-box-shadow: inset 4px 2px 2px rgba(255, 255, 255, 0.178), inset -2px -2px 2px rgba(0, 0, 0, 0.4);
-          box-shadow: inset 4px 2px 2px rgba(255, 255, 255, 0.178), inset -2px -2px 2px rgba(0, 0, 0, 0.4);
-}
-
-.inputButton-light:active {
-  -webkit-transform: translateY(12%) scaleX(0.9) scaleY(0.9) rotateX(10deg);
-          transform: translateY(12%) scaleX(0.9) scaleY(0.9) rotateX(10deg);
-  -webkit-transition: all 0.2s;
-  transition: all 0.2s;
-}
-
-.inputButton-dark {
-  width: 4.5vw;
-  height: 4.5vw;
-  border-radius: 50%;
-  border: 0;
-  outline: none;
-  -webkit-box-shadow: inset 4px 2px 2px rgba(255, 255, 255, 0.4), inset -2px -2px 2px rgba(0, 0, 0, 0.4);
-          box-shadow: inset 4px 2px 2px rgba(255, 255, 255, 0.4), inset -2px -2px 2px rgba(0, 0, 0, 0.4);
-}
-
-.inputButton-dark:active {
-  -webkit-transform: translateY(12%) scaleX(0.9) scaleY(0.9) rotateX(10deg);
-          transform: translateY(12%) scaleX(0.9) scaleY(0.9) rotateX(10deg);
-  -webkit-transition: all 0.2s;
-  transition: all 0.2s;
-}
-
-/** iPads or wide shorter desktop viewports */
-@media only screen and (max-width: 1100px) {
-  .inputButton-light {
-    width: 6vw;
-    height: 6vw;
-  }
-  .inputButton-dark {
-    width: 6vw;
-    height: 6vw;
-  }
-}
-
-/** wide shorter desktop viewports */
-@media only screen and (max-width: 900px) {
-  .inputButton-light {
-    width: 7vw;
-    height: 7vw;
-  }
-  .inputButton-dark {
-    width: 7vw;
-    height: 7vw;
-  }
-}
-
-/* inputButton mobile sizing rules */
-@media only screen and (max-width: 400px) {
-  .inputButton-light {
-    border-radius: 50%;
-    border: 0;
-    outline: none;
-    width: 10vw;
-    height: 10vw;
-    -webkit-box-shadow: inset 4px 2px 2px rgba(255, 255, 255, 0.178), inset -2px -2px 2px rgba(0, 0, 0, 0.4);
-            box-shadow: inset 4px 2px 2px rgba(255, 255, 255, 0.178), inset -2px -2px 2px rgba(0, 0, 0, 0.4);
-  }
-  .inputButton-light:active {
-    -webkit-transform: translateY(12%) scaleX(0.9) scaleY(0.9) rotateX(10deg);
-            transform: translateY(12%) scaleX(0.9) scaleY(0.9) rotateX(10deg);
-    -webkit-transition: all 0.2s;
-    transition: all 0.2s;
-  }
-  .inputButton-dark {
-    border-radius: 50%;
-    border: 0;
-    outline: none;
-    width: 10vw;
-    height: 10vw;
-    -webkit-box-shadow: inset 4px 2px 2px rgba(255, 255, 255, 0.4), inset -2px -2px 2px rgba(0, 0, 0, 0.4);
-            box-shadow: inset 4px 2px 2px rgba(255, 255, 255, 0.4), inset -2px -2px 2px rgba(0, 0, 0, 0.4);
-  }
-  .inputButton-dark:active {
-    -webkit-transform: translateY(12%) scaleX(0.9) scaleY(0.9) rotateX(10deg);
-            transform: translateY(12%) scaleX(0.9) scaleY(0.9) rotateX(10deg);
-    -webkit-transition: all 0.2s;
-    transition: all 0.2s;
-  }
-  /** sizing rules for thin viewports **/
-}
-
-@media only screen and (max-width: 400px) and (max-aspect-ratio: 1 / 2) {
-  .inputButton-light {
-    border-radius: 50%;
-    border: 0;
-    outline: none;
-    width: 11vw;
-    height: 11vw;
-  }
-  .inputButton-dark {
-    border-radius: 50%;
-    border: 0;
-    outline: none;
-    width: 11vw;
-    height: 11vw;
-  }
-}
-
-/** big button **/
 .bigInputButton-light {
   color: black;
   background-color: inherit;
@@ -307,6 +173,139 @@
     width: 8.5vw;
     height: 12.5vh;
     margin-left: 100%;
+  }
+}
+
+.lock-button-light {
+  opacity: 0.70;
+}
+
+.lock-button-dark {
+  -webkit-filter: brightness(0) invert(1);
+          filter: brightness(0) invert(1);
+  opacity: 0.8;
+}
+
+/* inputButton coloring rules */
+/** global styling rules **/
+.inputButton-light {
+  color: black;
+  background-color: inherit;
+}
+
+.inputButton-dark {
+  color: white;
+  background-color: inherit;
+}
+
+/* inputButton desktop sizing rules */
+.inputButton-light {
+  width: 4.5vw;
+  height: 4.5vw;
+  border-radius: 50%;
+  border: 0;
+  outline: none;
+  -webkit-box-shadow: inset 4px 2px 2px rgba(255, 255, 255, 0.178), inset -2px -2px 2px rgba(0, 0, 0, 0.4);
+          box-shadow: inset 4px 2px 2px rgba(255, 255, 255, 0.178), inset -2px -2px 2px rgba(0, 0, 0, 0.4);
+}
+
+.inputButton-light:active {
+  -webkit-transform: translateY(12%) scaleX(0.9) scaleY(0.9) rotateX(10deg);
+          transform: translateY(12%) scaleX(0.9) scaleY(0.9) rotateX(10deg);
+  -webkit-transition: all 0.2s;
+  transition: all 0.2s;
+}
+
+.inputButton-dark {
+  width: 4.5vw;
+  height: 4.5vw;
+  border-radius: 50%;
+  border: 0;
+  outline: none;
+  -webkit-box-shadow: inset 4px 2px 2px rgba(255, 255, 255, 0.4), inset -2px -2px 2px rgba(0, 0, 0, 0.4);
+          box-shadow: inset 4px 2px 2px rgba(255, 255, 255, 0.4), inset -2px -2px 2px rgba(0, 0, 0, 0.4);
+}
+
+.inputButton-dark:active {
+  -webkit-transform: translateY(12%) scaleX(0.9) scaleY(0.9) rotateX(10deg);
+          transform: translateY(12%) scaleX(0.9) scaleY(0.9) rotateX(10deg);
+  -webkit-transition: all 0.2s;
+  transition: all 0.2s;
+}
+
+/** iPads or wide shorter desktop viewports */
+@media only screen and (max-width: 1100px) {
+  .inputButton-light {
+    width: 6vw;
+    height: 6vw;
+  }
+  .inputButton-dark {
+    width: 6vw;
+    height: 6vw;
+  }
+}
+
+/** wide shorter desktop viewports */
+@media only screen and (max-width: 900px) {
+  .inputButton-light {
+    width: 7vw;
+    height: 7vw;
+  }
+  .inputButton-dark {
+    width: 7vw;
+    height: 7vw;
+  }
+}
+
+/* inputButton mobile sizing rules */
+@media only screen and (max-width: 400px) {
+  .inputButton-light {
+    border-radius: 50%;
+    border: 0;
+    outline: none;
+    width: 10vw;
+    height: 10vw;
+    -webkit-box-shadow: inset 4px 2px 2px rgba(255, 255, 255, 0.178), inset -2px -2px 2px rgba(0, 0, 0, 0.4);
+            box-shadow: inset 4px 2px 2px rgba(255, 255, 255, 0.178), inset -2px -2px 2px rgba(0, 0, 0, 0.4);
+  }
+  .inputButton-light:active {
+    -webkit-transform: translateY(12%) scaleX(0.9) scaleY(0.9) rotateX(10deg);
+            transform: translateY(12%) scaleX(0.9) scaleY(0.9) rotateX(10deg);
+    -webkit-transition: all 0.2s;
+    transition: all 0.2s;
+  }
+  .inputButton-dark {
+    border-radius: 50%;
+    border: 0;
+    outline: none;
+    width: 10vw;
+    height: 10vw;
+    -webkit-box-shadow: inset 4px 2px 2px rgba(255, 255, 255, 0.4), inset -2px -2px 2px rgba(0, 0, 0, 0.4);
+            box-shadow: inset 4px 2px 2px rgba(255, 255, 255, 0.4), inset -2px -2px 2px rgba(0, 0, 0, 0.4);
+  }
+  .inputButton-dark:active {
+    -webkit-transform: translateY(12%) scaleX(0.9) scaleY(0.9) rotateX(10deg);
+            transform: translateY(12%) scaleX(0.9) scaleY(0.9) rotateX(10deg);
+    -webkit-transition: all 0.2s;
+    transition: all 0.2s;
+  }
+  /** sizing rules for thin viewports **/
+}
+
+@media only screen and (max-width: 400px) and (max-aspect-ratio: 1 / 2) {
+  .inputButton-light {
+    border-radius: 50%;
+    border: 0;
+    outline: none;
+    width: 11vw;
+    height: 11vw;
+  }
+  .inputButton-dark {
+    border-radius: 50%;
+    border: 0;
+    outline: none;
+    width: 11vw;
+    height: 11vw;
   }
 }
 /*# sourceMappingURL=InputButton.css.map */
