@@ -1,5 +1,5 @@
 
-import "./Home.css";
+import "./styles/Home.css";
 import React from "react";
 import CalculatorApp from "./../../containers/CalculatorApp";
 
@@ -13,7 +13,7 @@ import {
 import { AnimatePresence, motion } from "framer-motion";
 
 
-import * as PageTransitionRules from "./pageTransitionRules/pageTranisitionRules"
+import * as PageTransitionRules from "./styles/pageTransitionRules/pageTranisitionRules"
 
 
 

@@ -1,0 +1,232 @@
+@import url('https://fonts.googleapis.com/css?family=Playfair+Display:400,900');
+
+a {
+    text-decoration: none;
+}
+.entryPad{
+    margin: 0 auto;
+}
+nav {
+    display: flex;
+    flex-direction: column;
+    
+
+}
+.entryButton{
+    background: none;
+    display:inline-block;
+    padding:0.5em 3em;
+    border:0.16em solid #FFFFFF;
+    margin:0 0.3em 0.3em 0;
+    box-sizing: border-box;
+    text-decoration:none;
+    text-transform:uppercase;
+    font-family:'Roboto',sans-serif;
+    font-weight:400;
+    color:#FFFFFF;
+    text-align:center;
+    transition: all 0.25s;
+    min-height: 5vh;
+
+    margin-top: 5%;
+
+}
+
+.entryButton:hover{
+    color:#DDDDDD;
+    border-color:#DDDDDD;
+    animation: neonOutward 1.5s ease-in-out infinite alternate; 
+}
+
+.entryButton:active{
+    color:#BBBBBB;
+    border-color:#BBBBBB;
+    outline: none;
+}
+ 
+
+    
+.home {
+    background: rgb(238,174,202);
+    background: radial-gradient(circle, rgba(238,174,202,1) 0%, rgba(148,187,233,1) 100%);
+	min-height: 120vh;
+    min-width: 120vw;
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: center;
+	overflow: hidden;
+	position: relative;
+}
+
+.shape-blob {
+	background:#9CFFFA;
+	height: 10%;
+	width: 10%;
+	border-radius: 30% 50% 20% 40%;
+  	animation: 
+		transform 20s ease-in-out infinite both alternate,
+		movement_one 40s ease-in-out infinite both,
+         neon1 1.5s ease-in-out infinite alternate;
+    transition: all 0.5s;
+	opacity:.7;
+	position: absolute;
+	left: 70%;
+	top: 50%;
+}
+.shape-blob.one{
+	height: 500px;
+	width: 500px;
+	left: -200px;
+	top: -150px;
+	transform: rotate(-180deg);
+	animation: transform 30s ease-in-out infinite both alternate, movement_two 60s ease-in-out infinite both, neon1 3s ease-in-out infinite alternate;
+}
+
+.shape-blob.two{
+	height: 350px;
+	width: 350px;
+	left: 500px;
+	top: -150px;
+	transform: rotate(-180deg);
+	animation: transform 30s ease-in-out infinite both alternate,
+     movement_two 60s ease-in-out infinite both,
+     neon1 3s ease-in-out infinite alternate;
+}
+
+
+h1 {
+	font-family: 'Playfair Display', serif;
+	font-size: 5em;
+	letter-spacing: 2px;
+	font-weight: 900;
+	color: white;
+	line-height: .9em;
+	position: relative;
+	z-index: 4;
+	text-shadow: 2px 3px 15px rgba(0,0,0,.15);
+
+}
+/* 
+  and (orientation: portrait) */ 
+@media only screen 
+  and (max-width: 650px)  {
+
+
+    h1 {
+      
+        font-size: 2em;
+        letter-spacing: 2px;
+        font-weight: 900;
+        line-height: .9em;
+        text-shadow: 2px 3px 15px rgba(0,0,0,.15);
+        margin: 0 10%;
+    }
+
+    .entryButton{
+        padding:0.1em 1em;
+        border:0.16em solid #FFFFFF;
+        margin:0 0.3em 0.3em 0;
+        font-weight:400;
+        min-height: 5vh;
+        margin-top: 7%;
+        animation: neonWhiteOutward 1.5s ease-in-out infinite alternate; 
+    
+    }
+
+
+
+    .shape-blob {
+        background:#9CFFFA;
+        height: 10%;
+        width: 10%;
+        border-radius: 30% 50% 20% 40%;
+        left: 20%;
+        top: 60%;
+    }
+    .shape-blob.one{
+        height: 30%;
+        width: 39%;
+        left: -2%;
+        top: -7%;
+    }
+    
+    .shape-blob.two{
+        height: 25%;
+        width: 25%;
+        left: 50%;
+        top: 15%;
+    }
+
+
+    
+
+}
+
+
+@keyframes transform
+{
+    0%,
+  100% { border-radius: 33% 67% 70% 30% / 30% 30% 70% 70%; } 
+   20% { border-radius: 37% 63% 51% 49% / 37% 65% 35% 63%; } 
+   40% { border-radius: 36% 64% 64% 36% / 64% 48% 52% 36%; } 
+   60% { border-radius: 37% 63% 51% 49% / 30% 30% 70% 70%; } 
+   80% { border-radius: 40% 60% 42% 58% / 41% 51% 49% 59%; } 
+}
+
+
+@keyframes movement_one
+{
+    0%,
+  100% { transform: none; }
+   50% { transform: translate(50%, 20%) rotateY(10deg) scale(1.2); }
+}
+
+@keyframes movement_two
+{
+    0%,
+  500% { transform: none; }
+   50% { transform: translate(50%, 20%) rotate(-200deg) scale(1.2);}
+}
+
+
+$NeonColor: #FF1177;
+$NeonWhiteColor: #fff;
+
+@keyframes neon1 {
+    0% {
+      box-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #fff, 0 0 40px $NeonColor, 0 0 70px $NeonColor, 0 0 80px $NeonColor, 0 0 100px $NeonColor, 0 0 150px $NeonColor inset;
+    }
+    50% {
+        box-shadow: 0 0 7px #fff, 0 0 15px #fff, 0 0 20px #fff, 0 0 30px $NeonColor, 0 0 55px $NeonColor, 0 0 60px $NeonColor, 0 0 75px $NeonColor, 0 0 90px $NeonColor inset;
+     }
+    100% {
+       box-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #fff, 0 0 20px $NeonColor, 0 0 35px $NeonColor, 0 0 40px $NeonColor, 0 0 50px $NeonColor, 0 0 75px $NeonColor inset;
+    }
+  }
+
+  @keyframes neonOutward {
+    0% {
+      box-shadow: 0 0 6px #fff, 0 0 20px #fff, 0 0 30px #fff, 0 0 40px $NeonColor, 0 0 70px $NeonColor, 0 0 80px $NeonColor, 0 0 100px $NeonColor, 0 0 150px $NeonColor ;
+    }
+    50% {
+        box-shadow: 0 0 3px #fff, 0 0 15px #fff, 0 0 20px #fff, 0 0 30px $NeonColor, 0 0 55px $NeonColor, 0 0 60px $NeonColor, 0 0 75px $NeonColor, 0 0 90px $NeonColor ;
+     }
+    100% {
+       box-shadow: 0 0 6px #fff, 0 0 10px #fff, 0 0 15px #fff, 0 0 20px $NeonColor, 0 0 35px $NeonColor, 0 0 40px $NeonColor, 0 0 50px $NeonColor, 0 0 75px $NeonColor ;
+    }
+  }
+
+  @keyframes neonWhiteOutward {
+    0% {
+      box-shadow: 0 0 3px #fff, 0 0 10px #fff, 0 0 15px #fff, 0 0 20px $NeonWhiteColor, 0 0 70px $NeonWhiteColor, 0 0 30px $NeonWhiteColor, 0 0 50px $NeonWhiteColor, 0 0 75px $NeonWhiteColor ;
+    }
+    50% {
+        box-shadow: 0 0 1.5px #fff, 0 0 7.5px #fff, 0 0 10px #fff, 0 0 15px $NeonWhiteColor, 0 0 55px $NeonWhiteColor, 0 0 30px $NeonWhiteColor, 0 0 38px $NeonWhiteColor, 0 0 45px $NeonWhiteColor ;
+     }
+    100% {
+       box-shadow: 0 0 3px #fff, 0 0 5px #fff, 0 0 7.5px #fff, 0 0 10px $NeonWhiteColor, 0 0 35px $NeonWhiteColor, 0 0 20px $NeonWhiteColor, 0 0 25px $NeonWhiteColor, 0 0 38px $NeonWhiteColor ;
+    }
+  }
+
+
