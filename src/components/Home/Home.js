@@ -1,6 +1,6 @@
 
 import "./styles/Home.css";
-import React from "react";
+import React , { useEffect } from 'react';
 import CalculatorApp from "./../../containers/CalculatorApp";
 import Typing from 'react-typing-animation';
 
@@ -19,6 +19,56 @@ import * as PageTransitionRules from "./styles/pageTransitionRules/pageTranisiti
 
 
 const Home = ()=>{
+
+    //prevents scrolling
+    useEffect(() => {
+        function handleScroll(e) {
+
+            var keys = {37: 1, 38: 1, 39: 1, 40: 1};
+
+            function preventDefault(e) {
+            e.preventDefault();
+            }
+            function preventDefaultForScrollKeys(e) {
+                if (keys[e.keyCode]) {
+                  preventDefault(e);
+                  return false;
+                }
+              }
+              
+              //Chrome requires { passive: false } 
+              var supportsPassive = false;
+              try {
+                window.addEventListener("test", null, Object.defineProperty({}, 'passive', {
+                  get: function () { supportsPassive = true; } 
+                }));
+              } catch(e) {}
+              
+              var wheelOpt = supportsPassive ? { passive: false } : false;
+              var wheelEvent = 'onwheel' in document.createElement('div') ? 'wheel' : 'mousewheel';
+              
+              // call this to Disable
+              function disableScroll() {
+                window.addEventListener('DOMMouseScroll', preventDefault, false); // older FF
+                window.addEventListener(wheelEvent, preventDefault, wheelOpt); // modern desktop
+                window.addEventListener('touchmove', preventDefault, wheelOpt); // mobile
+                window.addEventListener('keydown', preventDefaultForScrollKeys, false);
+              }
+
+              disableScroll();
+        }
+    
+        document.addEventListener('scroll', handleScroll);
+        
+    
+        return () => {
+          window.removeEventListener('scroll', handleScroll);
+        };
+
+
+      }, []);
+
+
     return(
 
         <Router>
