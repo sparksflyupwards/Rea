@@ -283,14 +283,18 @@ export default class CalculatorApp extends React.Component {
     });
   }
   handleEvaluate() {
-    let sum, terms, errorMessage;
-    terms = this.state.expression.split(" ");
 
+    let sum, terms, errorMessage;
+    terms = this.state.expression.split(" ").filter((char)=> char != "");
+    console.log(terms)
     if (terms && this.state.expression.indexOf("X") != -1) {
-      if (terms >= 3) {
-        sum = eval(this.state.expression.replace("X", "*"));
+     
+      if (terms.length >= 3 && terms[terms.length-1]!="-") {
+      
+          sum = eval(this.state.expression.replace("X", "*"));
+       
       } else {
-        errorMessage = "Invalid Expression";
+        errorMessage = "Invalid Input";
       }
     } else {
       try {
