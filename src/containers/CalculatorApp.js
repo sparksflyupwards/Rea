@@ -1,12 +1,12 @@
 import "./styles/calculator.css";
-import * as StyleModules  from "./styles/modules/styles"
+import * as StyleModules from "./styles/modules/styles";
 import React, { Component } from "react";
 
 import DisplayPanel from "../components/DisplayPanel/DisplayPanel";
 import Header from "../components/Header/Header";
 import InputButton from "../components/InputButton/InputButton";
 
-import {motion} from "framer-motion";
+import { motion } from "framer-motion";
 import Tour from "reactour";
 
 export default class CalculatorApp extends React.Component {
@@ -21,66 +21,59 @@ export default class CalculatorApp extends React.Component {
       steps: [
         {
           selector: '[data-tut="tr"]',
-          content: ()=>(
+          content: () => (
             <div className="helperCard">
-                    Welcome to the React 3D Calculator tour! 
-                    Lets get started, and remember, you can exit anytime and play with the app as you go...
+              Welcome to the 3D Calculator! Lets get started, and remember, you
+              can exit anytime and play with the app as you go...
             </div>
-            )
-          
-          
-,
+          ),
         },
         {
           selector: '[data-tut="calculator"]',
-          content: ()=>(
+          content: () => (
             <div className="helperCard">
-          
-          Here you will find our state of the art, touch if you dare, calculator lovingly built with ReactJS. It's got all your standard numbers and operations to press at your hearts delight, but  
-                    watch out, it tilts as you touch it!
-                    </div>)            
-        ,
+              Here you will find our state of the art, touch if you dare, 3d
+              calculator lovingly built with ReactJS. It's got all your standard
+              numbers and operations at your fingertips, but watch out, it tilts
+              as you touch it!
+            </div>
+          ),
         },
         {
           selector: '[data-tut="C"]',
-          content:
-          
-          ()=>(
+          content: () => (
             <div className="helperCard">
-          
-          If you make a mistake you can erase your recent input with the C button here.
-                    </div>)    
-          
-          ,
+              If you make a mistake you can erase your last input with the
+              Correction button here.
+            </div>
+          ),
         },
         {
           selector: '[data-tut="AC"]',
-          content:  
-          ()=>(
+          content: () => (
             <div className="helperCard">
-          
-          To start from scratch hit the AC button to reset your display.
-                    </div>),
+              To start from scratch hit the All Clear button to reset your
+              display.
+            </div>
+          ),
         },
         {
           selector: '[data-tut="toggle-theme"]',
-          content: 
-          ()=>(
+          content: () => (
             <div className="helperCard">
-          
-          Try out the dark theme if your eyes get tired.
-                    </div>),
+              Try out the dark theme if your eyes get tired.
+            </div>
+          ),
         },
         {
           selector: '[data-tut="lock"]',
-          content:
-          ()=>(
+          content: () => (
             <div className="helperCard">
-          
-          And finally, if you'd like your calculator to stay still hit the lock and so it will be!
-                    </div>),
+              And finally, if you'd like your calculator to stay still, hit the
+              lock and so it will be!
+            </div>
+          ),
         },
-        
       ],
     };
 
@@ -103,7 +96,8 @@ export default class CalculatorApp extends React.Component {
     */
 
     const body = document.getElementsByTagName("BODY")[0];
-    body.style = 'min-height: 100vh\; background-color: #2edfd6\; background-image: repeating-linear-gradient(45deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2) 100px, transparent 0px, transparent 200px), repeating-linear-gradient(-45deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2) 100px, transparent 0px, transparent 200px)\; -webkit-user-select: none\; -moz-user-select: none\;-ms-user-select: none\;user-select: none\; -webkit-transition: all 0.2s\; transition: all 0.2s\; -webkit-transition: translate 2s\; transition: translate 2s'
+    body.style =
+      "min-height: 100vh; background-color: #2edfd6; background-image: repeating-linear-gradient(45deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2) 100px, transparent 0px, transparent 200px), repeating-linear-gradient(-45deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2) 100px, transparent 0px, transparent 200px); -webkit-user-select: none; -moz-user-select: none;-ms-user-select: none;user-select: none; -webkit-transition: all 0.2s; transition: all 0.2s; -webkit-transition: translate 2s; transition: translate 2s";
     let isMobile;
     const devMode = false;
     const calculatorElement = document.getElementById("calculatorApp");
@@ -180,8 +174,6 @@ export default class CalculatorApp extends React.Component {
 
       document.addEventListener("touchend", finish3DTilt);
     }
-
-
   }
 
   handleThemeToggle() {
@@ -295,13 +287,11 @@ export default class CalculatorApp extends React.Component {
     terms = this.state.expression.split(" ");
 
     if (terms && this.state.expression.indexOf("X") != -1) {
-      if(terms>=3){
+      if (terms >= 3) {
         sum = eval(this.state.expression.replace("X", "*"));
+      } else {
+        errorMessage = "Invalid Expression";
       }
-      else {
-        errorMessage = "Invalid Expression"
-      }
-      
     } else {
       try {
         if (!this.state.expression) {
@@ -362,185 +352,184 @@ export default class CalculatorApp extends React.Component {
   render() {
     return (
       <motion.div
-      initial={{ scaleY: 0 }}
-      animate={{ scaleY: 1 }}
-      exit={{ scaleY: 0,
-              opacity: 0 }}
-      transition={{ duration: 1 }}
-    > 
-                <div className={
-                    this.state.currentBaseColor == "dark"
-                      ? "calculator-dark"
-                      : "calculator"
-                  }
-                  id="calculatorApp"
-                  data-tut="calculator"
-                >
-                      <Tour
-                        steps={this.state.steps}
-                        isOpen={this.state.isTourOpen}
-                        onRequestClose={this.toggleTour}
-                        rounded={30}
-                        showNavigation={false}
-                        accentColor={"green"}
-                      ></Tour>
-                      <Header
-                        title="FCC Calculator App"
-                        themeToggleImage={this.state.currentBaseColor}
-                        handleThemeToggle={this.handleThemeToggle}
-                      />
+        initial={{ scaleY: 0 }}
+        animate={{ scaleY: 1 }}
+        exit={{ scaleY: 0, opacity: 0 }}
+        transition={{ duration: 1 }}
+      >
+        <div
+          className={
+            this.state.currentBaseColor == "dark"
+              ? "calculator-dark"
+              : "calculator"
+          }
+          id="calculatorApp"
+          data-tut="calculator"
+        >
+          <Tour
+            steps={this.state.steps}
+            isOpen={this.state.isTourOpen}
+            onRequestClose={this.toggleTour}
+            rounded={30}
+            showNavigation={false}
+            accentColor={"green"}
+          ></Tour>
+          <Header
+            title="FCC Calculator App"
+            themeToggleImage={this.state.currentBaseColor}
+            handleThemeToggle={this.handleThemeToggle}
+          />
 
-                      <DisplayPanel
-                        theme={this.state.currentBaseColor}
-                        input={this.state.input}
-                        expression={this.state.expression}
-                        displayHelp={this.state.displayHelp}
-                      />
+          <DisplayPanel
+            theme={this.state.currentBaseColor}
+            input={this.state.input}
+            expression={this.state.expression}
+            displayHelp={this.state.displayHelp}
+          />
 
-                      <div className="numberPad">
-                    <InputButton
-                      id="clear"
-                      class="inputButton"
-                      buttonText="AC"
-                      onClick={this.handleAllClear}
-                      theme={this.state.currentBaseColor}
-                    />
+          <div className="numberPad">
+            <InputButton
+              id="clear"
+              class="inputButton"
+              buttonText="AC"
+              onClick={this.handleAllClear}
+              theme={this.state.currentBaseColor}
+            />
 
-                    <InputButton
-                      id="clearLine"
-                      class="inputButton"
-                      buttonText="C"
-                      onClick={this.handleClear}
-                      theme={this.state.currentBaseColor}
-                    />
-                    <InputButton
-                      id="divide"
-                      class="inputButton"
-                      buttonText="/"
-                      onClick={this.handleInput}
-                      theme={this.state.currentBaseColor}
-                    />
-                    <InputButton
-                      id="multiply"
-                      class="inputButton"
-                      buttonText="X"
-                      onClick={this.handleInput}
-                      theme={this.state.currentBaseColor}
-                    />
+            <InputButton
+              id="clearLine"
+              class="inputButton"
+              buttonText="C"
+              onClick={this.handleClear}
+              theme={this.state.currentBaseColor}
+            />
+            <InputButton
+              id="divide"
+              class="inputButton"
+              buttonText="/"
+              onClick={this.handleInput}
+              theme={this.state.currentBaseColor}
+            />
+            <InputButton
+              id="multiply"
+              class="inputButton"
+              buttonText="X"
+              onClick={this.handleInput}
+              theme={this.state.currentBaseColor}
+            />
 
-                    <InputButton
-                      id="seven"
-                      class="inputButton"
-                      buttonText="7"
-                      onClick={this.handleInput}
-                      theme={this.state.currentBaseColor}
-                    />
-                    <InputButton
-                      id="eight"
-                      class="inputButton"
-                      buttonText="8"
-                      onClick={this.handleInput}
-                      theme={this.state.currentBaseColor}
-                    />
-                    <InputButton
-                      id="nine"
-                      class="inputButton"
-                      buttonText="9"
-                      onClick={this.handleInput}
-                      theme={this.state.currentBaseColor}
-                    />
-                    <InputButton
-                      id="subtract"
-                      class="inputButton"
-                      buttonText="-"
-                      onClick={this.handleInput}
-                      theme={this.state.currentBaseColor}
-                    />
+            <InputButton
+              id="seven"
+              class="inputButton"
+              buttonText="7"
+              onClick={this.handleInput}
+              theme={this.state.currentBaseColor}
+            />
+            <InputButton
+              id="eight"
+              class="inputButton"
+              buttonText="8"
+              onClick={this.handleInput}
+              theme={this.state.currentBaseColor}
+            />
+            <InputButton
+              id="nine"
+              class="inputButton"
+              buttonText="9"
+              onClick={this.handleInput}
+              theme={this.state.currentBaseColor}
+            />
+            <InputButton
+              id="subtract"
+              class="inputButton"
+              buttonText="-"
+              onClick={this.handleInput}
+              theme={this.state.currentBaseColor}
+            />
 
-                    <InputButton
-                      id="four"
-                      class="inputButton"
-                      buttonText="4"
-                      onClick={this.handleInput}
-                      theme={this.state.currentBaseColor}
-                    />
-                    <InputButton
-                      id="five"
-                      class="inputButton"
-                      buttonText="5"
-                      onClick={this.handleInput}
-                      theme={this.state.currentBaseColor}
-                    />
-                    <InputButton
-                      id="six"
-                      class="inputButton"
-                      buttonText="6"
-                      onClick={this.handleInput}
-                      theme={this.state.currentBaseColor}
-                    />
-                    <InputButton
-                      id="add"
-                      class="inputButton"
-                      buttonText="+"
-                      onClick={this.handleInput}
-                      theme={this.state.currentBaseColor}
-                    />
+            <InputButton
+              id="four"
+              class="inputButton"
+              buttonText="4"
+              onClick={this.handleInput}
+              theme={this.state.currentBaseColor}
+            />
+            <InputButton
+              id="five"
+              class="inputButton"
+              buttonText="5"
+              onClick={this.handleInput}
+              theme={this.state.currentBaseColor}
+            />
+            <InputButton
+              id="six"
+              class="inputButton"
+              buttonText="6"
+              onClick={this.handleInput}
+              theme={this.state.currentBaseColor}
+            />
+            <InputButton
+              id="add"
+              class="inputButton"
+              buttonText="+"
+              onClick={this.handleInput}
+              theme={this.state.currentBaseColor}
+            />
 
-                    <InputButton
-                      id="one"
-                      class="inputButton"
-                      buttonText="1"
-                      onClick={this.handleInput}
-                      theme={this.state.currentBaseColor}
-                    />
-                    <InputButton
-                      id="two"
-                      class="inputButton"
-                      buttonText="2"
-                      onClick={this.handleInput}
-                      theme={this.state.currentBaseColor}
-                    />
-                    <InputButton
-                      id="three"
-                      class="inputButton"
-                      buttonText="3"
-                      onClick={this.handleInput}
-                      theme={this.state.currentBaseColor}
-                    />
-                    <InputButton
-                      id="equals"
-                      class="bigInputButton"
-                      buttonText="="
-                      onClick={this.handleEvaluate}
-                      theme={this.state.currentBaseColor}
-                    />
+            <InputButton
+              id="one"
+              class="inputButton"
+              buttonText="1"
+              onClick={this.handleInput}
+              theme={this.state.currentBaseColor}
+            />
+            <InputButton
+              id="two"
+              class="inputButton"
+              buttonText="2"
+              onClick={this.handleInput}
+              theme={this.state.currentBaseColor}
+            />
+            <InputButton
+              id="three"
+              class="inputButton"
+              buttonText="3"
+              onClick={this.handleInput}
+              theme={this.state.currentBaseColor}
+            />
+            <InputButton
+              id="equals"
+              class="bigInputButton"
+              buttonText="="
+              onClick={this.handleEvaluate}
+              theme={this.state.currentBaseColor}
+            />
 
-                    <InputButton
-                      id="lock"
-                      class="inputButton"
-                      buttonText="lock"
-                      buttonImage="lock"
-                      onClick={this.handleLock}
-                      theme={this.state.currentBaseColor}
-                    />
-                    <InputButton
-                      id="zero"
-                      class="inputButton"
-                      buttonText="0"
-                      onClick={this.handleInput}
-                      theme={this.state.currentBaseColor}
-                    />
-                    <InputButton
-                      id="decimal"
-                      class="inputButton"
-                      buttonText="."
-                      onClick={this.handleInput}
-                      theme={this.state.currentBaseColor}
-                    />
-                  </div>
-
-                </div>
-       </motion.div> 
+            <InputButton
+              id="lock"
+              class="inputButton"
+              buttonText="lock"
+              buttonImage="lock"
+              onClick={this.handleLock}
+              theme={this.state.currentBaseColor}
+            />
+            <InputButton
+              id="zero"
+              class="inputButton"
+              buttonText="0"
+              onClick={this.handleInput}
+              theme={this.state.currentBaseColor}
+            />
+            <InputButton
+              id="decimal"
+              class="inputButton"
+              buttonText="."
+              onClick={this.handleInput}
+              theme={this.state.currentBaseColor}
+            />
+          </div>
+        </div>
+      </motion.div>
     );
   }
 }

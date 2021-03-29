@@ -1,86 +1,68 @@
-
 import "./styles/Home.css";
-import React , { useEffect } from 'react';
+import React, { useEffect } from "react";
 import CalculatorApp from "./../../containers/CalculatorApp";
-import Typing from 'react-typing-animation';
+import Typing from "react-typing-animation";
 
-import {
-    BrowserRouter as Router,
-    Switch,
-    Route,
-    Link
-  } from "react-router-dom";
+import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 
 import { AnimatePresence, motion } from "framer-motion";
 
+import * as PageTransitionRules from "./styles/pageTransitionRules/pageTranisitionRules";
 
-import * as PageTransitionRules from "./styles/pageTransitionRules/pageTranisitionRules"
+const Home = () => {
+  return (
+    <Router>
+      <AnimatePresence exitBeforeEnter>
+        <Switch>
+          <Route path="/Calculator">
+            <CalculatorApp isTourOpen={false} />
+          </Route>
+          <Route path="/CalculatorTutorial">
+            <CalculatorApp isTourOpen={true} />
+          </Route>
+          <Route path="/">
+            <Navigation />
+          </Route>
+        </Switch>
+      </AnimatePresence>
+    </Router>
+  );
+};
 
-
-
-const Home = ()=>{
-
-  
-    return(
-
-        <Router>
-        <AnimatePresence exitBeforeEnter>
-                <Switch>
-                    <Route path="/Calculator">
-                    <CalculatorApp isTourOpen ={false} />
-                    </Route>
-                    <Route path="/CalculatorTutorial">
-                        <CalculatorApp isTourOpen ={true} />
-                    </Route>
-                    <Route path="/">
-                        <Navigation/>
-                    </Route>
-                </Switch>
-          </AnimatePresence>
-      </Router>
-      
-      );
-}
-
-const Navigation = ()=>{
-
-    return(
-        
-        <motion.div
-        initial="initial"
-        animate="in"
-        exit="out"
-        transition={PageTransitionRules.pageTransition}
-        style={PageTransitionRules.pageStyle}
-        variants={PageTransitionRules.pageVariants}
-      >
-        <div class="home">
+const Navigation = () => {
+  return (
+    <motion.div
+      initial="initial"
+      animate="in"
+      exit="out"
+      transition={PageTransitionRules.pageTransition}
+      style={PageTransitionRules.pageStyle}
+      variants={PageTransitionRules.pageVariants}
+    >
+      <div class="home">
         <div class="shape-blob"></div>
         <div class="shape-blob one"></div>
-        <div class="shape-blob two"></div>  
+        <div class="shape-blob two"></div>
         <nav>
-            
-            <div className="entryPad">
-
+          <div className="entryPad">
             <Link to="/">
-                    <h1>3D Calculator</h1>
+              <h1>3D Calculator</h1>
             </Link>
-                    <Link to="/CalculatorTutorial">
-                        <button type="button" className="entryButton">
-                            Take a tutorial
-                        </button>
-                    </Link>
-                    <Link to="/Calculator">
-                        <button type="button" className="entryButton">
-                            Just get started
-                        </button>
-                    </Link>
-            </div>
-      </nav>
+            <Link to="/CalculatorTutorial">
+              <button type="button" className="entryButton">
+                Take a tutorial
+              </button>
+            </Link>
+            <Link to="/Calculator">
+              <button type="button" className="entryButton">
+                Just get started
+              </button>
+            </Link>
+          </div>
+        </nav>
       </div>
-      </motion.div>
-)
-}
-
+    </motion.div>
+  );
+};
 
 export default Home;

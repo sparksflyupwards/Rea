@@ -1,175 +1,152 @@
 @font-face {
-    font-family: "Digital";
-    src: url("//db.onlinewebfonts.com/t/8e22783d707ad140bffe18b2a3812529.eot");
-    src: url("//db.onlinewebfonts.com/t/8e22783d707ad140bffe18b2a3812529.eot?#iefix")
-        format("embedded-opentype"),
-      url("//db.onlinewebfonts.com/t/8e22783d707ad140bffe18b2a3812529.woff2")
-        format("woff2"),
-      url("//db.onlinewebfonts.com/t/8e22783d707ad140bffe18b2a3812529.woff")
-        format("woff"),
-      url("//db.onlinewebfonts.com/t/8e22783d707ad140bffe18b2a3812529.ttf")
-        format("truetype"),
-      url("//db.onlinewebfonts.com/t/8e22783d707ad140bffe18b2a3812529.svg#Digital-7")
-        format("svg");
-  }
-
-  /** Global styling variables **/
-  $calculator-desktop-width : 400px;
-  $calculator-desktop-height : 650px;
-  
-  $calculator-mobile-width-thin : 80%;
-  $calculator-mobile-height-thin : 75vh;
-
-  $calculator-mobile-width-wide : 70%;
-  $calculator-mobile-height-wide : 78vh;
-  
-  $lightShadow: inset 4px 2px 2px rgba(255, 255, 255, .4), inset -2px -2px 2px rgba(0, 0, 0, .4)
-                ,  2vw 6vh 6px rgba(0, 0, 0, 0.18), 0 1px 4px rgba(0, 0, 0, 0.24);
-
-  $darkShadow: inset 4px 2px 2px rgba(255, 255, 255, 0.178), inset -2px -2px 2px rgba(0, 0, 0, 0.548)
-                ,  2vw 6vh 6px rgba(0, 0, 0, 0.18), 0 1px 4px rgba(0, 0, 0, 0.24);
-  $transition-time: 0.2s;
-
-
-
-
-
- .helperCard {
-   max-width: 70vw;
- }
-  @mixin numberPad {
-    display: grid;
-  }
-  
-  
-
-
-  /** Calculator coloring rules **/
-
-  .calculator {
-    text-align: center;
-    background-color: #FFBF47;
-    color: black;
-  }
-  
-
-  .calculator-dark {
-    text-align: center;
-    background-color: #32292F ;
-    color: white;
+  font-family: "Digital";
+  src: url("//db.onlinewebfonts.com/t/8e22783d707ad140bffe18b2a3812529.eot");
+  src: url("//db.onlinewebfonts.com/t/8e22783d707ad140bffe18b2a3812529.eot?#iefix")
+      format("embedded-opentype"),
+    url("//db.onlinewebfonts.com/t/8e22783d707ad140bffe18b2a3812529.woff2")
+      format("woff2"),
+    url("//db.onlinewebfonts.com/t/8e22783d707ad140bffe18b2a3812529.woff")
+      format("woff"),
+    url("//db.onlinewebfonts.com/t/8e22783d707ad140bffe18b2a3812529.ttf")
+      format("truetype"),
+    url("//db.onlinewebfonts.com/t/8e22783d707ad140bffe18b2a3812529.svg#Digital-7")
+      format("svg");
 }
-  
 
-  /* Calculator desktop sizing rules */
-  $grid-width: 6.2em;
-  $grid-height: 6.2em;
+/** Global styling variables **/
+$calculator-desktop-width: 400px;
+$calculator-desktop-height: 650px;
 
-  .numberPad{
-    @include numberPad();
-    grid-template-columns: repeat(4, $grid-width);
-    grid-template-rows: repeat(5, $grid-height);
-    margin-top: 10%;
-    min-height: 36%;
+$calculator-mobile-width-thin: 80%;
+$calculator-mobile-height-thin: 75vh;
 
-  }
-  
-  @mixin calculator {
-    width: 100%;
-    margin: 4% auto;
-    height: fit-content;
-    
-    width: $calculator-desktop-width;
-    border-radius: 5%;
-    
-    box-shadow: inset 4px 2px 2px rgba(255, 255, 255, .4), inset -2px -2px 2px rgba(0, 0, 0, .4);
-  }
+$calculator-mobile-width-wide: 70%;
+$calculator-mobile-height-wide: 78vh;
+
+$lightShadow: inset 4px 2px 2px rgba(255, 255, 255, 0.4),
+  inset -2px -2px 2px rgba(0, 0, 0, 0.4), 2vw 6vh 6px rgba(0, 0, 0, 0.18),
+  0 1px 4px rgba(0, 0, 0, 0.24);
+
+$darkShadow: inset 4px 2px 2px rgba(255, 255, 255, 0.178),
+  inset -2px -2px 2px rgba(0, 0, 0, 0.548), 2vw 6vh 6px rgba(0, 0, 0, 0.18),
+  0 1px 4px rgba(0, 0, 0, 0.24);
+$transition-time: 0.2s;
+
+.helperCard {
+  max-width: 70vw;
+}
+@mixin numberPad {
+  display: grid;
+}
+
+/** Calculator coloring rules **/
+
+.calculator {
+  text-align: center;
+  background-color: #ffbf47;
+  color: black;
+}
+
+.calculator-dark {
+  text-align: center;
+  background-color: #32292f;
+  color: white;
+}
+
+/* Calculator desktop sizing rules */
+$grid-width: 6.2em;
+$grid-height: 6.2em;
+
+.numberPad {
+  @include numberPad();
+  grid-template-columns: repeat(4, $grid-width);
+  grid-template-rows: repeat(5, $grid-height);
+  margin-top: 10%;
+  min-height: 36%;
+}
+
+@mixin calculator {
+  width: 100%;
+  margin: 4% auto;
+  height: fit-content;
+
+  width: $calculator-desktop-width;
+  border-radius: 5%;
+
+  box-shadow: inset 4px 2px 2px rgba(255, 255, 255, 0.4),
+    inset -2px -2px 2px rgba(0, 0, 0, 0.4);
+}
+.calculator {
+  @include calculator();
+  box-shadow: $darkShadow;
+}
+
+.calculator-dark {
+  @include calculator();
+  box-shadow: $lightShadow;
+}
+
+/* Calculator mobile sizing rules */
+
+@mixin calculatorMobile {
+  border-radius: 5%;
+  box-shadow: 6vw 6vh 6px rgba(0, 0, 0, 0.18), 0 1px 4px rgba(0, 0, 0, 0.24);
+
+  box-shadow: inset 4px 2px 2px rgba(255, 255, 255, 0.4),
+    inset -2px -2px 2px rgba(0, 0, 0, 0.4);
+}
+@mixin calculatorMobileThin {
+  @include calculatorMobile();
+  margin: 20% auto;
+  height: fit-content;
+  width: fit-content;
+}
+
+@mixin calculatorMobileWide {
+  @include calculatorMobile();
+  margin: 17% auto;
+  height: fit-content;
+  width: fit-content;
+}
+
+@media only screen and (max-width: 600px) {
+  /** for wider mobile viewports */
   .calculator {
-      @include calculator();
-      box-shadow: $darkShadow;
+    @include calculatorMobileWide();
   }
-
   .calculator-dark {
-   @include calculator();
-   box-shadow: $lightShadow;
+    @include calculatorMobileWide();
   }
-  
 
+  $grid-width-mobile: 3.5em;
+  $grid-height-mobile: 3.8em;
 
-  /* Calculator mobile sizing rules */
-
-  @mixin calculatorMobile {
-    border-radius: 5%;
-    box-shadow: 6vw 6vh 6px rgba(0, 0, 0, 0.18), 0 1px 4px rgba(0, 0, 0, 0.24);
-
-    box-shadow: inset 4px 2px 2px rgba(255, 255, 255, .4), inset -2px -2px 2px rgba(0, 0, 0, .4);
+  .numberPad {
+    @include numberPad();
+    grid-template-columns: repeat(4, $grid-width-mobile);
+    grid-template-rows: repeat(5, $grid-height-mobile);
+    margin-top: 4vh;
+    margin-left: 0%;
   }
-  @mixin calculatorMobileThin {
-    @include calculatorMobile();
-    margin: 20% auto;
-    height: fit-content;
-    width: fit-content;
+
+  /** for thinner phones **/
+  @media (max-aspect-ratio: 1/2) {
+    $grid-width: 3.5em;
+    $grid-height: 3.8em;
+
+    .numberPad {
+      @include numberPad();
+      grid-template-columns: repeat(4, $grid-width);
+      grid-template-rows: repeat(5, $grid-height);
+      margin-top: 19%;
+      padding-left: 1%;
+      padding-right: 1%;
     }
-
-  @mixin calculatorMobileWide {
-    @include calculatorMobile();
-    margin: 17% auto;
-    height: fit-content;
-    width: fit-content;
-  }
-
-
-  @media only screen and (max-width: 600px){
-
-    /** for wider mobile viewports */
     .calculator {
-        @include calculatorMobileWide();
-   
-      }
-      .calculator-dark {
-        @include calculatorMobileWide();
-
-       
-     }
-     
-        $grid-width-mobile: 3.5em;
-        $grid-height-mobile: 3.8em;
-
-        .numberPad{
-           @include numberPad();
-            grid-template-columns: repeat(4, $grid-width-mobile);
-            grid-template-rows: repeat(5, $grid-height-mobile);
-            margin-top: 4vh;
-            margin-left: 0%;
-            
-        }
-        
-      /** for thinner phones **/
-      @media (max-aspect-ratio: 1/2) {
-
-        $grid-width: 3.5em;
-        $grid-height: 3.8em;
-
-        .numberPad{
-            
-            @include numberPad();
-            grid-template-columns: repeat( 4, $grid-width);
-            grid-template-rows: repeat( 5, $grid-height);
-            margin-top: 19%;
-            padding-left: 1%;
-            padding-right: 1%;
-            
-          }
-          .calculator {
-            @include calculatorMobileThin();
-          }
-          .calculator-dark {
-            @include calculatorMobileThin();
-            
-         }
-      }
-
-
-
-      
-    
+      @include calculatorMobileThin();
+    }
+    .calculator-dark {
+      @include calculatorMobileThin();
+    }
   }
+}

@@ -12,13 +12,13 @@
 /** Calculator coloring rules **/
 .calculator {
   text-align: center;
-  background-color: #FFBF47;
+  background-color: #ffbf47;
   color: black;
 }
 
 .calculator-dark {
   text-align: center;
-  background-color: #32292F;
+  background-color: #32292f;
   color: white;
 }
 
