@@ -124,6 +124,13 @@ h1 {
 /* 
   and (orientation: portrait) */
 @media only screen and (max-width: 650px) {
+  nav {
+    display: inline-block;
+    margin-top: auto;
+    margin-bottom: auto;
+    -webkit-transform: translateY(-50%);
+            transform: translateY(-50%);
+  }
   h1 {
     font-size: 2em;
     letter-spacing: 2px;

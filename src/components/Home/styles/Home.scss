@@ -9,8 +9,6 @@ a {
 nav {
     display: flex;
     flex-direction: column;
-    
-
 }
 .entryButton{
     background: none;
@@ -112,7 +110,13 @@ h1 {
 @media only screen 
   and (max-width: 650px)  {
 
-
+    nav {
+        display: inline-block;
+       margin-top: auto;
+       margin-bottom: auto;
+       transform: translateY(-50%);
+    }
+    
     h1 {
       
         font-size: 2em;

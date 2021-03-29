@@ -2,6 +2,7 @@
 import "./styles/Home.css";
 import React from "react";
 import CalculatorApp from "./../../containers/CalculatorApp";
+import Typing from 'react-typing-animation';
 
 import {
     BrowserRouter as Router,
@@ -62,9 +63,12 @@ const Navigation = ()=>{
         <div class="shape-blob one"></div>
         <div class="shape-blob two"></div>  
         <nav>
-            <Link to="/"><h1>3D Calculator</h1></Link>
             
             <div className="entryPad">
+
+            <Link to="/">
+                    <h1>3D Calculator</h1>
+            </Link>
                     <Link to="/CalculatorTutorial">
                         <button type="button" className="entryButton">
                             Take a tutorial
