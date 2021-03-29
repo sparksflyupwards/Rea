@@ -21,30 +21,66 @@ export default class CalculatorApp extends React.Component {
       steps: [
         {
           selector: '[data-tut="tr"]',
-          content: `Welcome to the React 3D Calculator tour! 
-                    Lets get started, and remember, you can exit anytime and play with the app as you go...`,
+          content: ()=>(
+            <div className="helperCard">
+                    Welcome to the React 3D Calculator tour! 
+                    Lets get started, and remember, you can exit anytime and play with the app as you go...
+            </div>
+            )
+          
+          
+,
         },
         {
           selector: '[data-tut="calculator"]',
-          content: `Here you will find our state of the art, touch if you dare, calculator lovingly built with ReactJS. It's got all your standard numbers and operations to press at your hearts delight, but  
-                    watch out, it tilts as you touch it!`,
+          content: ()=>(
+            <div className="helperCard">
+          
+          Here you will find our state of the art, touch if you dare, calculator lovingly built with ReactJS. It's got all your standard numbers and operations to press at your hearts delight, but  
+                    watch out, it tilts as you touch it!
+                    </div>)            
+        ,
         },
         {
           selector: '[data-tut="C"]',
-          content: `If you make a mistake you can erase your recent input with the C button here.`,
+          content:
+          
+          ()=>(
+            <div className="helperCard">
+          
+          If you make a mistake you can erase your recent input with the C button here.
+                    </div>)    
+          
+          ,
         },
         {
           selector: '[data-tut="AC"]',
-          content: `To start from scratch hit the AC button to reset your display.`,
+          content:  
+          ()=>(
+            <div className="helperCard">
+          
+          To start from scratch hit the AC button to reset your display.
+                    </div>),
         },
         {
           selector: '[data-tut="toggle-theme"]',
-          content: `Try out the dark theme if your eyes get tired.`,
+          content: 
+          ()=>(
+            <div className="helperCard">
+          
+          Try out the dark theme if your eyes get tired.
+                    </div>),
         },
         {
           selector: '[data-tut="lock"]',
-          content: `And finally, if you'd like your calculator to stay still hit the lock and so it will be!`,
+          content:
+          ()=>(
+            <div className="helperCard">
+          
+          And finally, if you'd like your calculator to stay still hit the lock and so it will be!
+                    </div>),
         },
+        
       ],
     };
 
@@ -344,6 +380,9 @@ export default class CalculatorApp extends React.Component {
                         steps={this.state.steps}
                         isOpen={this.state.isTourOpen}
                         onRequestClose={this.toggleTour}
+                        rounded={30}
+                        showNavigation={false}
+                        accentColor={"green"}
                       ></Tour>
                       <Header
                         title="FCC Calculator App"

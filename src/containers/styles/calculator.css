@@ -5,6 +5,10 @@
 }
 
 /** Global styling variables **/
+.helperCard {
+  max-width: 70vw;
+}
+
 /** Calculator coloring rules **/
 .calculator {
   text-align: center;

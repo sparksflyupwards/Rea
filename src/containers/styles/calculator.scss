@@ -30,6 +30,13 @@
                 ,  2vw 6vh 6px rgba(0, 0, 0, 0.18), 0 1px 4px rgba(0, 0, 0, 0.24);
   $transition-time: 0.2s;
 
+
+
+
+
+ .helperCard {
+   max-width: 70vw;
+ }
   @mixin numberPad {
     display: grid;
   }
