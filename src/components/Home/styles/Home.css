@@ -53,8 +53,8 @@ nav {
 .home {
   background: #eeaeca;
   background: radial-gradient(circle, #eeaeca 0%, #94bbe9 100%);
-  min-height: 120vh;
-  min-width: 120vw;
+  min-height: 100vh;
+  min-width: 100vw;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -124,6 +124,9 @@ h1 {
 /* 
   and (orientation: portrait) */
 @media only screen and (max-width: 650px) {
+  body {
+    min-height: 100%;
+  }
   nav {
     display: inline-block;
     margin-top: auto;
