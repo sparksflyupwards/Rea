@@ -76,7 +76,7 @@ const Navigation = ()=>{
                     </Link>
                     <Link to="/Calculator">
                         <button type="button" className="entryButton">
-                            Just get starterd
+                            Just get started
                         </button>
                     </Link>
             </div>

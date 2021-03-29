@@ -131,12 +131,18 @@ h1 {
         padding:0.1em 1em;
         border:0.16em solid #FFFFFF;
         margin:0 0.3em 0.3em 0;
+        font-size: .8em;
         font-weight:400;
         min-height: 5vh;
         margin-top: 7%;
         animation: neonWhiteOutward 1.5s ease-in-out infinite alternate; 
     
     }
+
+    .entryButton:hover{
+        animation: none; 
+    }
+    
 
 
 
@@ -223,13 +229,13 @@ $NeonWhiteColor: #fff;
 
   @keyframes neonWhiteOutward {
     0% {
-      box-shadow: 0 0 3px #fff, 0 0 10px #fff, 0 0 15px #fff, 0 0 20px $NeonWhiteColor, 0 0 70px $NeonWhiteColor, 0 0 30px $NeonWhiteColor, 0 0 50px $NeonWhiteColor, 0 0 75px $NeonWhiteColor ;
+      box-shadow: 0 0 2px #fff, 0 0 5px #fff, 0 0 10px #fff, 0 0 20px $NeonWhiteColor, 0 0 70px $NeonWhiteColor, 0 0 30px $NeonWhiteColor, 0 0 50px $NeonWhiteColor, 0 0 75px $NeonWhiteColor ;
     }
     50% {
-        box-shadow: 0 0 1.5px #fff, 0 0 7.5px #fff, 0 0 10px #fff, 0 0 15px $NeonWhiteColor, 0 0 55px $NeonWhiteColor, 0 0 30px $NeonWhiteColor, 0 0 38px $NeonWhiteColor, 0 0 45px $NeonWhiteColor ;
+        box-shadow: 0 0 1px #fff, 0 0 3px #fff, 0 0 5px #fff, 0 0 15px $NeonWhiteColor, 0 0 55px $NeonWhiteColor, 0 0 30px $NeonWhiteColor, 0 0 38px $NeonWhiteColor, 0 0 45px $NeonWhiteColor ;
      }
     100% {
-       box-shadow: 0 0 3px #fff, 0 0 5px #fff, 0 0 7.5px #fff, 0 0 10px $NeonWhiteColor, 0 0 35px $NeonWhiteColor, 0 0 20px $NeonWhiteColor, 0 0 25px $NeonWhiteColor, 0 0 38px $NeonWhiteColor ;
+       box-shadow: 0 0 2px #fff, 0 0 2px #fff, 0 0 2px #fff, 0 0 10px $NeonWhiteColor, 0 0 35px $NeonWhiteColor, 0 0 20px $NeonWhiteColor, 0 0 25px $NeonWhiteColor, 0 0 38px $NeonWhiteColor ;
     }
   }
 
