@@ -303,17 +303,17 @@ export default class CalculatorApp extends React.Component {
           errorMessage = "Invalid Input";
         } else {
           sum = eval(this.state.expression);
-
-          //keep precision to four digits and ensure number is not too long to display
-          sum = parseFloat(sum.toFixed(4))
-          if(String(sum).length > 13){
-            errorMessage = "Result too long"
-          }
         }
       } catch (exception) {
         errorMessage = "Error.";
       }
     }
+
+     //keep precision to four digits and ensure number is not too long to display
+     sum = parseFloat(sum.toFixed(4))
+     if(String(sum).length > 13){
+       errorMessage = "Result too long"
+     }
 
     if (errorMessage) {
       this.setState((state) => {

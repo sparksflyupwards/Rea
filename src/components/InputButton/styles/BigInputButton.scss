@@ -1,13 +1,5 @@
 @import './templateMixins/ButtonMixins.scss';
 
-
-
-
-
-
-
-
-
 .bigInputButton-light {
     @include inputButtonLightTheme;
 }
