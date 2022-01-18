@@ -296,12 +296,16 @@ export default class CalculatorApp extends React.Component {
       } else {
         errorMessage = "Invalid Input";
       }
-    } else {
+    } 
+    else {
       try {
         if (!this.state.expression) {
           errorMessage = "Invalid Input";
         } else {
           sum = eval(this.state.expression);
+          if(String(sum).length > 13){
+            errorMessage = "Result too large"
+          }
         }
       } catch (exception) {
         errorMessage = "Error.";
